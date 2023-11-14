@@ -1,0 +1,1307 @@
+---
+title: "Taller de Tidymodels"
+subtitle: "Jornadas de R"
+author: "Aitor Gonzalez, estadístico y data scientist en el dpt de medicina de la UAB"
+output: 
+  html_document:
+    toc: yes
+    toc_float: yes
+    toc_depth: 3
+    number_sections: true
+    code_folding: show
+    theme: united
+    highlight: tango
+---
+
+# Antes de empezar, conozcámonos
+
+Hola, soy Aitor Gonzalez, Yo aprendo Tidymodels para que te sea más fácil de aprender.
+
+Soy data scientist o lo que es lo mismo, estadístico que hace más cosas aparte de una regresión logística.
+Actualmente trabajo en la unidad de facultad de medicina y biológia de la universidad autónoma de Barcelona.
+
+
+Este taller contiene **mucho texto**. Y suele requerir de un par de veces mirárselo para pillarle todo el tranquillo. No pasa nada si no te enteras a la primera. "Dentro de poco" estará subido a Youtube en mi canal Reestimando.
+
+|                                  |                                    |
+|----------------------------------|------------------------------------|
+| ![](imagenes/youutbe%20logo.png) | ![](imagenes/RE%20complex%202.png) |
+
+# ¿Por que Tidymodels?
+
+## Un poquito de la historia
+
+La historia comienza con este señor de la foto de la ziquierda. Él es **Max Khun**. Parece un señor muy majo o muy travieso. Yo personalmemte creo más lo segundo viendo su creación.
+
+|                                                     |                                                |
+|-----------------------------|-------------------------------------------|
+| ![](imagenes/maxkhun.jpg){width="257" height="250"} | ![](imagenes/twitter_maxKhun.png){width="404"} |
+
+Comienza por aquí por que este señor fue el desarrollador de la Librería **Caret**.**Caret** fue una librería que comenzó en 2008 y que asentó las bases del modelado estadístico en R. Desde su creación, el paquete ha sido citado en más de 7000 publicaciones académicas, teniendo un enorme éxito en la comunidad.
+
+El paquete fue un éxito debido a que antes de él, no había una forma de unificar sintaxis entre los principales paquetes de modelado. Cada modelo estaba en un paquete y todos diferentes entre si, un caos para organizar un flujo de trabajo. **Caret** permitía utilizar con una sintaxis común los modelos de varias librerías. Además también traía varias funciones para hacer automáticamente cosas que son necesarias en todo proceso de modelado, como una función que haga una partición de datos en un conjunto de entrenamiento y uno de prueba (training y test).
+
+|                                             |                                |
+|------------------------------------------|------------------------------|
+| ![](imagenes/IniciosCaret.jpg){width="265"} | ![](imagenes/Caret%20logo.png) |
+
+**ELIPSIS** en 2012 aparece la el entorno *tidyverse* de la mano de *Hadley Whickam*, la otra súper estrella de R en los últimos años. Tidyverse proporciona un montón de herramientas para poder lidiar con facilidad con la manipulación de datos, conviertiéndose en un packate súper popular no solo ne R, sino en toda la ciencia datos. El principal punto es la facilidad de sintaxis para todas sus funciones, haciendo que los usuarios tuvieran una lectura de código muy fácil y fluida, enfocandose 100% en la necesidad y no en la programación.
+
+|                                                         |               |
+|--------------------------------------|----------------------------------|
+| ![](imagenes/Hadley-wickham2016-02-04.jpg){width="195"} | ![](imagenes/tidyverse_packages.jpg){width="503"} |
+
+Encantado con un framework en el que toda la sintaxis está ordenada, **en 2019, Max se une al tidyverso, y comienza a crear Tidymodels cooperando con el equipo de Whickam**. El objetivo era convertir Careta algo más modularizado y que permitiera centrar en el modelado en si mismo, más que infinitas líneas de sintaxis para poder crear modelos de machine learning.
+
+A fecha de este taller, noviembre de 2023, hay otra desarrolladora principal de Tidymodels además de MAx. **Julia Silge**.
+
+|                                              |                                                             |
+|-------------------------------|-----------------------------------------|
+| ![](imagenes/julia%20Silge.jpg){width="223"} | ![](imagenes/Julia%20Silge%20presentacion.png){width="441"} |
+
+Esta mujer, no solo es un as de la programación, sino que además se dedica a expandir la filosofía Tidy a través de sus redes. Su contenido vale oro y diría que es imperdible si quieres no solo aprender más de Tidymodels, sino de las posibilidades del aprendizaje automático en general.
+
+\- [https://www.youtube.com/\@JuliaSilge](https://www.youtube.com/@JuliaSilge){.uri}
+
+\- <https://juliasilge.com/blog/>
+
+Entre algunos de sus trabajos más llamativos están uno que me encanta que es **Topic modeling for #TidyTuesday Taylor Swift lyrics** es decir, "modelizando los temas que tratan las canciones de taylor swift" <https://juliasilge.com/blog/taylor-swift/>
+
+## Un breve ejemplo
+
+Imaginemos que queremos hacer una regresión lineal. Cogeremos unos datos cualquiera, lo de mtcars.supongamos que queremos hacer una regresión logítica, la sintaxis para eso sería:
+
+![](imagenes/Ejemplo_tidymodels_1.png)
+
+Como se pude ver en el ejemplo, la regresión fuera de tidymodels la hacemos con la librería **glm**. En Tidymodels esto se especifica con la función **set_engine**.
+
+Ahora, veamos que pasaría si queremos hacerla con las liberría **h2o**
+
+![](imagenes/Ejemplo_tidymodels_2.png)
+
+Se va pillando la idea, ¿no? Tidymodels permite que con cambios mínimos de código puedas cambiar completamente tu flujo de trabajo. Si queremos cambiar un "motor" de modelo, solo tenemos que especificarlo en un solo cambio, y no tener que reescribir todo el código de nuevo. Esto es clave ya que permite jugar mucho a la hora de probar muchos tipos de modelos y ampliar las miras sin aumentar los problemas de código.
+
+Evidentemente, esto no es ni la superficie de Tidymodels, aquí solo estamos viendo la isla a lo lejos.
+
+## ¿Que aporta de tidymodels?
+
+-   **No más Caret**: Caret está en mantenimiento solo, en el futuro se dará soporte a Tidymodels. Tidymodels es la apuesta al largo plazo en el entorno de R.
+-   **Consistencia**: Misma sintaxis para todos los procesos.
+-   **Replicabilidad**: Es muy sencillo replicar resultados.
+-   **Comunicación**: Los outputs de Tidymodels siguen la lógica de Tidyverse.
+-   **Exportabilidad**: Junto a otras librerías, como Plumber y Vetiver, Tidymodels permite facilmente la exportabilidad de sus modelos a otros entornos en Cloud, para poner los modelos a producción.
+-   **Posibilidades**: a fecha de este informe, tidymodels *da soporte a 155 modelos,* incluyendo modelos para datos censurados y modelos de series temporales. 
+
+# Presentando los datos
+
+Somos unos expertos en aprendizaje automático y nos piden ayuda de un hospital 🏥
+
+Al parecer, nuestra variable, **Var_respuesta**, es una enfermedad complicada de diagnosticar. Los médicos no son capaces de determinar si un paciente tendrá o no esa enfermedad al cabo de un año. Entonces han hecho un estudio **caso-control** en el que se miran unas cuantas variables; y al cabo de un año se da un diagnostico definitivo de **var_respuesta**. En este caso pues, nos interesa una modelización de tipo clasificatoria binaria, es decir de 2 niveles, o tiene la enfermedad o no la tiene. 👍/👎
+
+Además de de nuestra variable **Var_respuesta**, tenemos otras 25 variables de diversos tipos, de cognición, bioquímicas, genéticas, etc. El dataframe es una simulación de uno real, e incluye valores perdidos y otras características a tener en cuenta en la fase de pre-procesamiento.
+
+Insisto, **el propósito es modelizar un clasifiación binaria**
+
+Antes de empezar podemos ver un poco su estructura.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+```{r carga de librereias}
+# |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+# Librerias | Carga de datos ----
+# |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+if(!require('pacman')){install.packages('pacman')}
+pacman::p_load(
+  readxl,      # Lectura de los datos
+  tidyverse ,  # Acceso al entorno de procesamiento "tidyverse"
+  tidymodels,  # Acceso al entorno de modelado "tidymodels"
+  agua,        # Modelaje de entorno h2o 
+  themis,      # Soporte de la librería "recipes" para añadir sobremuestreo
+  skimr,       # Descriptiva rápida de datos  
+  naniar,
+  knitr,       # pPesta en html para este formato
+)
+
+datos <- read_xlsx('Data/datos.xlsx') %>% 
+  filter(!is.na(Var_respuesta) ) %>% 
+  mutate(Var_respuesta= as_factor(Var_respuesta))
+
+
+datos %>% 
+  head(.,10) %>% 
+  knitr::kable()
+
+
+# Valoración general
+skimr::skim(datos)
+
+# Valores perdidos
+
+naniar::vis_miss(datos)
+
+naniar::gg_miss_upset(datos, nsets = 10, nintersects = 50)
+
+```
+
+# ¿De qué se compone tidymodels?
+
+El flujo de trabajo para producir un modelo en tidymodels es el siguiente:
+
+![](imagenes/Flujo%20de%20un%20modelo%20de%20machine%20learning.png)
+
+La idea detrás consiste en una sola sintaxis que resuma todo este flujo de trabajo. 
+
+1. Particion de datos
+2. Pre-procesamos los datos de entrenamiento.
+3. Buscamos los híper-parámetros ideales para nuestros datos en el modelo
+4. Ajustamos el modelo.
+5. Comprobamos con las métricas.
+6. Vemos su fnciona con unos datos que el modelo no haya visto.
+
+Como hemos visto en el ejemplo anterior, con cambiar una sola línea línea, podemos cambiar el tipo de modelo. Y con entender unos pocos puntos clave de todos los nexos, podemos llevar a cabo flujos de trabajo muy eficientes con muy poco coste de mantenimiento y poco cambio de sintaxis.
+
+Para la creación de este "cosmos", Tidymodels utiliza las siguientes librerías:
+
+![](imagenes/visionglobatidymodels.png)
+
+-   **Rsample**: Funciones para crear distintos tipos de remuestreos.
+-   **Recipes** : Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.
+-   **Parsnip** Interfaz para ajustar modelos, hasta 155 tipos a fecha de este html.
+-   **Yarstick** Creación de métricas para la evaluación de un modelo.
+-   **Workflows** Cohesión interna de tidymodels.
+-   **Tune & Dials** Creación y gestioón de híper-parámetros de cualquire modelo presente en Tidymodels.
+
+------------------------------------------------------------------------
+
+# Preparando la partición de datos con Rsampling
+
+Para comenzar a crear un modelo de aprendizaje automático es necesario tener datos, fundamental. Estos datos, sueen ser dificiles de conseguir, requieren tiempo, esfuerzo y dinero. Su manejo debe ser optimizado con el fin de abaratar los costes de recopialrlos y mejorar los resultados. Además tener en cuenta que el propósito de un modelo de aprendizaje automático en general es que se pueda usar para poder predecir que va a pasar con unos datos que no tenga, o que tenga en un futuro.
+
+Aquí entre el punto del remuestreo. Crearemos un partición de la muestra en unos datos para "entrenar" el modelo y la otra para "evaluarlo", para ver si tal y como ha quedado calibrado el modelo es útil o no.
+
+Por supuesto, la calidad de esta partición estará ligada a la calidad de los datos. Si los datos recopilados no son suficientemente representativos, el modelo no predecirá bien cuando traigamos casos que no haya visto, aún incluso si la evaluación del modelo ha sido buena.
+
+Básicamente queremos esto
+
+![](imagenes/datos%20acusandose.jpg)
+
+La libreria dentro de tidymodels que nos dará los conjuntos de datos para hacer esto es **rsample**.
+
+|                              |                                               |
+|-----------------------------|-------------------------------------------|
+| ![](imagenes/train_test.jpg) | <img src="imagenes/rsample.png" width="230"/> |
+
+Algunas de las funciones importantes dentro de este conjunto:
+
+-   **initial_split**: Principal función dentro de la librería.Crea un objeto **"split"** sencillo para hacer una partición de datos
+
+```{r Rsample: ejemplo de split simple (particion simple)}
+# 🔴 La función principal de Rsample, hace una partición de un conjunto de  🔴
+initial_split(datos, prop = 0.6 )
+```
+
+-   **bootstraps**: crea un tibble con n cantidad de objetos *"split"* y su correspondiente identificador. Estas muestras son de tipo bootstrap, es decir, muestras en las que un individuos puede aparecer más de una vez en el conjunto de datos, tanto en entrenamiento como en evaluación.
+
+```{r Rsample: ejemplo de split bootstrap (particion bootstrap)}
+rsample::bootstraps(datos,5)
+```
+
+-   **rolling_origin**: Crea un tibble con n cantidad de objetos *"split"* y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contienen datos que consecutivos. Es decir, se comienza por la fila 1 y se hacen bloquen a cantidades iguales. Se usa sobretodo en la partición de datos de tiempo o cuando se está estudiando la creación de una partición optimizada entre el conjunto de entrenamiento y de evaluación.
+
+```{r Rsample: ejemplo rolling origin (particion estructurada)}
+rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = FALSE)
+```
+
+```{r Rsample: comparativa de rolling_origing, class.source = 'fold-hide' }
+ggpubr::ggarrange(
+  rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = FALSE) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = factor(Row), fill = Data)) +
+    geom_tile() + 
+  scale_fill_manual( values = c('cyan','orange'))
+  ,
+  rolling_origin(datos, initial = 50, assess = 20, skip = 70, cumulative = FALSE) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = factor(Row), fill = Data)) +
+    geom_tile()  + 
+  scale_fill_manual( values = c('cyan','orange'))
+  ,
+  rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = T) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = factor(Row), fill = Data)) +
+    geom_tile()  + 
+  scale_fill_manual( values = c('cyan','orange'))
+  ,
+  rolling_origin(datos, initial = 50, assess = 50, skip = 70, cumulative = T) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = factor(Row), fill = Data)) +
+    geom_tile()  + 
+  scale_fill_manual( values = c('cyan','orange'))
+  ,
+  common.legend = T, legend = 'bottom'
+)
+```
+
+## Estratificar
+
+Una de las cosas que pasan habitual a la hora de crear una partición de datos es que, al ser aleatorias, uno de los conjuntos contenga más datos de un tiempo de otro tipo.
+
+Idealmente querríamos que el conjunto de entrenamiento y que el conjunto de evaluación contuvieran la misma proporción de las categorías.
+
+Para ello, en varias de las funciones de **rsample** se cuenta con el argumento **strata** que permite hacer esto de form estratificada para una variable o variables de interés, es este caso, para nuestros datos y nuestra variable conjunta:
+
+```{r Rsample:Estratificación de datos}
+set.seed(4147)
+# Splits ----
+
+## Sin estratificar 
+Split_datos_no_strat <- initial_split(datos, prop = 0.70 )
+# Put 3/4 of the data into the training set 
+# 🔴 Initial_split con datos estratificados 🔴
+## Estratificados 
+Split_datos_strat <- initial_split(datos, prop = 0.70, strata = Var_respuesta)
+
+```
+
+```{r Rsample:NoStrata_VS_Strata,class.source = 'fold-hide'}
+ggpubr::ggarrange(
+  ggpubr::ggarrange(
+    training(Split_datos_no_strat) %>% 
+      group_by(Var_respuesta) %>% 
+      summarise(recuento = n()) %>% 
+      ungroup() %>% 
+      mutate(prop_var_respuesta = recuento / sum(recuento) ) %>% 
+      ggplot(aes(x = Var_respuesta, y = recuento, fill = Var_respuesta)) +
+      geom_bar(stat = "identity") +
+      geom_text(aes(label = scales::percent(prop_var_respuesta)), position = position_stack(vjust = 0.5), size = 4) +
+    scale_fill_manual( values=c("azure4", "azure3"))
+    ,
+    testing(Split_datos_no_strat) %>% 
+      group_by(Var_respuesta) %>% 
+      summarise(recuento = n()) %>% 
+      mutate(prop_var_respuesta = recuento / sum(recuento) ) %>% 
+      ungroup() %>% 
+      ggplot(aes(x = Var_respuesta, y = recuento, fill = Var_respuesta)) +
+      geom_bar(stat = "identity") +
+      geom_text(aes(label = scales::percent(prop_var_respuesta)), position = position_stack(vjust = 0.5), size = 4) +
+      scale_fill_manual( values=c("azure4", "azure3")),
+    common.legend = T, legend = 'bottom'
+  ),
+  ggpubr::ggarrange(
+    training(Split_datos_strat) %>% 
+      group_by(Var_respuesta) %>% 
+      summarise(recuento = n()) %>% 
+      ungroup() %>% 
+      mutate(prop_var_respuesta = recuento / sum(recuento) ) %>% 
+      ggplot(aes(x = Var_respuesta, y = recuento, fill = Var_respuesta)) +
+      geom_bar(stat = "identity") +
+      geom_text(aes(label = scales::percent(prop_var_respuesta)), position = position_stack(vjust = 0.5), size = 4)+
+      scale_fill_manual( values=c("#E86EB7", "#108064"))
+    ,
+    testing(Split_datos_strat) %>% 
+      group_by(Var_respuesta) %>% 
+      summarise(recuento = n()) %>% 
+      mutate(prop_var_respuesta = recuento / sum(recuento) ) %>% 
+      ungroup() %>% 
+      ggplot(aes(x = Var_respuesta, y = recuento, fill = Var_respuesta)) +
+      geom_bar(stat = "identity") +
+      geom_text(aes(label = scales::percent(prop_var_respuesta)), position = position_stack(vjust = 0.5), size = 4)+
+      scale_fill_manual( values=c("#E86EB7", "#108064")), 
+    common.legend = T,
+    legend = 'bottom'
+  ),
+  labels = c('No estratificados', 'Estratificados'), label.x = 0.1
+) %>%  
+  plot()
+
+```
+
+|                                                                                                                                                                                                                     |                                                                |
+|-------------------------------------------------|-----------------------|
+| **Aclaración:** los colores elegidos para el gráfico son de mi escena preferida de *Spiderman, into the spiderverse*. dejad siempre "huevos de Pascua" en los trabajos, hace que las cosas sean más emocionantes :P | <img src="imagenes/Spiderverse color palete.png" width="200"/> |
+
+## Deshacer la partición
+
+Para esto usaremos las funciones **training()** y **test()**
+
+```{r Rsample: training y testing}
+
+# 🔴 Deshacemos las particiones con las funciones training y testing 🔴
+
+Training_datos <- training(Split_datos_strat)
+Testing_datos  <- testing(Split_datos_strat)
+
+knitr::kable(head(Training_datos,10))
+knitr::kable(head(Testing_datos,10))
+```
+
+## Folds, creando conjuntos de validación
+
+```{r Folds para datos de entrenamiento}
+# 🔴 Creamos Folds 🔴
+Folds_training <- vfold_cv(Training_datos, v = 5 ,strata = Var_respuesta)
+```
+
+------------------------------------------------------------------------
+
+# Pre-procesamiento de datos con Parsnip
+
+El pre-procesamiento es clave en el proceso de creación de un modelos de machine. Cuando queremos hacer un data frame para modelizar en aprendizaje automático, no viene todo arreglado. Incluso con una recopilación de datos buena puede que necsitemos algunos arreglos. Algunas de las causas de esto pueden ser:
+
+-   Hay modelos que **no** aceptan valores perdidos. Es necesario que imputemos (rellenar con valores perdidos)
+-   Dependiendo de cómo queramos escalar el modelo o a qué pregunta estemos contestando, los datos deberán estar normalizados o no.
+-   Re-equilibrar grupos disparejos aumenta la eficiencia de preddición, aunque hay que tener cuidado de cuando usarlo.
+-   Reconvertir/transformar variables para maximizar el rendimiento del modelo.
+
+Hacer todo estos procesos puede ser engorroso, pero podemos salir del paso fácilmente gracias por ejemplo de **doplyr**. Sin embargo ¿Cómo hacemos cuando queramos poner un modelo a grane scala y entren datos a cada momento? ¿Debemos ejecutar el pre-procesamiento una y otra vez?
+
+La clave para resolver esto está en el paquete **recipes**. Esta librería trae consigo todo un conjunto de funciones que permiten un pre-procesamiento fino fino.
+
+|                                          |                                               |
+|----------------------------------|--------------------------------------|
+| <img src="imagenes/bro_is_cooking.jpg"/> | <img src="imagenes/recipes.png" width="300"/> |
+
+## ¿Cómo cocinamos una receta?
+
+Para poder elaborar un flujo completo de pre-procesamiento debemos seguir los siguuientes pasos:
+
+1.  **recipe**: la base. Requiere de qué fórmula queremos para el modelo y de qué conjunto de datos partimos. Los datos aquí incorporados serán los datos de **entrenamiento**
+2.  **step**: el proceso que queramos aplicar a nuestros datos, cualquier transofrmación de datos va aquí.
+3.  **prep**: la receta se prepara, es decri se aplica al conjunto de entrenamiento y se abstrae para un modelado cualquiera
+4.  **bake**: pone el pre-procesamiento en producción para un conjunto de datos cualquiera.
+
+Hagamos un ejemplo básico: queremos una receta que sencillamnete impute los datos faltante por la media correspondiente a cada variable. Para eso vamos con ejemplo sencillo. La siguiente receta dejará los datos preparados para un modelo de aprendizaje automático, pero sin aplicarle ninguna trasnformación.
+
+```{r Recipes: ejemplo básico 1}
+Training_datos %>% 
+  # 🔴 1. Recipe (crea la formula generalizada del modelo) 
+  recipe(  
+    as.formula("Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"),
+    data = . , 
+    strata = Var_respuesta )  %>% 
+  # 🔴 2. step
+  # 🟡 En este caso no aplicamos ninguina trasnformación 
+  # STtep_log
+  # 🔴 3. Prep (asienta la receta y generalizala) 
+  prep() %>% 
+  # 🔴 4. Bake (pon la receta en producción/comprueba que tal ha funcionado)
+  bake(., new_data=NULL) %>% 
+  # displayment
+  head(.,10) %>% 
+  knitr::kable()
+```
+
+```{r Recipes: ejemplo básico 2 (Ahora es personal por que tiene un step)}
+Training_datos %>% 
+  # 🔴 1. Recipe (crea la formula generalizada del modelo) 
+  recipe(  
+    as.formula("Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"),
+    data = . , 
+    strata = Var_respuesta )  %>% 
+  # 🔴 2. Step (haz la transofrmación que requieras) 
+  # 🟡 Este step será el logaritmo de todas las variables predictoras númericas.
+  step_log(all_numeric(), -all_outcomes()) %>% 
+  # 🔴 3. Prep (asienta la receta y generalizala) 
+  prep() %>% 
+  # 🔴 4. Bake (pon la receta en producción/comprueba que tal ha funcionado)
+  bake(., new_data=NULL) %>% 
+  # displayment
+  head(.,10) %>% 
+  knitr::kable()
+```
+
+¡WALA! Datos pre-procesados y listos.
+
+A partir de aquí en cielo es el límite ya que hay steps para todo, recomiendo leer la librería **recipes** y ver que tienen disponible. al final de esta sección dejaremos lista una receta como ejemplo
+
+## Un par de ejemplos más
+
+### Imputación
+
+Hacer una imputación simple suele no ser la mejor via de hacerlo. lo ideal siempre es imputación múltiple. Es decir, una imputación que rellena los valores que faltan con números plausibles derivados de las distribuciones y relaciones entre las variables observadas en el conjunto de datos.
+
+En tidymodels se puede hacer imputación múltiple, y valga la redundancia, de múltiples formas. Por ejemplo, podemos imputar una variable usando una regresión lineal a partir de otras. Hagamos una prueba con la variable *Cognicion_02* a partir de *Cognicion_01* y *Escala_02*
+
+```{r Recipes: imputacion lineal}
+Training_datos %>% 
+  # 🔴 1. Recipe (crea la formula generalizada del modelo) 
+  recipe(  
+    as.formula("Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"),
+    data = . , 
+    strata = Var_respuesta )  %>% 
+  # 🔴 2. Step (haz la transofrmación que requieras) 
+  # 🟡 Este step será la imputación por regresiópn lineal con otras covariables
+  step_impute_linear( Cognicion_02, impute_with = imp_vars(Cognicion_01, Escala_02) ) %>%
+  # 🔴 3. Prep (asienta la receta y generalizala) 
+  prep() %>%
+  # 🔴 4. Bake (pon la receta en producción/comprueba que tal ha funcionado)
+  bake(., new_data=NULL) %>%   
+  # displayment
+  head(.,10) %>% 
+  knitr::kable()
+```
+
+Esto va genial cuando conocemos la estructura de los datos y sabemos con certeza la dependencia de unas variables con otras para imputarlas fácilmente, en lugar de confiar ciegamente en algoritmos de imputación.
+
+### PCA
+
+Como parte del pre-procesamiento, a veces puede ser necesario convertir ciertas variables a PCA para usarlas como componentes. No entraré en su uso, solo especificar la forma de hacerlo.
+
+```{r Recipes: Step_pca}
+Training_datos %>% 
+  # 🔴 1. Recipe (crea la formula generalizada del modelo) 
+  recipe(  
+    as.formula("Var_respuesta ~ Cognicion_01 + Cognicion_02 + Cognicion_03 + Escala_01 + Escala_02  + Escala_03"),
+    data = . , 
+    strata = Var_respuesta )  %>% 
+  # 🔴 2. Step (haz la transofrmación que requieras) 
+  # 🟡 Este step será la imputación por regresiópn lineal mcon otras covariables
+  step_impute_bag(all_numeric()) %>% 
+  step_pca( Cognicion_01 , Cognicion_02 , Cognicion_03, num_comp = 2,  id = "pca") %>%
+  # 🔴 3. Prep (asienta la receta y generalizala) 
+  prep() %>%
+  # 🔴 4. Bake (pon la receta en producción/comprueba que tal ha funcionado)
+  tidy(id = "pca") %>%
+  # displayment
+  head(.,10) %>% 
+  knitr::kable()
+```
+
+
+
+
+
+### Re-remuestrear
+
+ADASYN, o Adaptive Synthetic Sampling, es un algoritmo bastante utilizado cuando tenemos conjuntos de datos desequilibrados.
+
+Los conjuntos de datos desequilibrados se producen cuando la distribución de clases en los datos es desigual, lo que dificulta el entrenamiento de modelos que pueden estar sesgados hacia la clase mayoritaria.
+
+<https://www.researchgate.net/publication/224330873_ADASYN_Adaptive_Synthetic_Sampling_Approach_for_Imbalanced_Learning>
+
+```{r Recipes: step_adasyn}
+# 🔴 Libreria que permite instalar algoritmos e sobremuestreo en tidymodels.
+pacman::p_load(themis)
+
+Training_datos_adasyn <- Training_datos %>% 
+  # 1. Recipe (crea la formula generalizada del modelo) 
+  recipe(  
+    as.formula("Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"),
+    data = . , 
+    strata = Var_respuesta )  %>% 
+  #  2. Step (haz la transofrmación que requieras) 
+  #  step de  imputación por arboles manteniendo la estrucura de todas las covariables
+  step_impute_bag(all_numeric()) %>% 
+  # 🔴 step para sobremuestrear la el nivel menor en la variable respuesta.
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
+  #  3. Prep (asienta la receta y generalizala) 
+  prep() %>%
+  #  4. Bake (pon la receta en producción/comprueba que tal ha funcionado)
+  bake(., new_data=NULL)
+```
+
+```{r Recipes: auxiliar enseñando ADASYN, class.source = 'fold-hide'}
+# displayment  
+Training_datos_adasyn %>% 
+  head(.,10) %>% 
+  knitr::kable()
+
+
+ggpubr::ggarrange(
+  Training_datos %>% 
+      group_by(Var_respuesta) %>% 
+      summarise(recuento = n()) %>% 
+      ungroup() %>% 
+      mutate(prop_var_respuesta = recuento / sum(recuento) ) %>% 
+      ggplot(aes(x = Var_respuesta, y = recuento, fill = Var_respuesta)) +
+      geom_bar(stat = "identity") +
+      geom_text(
+        aes(label = scales::percent(prop_var_respuesta)), 
+        position = position_stack(vjust = 0.5), size = 4) +
+    scale_fill_manual( values=c("azure4", "azure3"))
+    ,
+    Training_datos_adasyn %>% 
+      group_by(Var_respuesta) %>% 
+      summarise(recuento = n()) %>% 
+      mutate(prop_var_respuesta = recuento / sum(recuento) ) %>% 
+      ungroup() %>% 
+      ggplot(aes(x = Var_respuesta, y = recuento, fill = Var_respuesta)) +
+      geom_bar(stat = "identity") +
+      geom_text(
+        aes(label = scales::percent(prop_var_respuesta)),
+        position = position_stack(vjust = 0.5), size = 4) +
+      scale_fill_manual( values=c("azure4", "azure3")),
+    common.legend = T, legend = 'bottom'
+  ,
+  labels = c('Normal', 'Sobre Muestreo\n        Adasyn'), label.x = 0.1
+) %>%  
+  plot()
+```
+
+## Caso práctico: receta
+
+Por el momento dejaré una receta lista para continuar con el taller.
+
+```{r Recipes:receta para el ejemplo}
+# Creamos la Fórmula para la receta a partir 
+# de nombres de las variables y un poco de magia con paste
+Receta_modelo_1_formula <- Training_datos %>% 
+  dplyr::select(
+   dplyr::matches('Cog'), dplyr::matches('escala')) %>% 
+  names() %>% 
+  paste(., collapse = ' + ') %>% 
+  paste('Var_respuesta ~' ,.) %>% 
+  as.formula() 
+
+  # 🔴 1.) Iniciamos la receta
+Receta_modelo_1 <- recipe(  
+    formula = Receta_modelo_1_formula,
+    data = Training_datos , 
+    strata = Var_respuesta)  %>% 
+  # 🔴 2.) Steps
+    #  🟡 2.1) Eliminamos las variables que contengan más de un 20% de datos perdidos 
+  step_filter_missing(all_predictors(),  threshold = 0.1) %>% 
+    #  🟡 2.2) Imputamos las variables númericas con un algoritmo de bagged trees
+  step_impute_bag(all_numeric(),-all_outcomes()) %>%
+    # 2.3) Normalizamos los datos (restamos la media)
+  step_normalize(all_numeric(),-all_outcomes() ) %>% 
+    # 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
+  step_scale(all_numeric(),-all_outcomes()) %>% 
+    # 2.5) Convertimos a Dummy las variables factor (no hará nada por que nop tenemos variables factor)
+  step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
+    # 2.6) Sobre muestreamos la variable para equilibrar grupos
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
+  # 3.) Preparamos la receta
+  prep()
+
+```
+
+```{r ,class.source = 'fold-hide'}
+Receta_modelo_1 %>% 
+  bake(., new_data=NULL) %>% 
+  head(.,10) %>% 
+  knitr::kable()
+```
+
+------------------------------------------------------------------------
+
+# ¿Dónde está el modelo? Creando modelos con Parnsip
+
+Vale, dejamos atrás la parte del pre-procesamiento y empezamos la parte más machine leaninrg. Modelos. Modelos a la carrera.
+
+![](imagenes/parsnip_set%20engine.jpg)
+
+La función del paquete **parsnip** dentro de tidymodels es propoconar una interfaz universal para diferentes métodos de modelado en R.
+
+El ejemplo del principio del taller está basado en esta sección, parnsip es el encargado de que solo con cambiar unas pocas líneas puedas cambiar todo un modelo dentro de un flujo de aprendizaje automático.
+
+A fecha de este taller, Tidymodels cuenta con más de 155 modelos, incluyendo supervivencia y series de tiempo. Se pueden encontrar en: <https://www.tidymodels.org/find/parsnip/>
+
+
+![](imagenes/Parsnip_all_models.png)
+
+Supongamos que queremos empezar modelar, queremos usar una regresión logística, un clásico en este campo.Pero dentro de R hay varias librarías que usan la regresión logística, cada una con sus varianciones y reglas. Veamos que tenemos para esto:
+
+```{r Parsnip: show_engines}
+# 🔴 Ver los posibles motores de un tipo de modelo
+show_engines('logistic_reg') 
+```
+
+```{r Parsnip: logistica simple}
+logistic_reg(
+  engine = "glmnet",
+  #Hyper-parametros           
+  penalty = NULL, mixture = NULL, mode = 'classification')
+```
+
+```{r Parsnip: logistica con hiperparametrosa 0}
+logistic_reg(
+  engine = "glmnet",
+  #Hyper-parametros           
+  penalty = 0, mixture = 0, mode = 'classification')
+```
+
+```{r Parsnip: logistica con hiperparametros libres}
+logistic_reg(
+  engine = "glmnet",
+  #Hyper-parametros           
+  penalty = tune(), mixture = tune(), mode = 'classification')
+```
+
+## Caso práctico, modelo de Random Forest
+
+```{r Parsnip: modelo ejemplo}
+Model_RandomForest <- 
+  # 🔴 Especificamos el modelo que queremos en este caso un random forest
+  rand_forest(
+  # 🟡 Ajustamos los hiper-parametros 
+    mtry = tune(),  trees = tune(),  min_n = tune()) %>% 
+  # 🔴 Ponemos el motor, es decir la librería por la queremos que se ejecute el modelo
+  set_engine("ranger", importance = "impurity") %>% 
+  # 🔴 Ajustamos el modo del modelo, es decri si queremos regresion o clasifiacion 
+  set_mode("classification")
+```
+
+# Unificando todo: Workflow
+
+El paquete de Workflows permite combinar una receta y una especificación de modelo en un único objeto. Esto hace que todo el proceso de modelado, desde el preprocesamiento de datos hasta el ajuste del modelo, esté en un mismo punto
+
+```{r Workflows}
+WF_Receta_modelo_1_Random_forest <- 
+  # 🔴 Activamos el workflow 
+  workflow() %>% 
+  # 🔴 Añadimos la receta
+  add_recipe(Receta_modelo_1) %>% 
+  # 🔴 Añadimos el modelo
+  add_model(Model_RandomForest)
+```
+
+# Eliginedo métricas con Yardstick
+
+El paquete yardstick, en concreto, se utiliza para las métricas de evaluación de modelos. Además
+
+```{r Yardstick}
+# 🔴 Seleccionamos las metricas que queremos para nuestro modelo
+Modelo_Metricas <- metric_set(accuracy, j_index, precision, sensitivity, specificity, roc_auc, f_meas,recall, mcc)
+```
+
+También decir que es es posible crear tu propia métrica. Pero aún no he indagado en esta metodología. Se puede encontrar más en: <https://yardstick.tidymodels.org/articles/custom-metrics.html>
+
+# Eligiendo hiperparámetros: tune y dials
+
+Los hiper-parámetros son una pieza crucial en los modelos de aprendizaje automático. Estos son parámetros de configuración externos que no pueden aprenderse a partir de los datos, pero que influyen significativamente en el rendimiento del modelo. Un ejemplo sería el número de árboles de un random forest por ejemplo. A diferencia de los parámetros del modelo, que se aprenden durante el entrenamiento, los híper-parámetros se establecen antes de que comience el entrenamiento de este.
+
+La selección de los hiperparámetros adecuados es esencial para conseguir un modelo de aprendizaje automático generalizable y con buen rendimiento y es un proceso delicado. Los híper-parámetros desempeñan un papel crucial a la hora de controlar el equilibrio entre la sobreadaptación y la inadaptación (oiverfitting y underfitting). La sobreadaptación se produce cuando un modelo funciona bien con los datos de entrenamiento pero no consigue generalizarse a datos nuevos que no se han visto. Por otro lado, el infraajuste se produce cuando el modelo es demasiado simple y no puede captar los patrones subyacentes en los datos. Ajustar los hiperparámetros puede ayudar a encontrar el nivel adecuado de complejidad del modelo, haciendo un buen equilibrio entre la varianza del conjunto de entrenamiento y el de evaluación.
+
+Los paquetes **Tune y Dials** son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de híper-parámetros.
+
+1.  Creamos unas réplicas del conjunto de entrenamiento, para tener subconjunto de entrenamiento y de validación (que ya hciimos en el apartado de Rsample con el objeto "")
+2.  Elegimos un modelo con Parsnip y dejamos sus híperparametros en abierto con **tune()**.
+3.  Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los híper-parámetros que dejamos en abierto en el paso 2.
+4.  Ponemos todo junto con la función **tune_grid()**
+
+|                                            |                                             |
+|------------------------------------|------------------------------------|
+| <img src="imagenes/Tune.png" width="200"/> | <img src="imagenes/Dials.png" width="200"/> |
+
+## Montando un espacio de híper-parametros: familia **grid\_**
+
+-   grid_regular: hará todas las combinaciones entre los rangos de la variable
+-   grid_random: probará hiper parámetros aleatoriamente
+-   grid_max_entropy: propondrá una combinaci´n de hiperpárametros que garanticen que se cubrirá todo el espectro, con fin de evitar mínimos locales en la conversión de algoritmos.
+-   grid_latin_hypercube: propondrá una matriz
+
+Grid regular hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la cmbinación entre el mínimo, el medio y el máximo de cada valor.
+
+```{r Tune&Dials: grid_regular standard}
+grid_regular(
+  mtry(range  = c(2, 10)),
+  min_n(range = c(2, 10)),
+  trees(range = c(2, 10)))
+```
+
+Podemos ampliar esto con el parámetro **levels**. Ahora serrá con el mínimo, el quantile 33, el cuantil 66 y el máximo.
+
+```{r Tune&Dials: grid_regular lvl 4}
+grid_regular(
+  mtry(range  = c(2, 10)),
+  min_n(range = c(2, 10)),
+  trees(range = c(2, 10)),
+  levels = 4  )
+```
+
+```{r Tune&Dials: grid_max_entropy}
+grid_max_entropy(
+  mtry(range  = c(1, 4)),
+  min_n(range = c(10, 30)),
+  trees(range = c(1, 1000)),
+  size = 10
+  )
+```
+
+## Ajustando los hiper-parametros: convergen Yardstick con dial y tune
+
+```{r Tune&Dials: probando híperparámetros}
+WF_hiper_parametros <- 
+  # 🔴 Este proceso se hace con la función tune  grid  🔴
+  tune_grid(
+  # Ponemos la receta nuestro modelo, que incuye el preprocesamiento y la fórmula
+  object = WF_Receta_modelo_1_Random_forest,
+  # 🟡 Ponemos los Folds del conjunto de entrenamiento,  
+  # 🟡 Dentro del entrenamiento hará un sub entrenamiento y una sub validación
+  resamples = Folds_training,
+  #Ponemos un grid para que pruebe con diferentes híper-parámetros, ya con un rango pre-definido
+  grid = grid_max_entropy(
+    mtry(range  = c(1, 4)),
+    min_n(range = c(10, 30)),
+    trees(range = c(1, 1000)),
+    size = 10),
+  # Ponemos las métricas que hemos definido anteriormente
+  metrics = Modelo_Metricas, 
+  # Con esta opción podemos guardar las predicciones
+  control = control_grid( save_pred = T)
+)
+```
+
+```{r Tune&Dials:coleccionado métricas de todos los Folds}
+WF_hiperparametros_coleccion <- 
+  WF_hiper_parametros %>% 
+  collect_metrics() # 🔴 Esta es la funcion que retorna las métricas, importante tenerla en cuenta
+
+WF_hiperparametros_coleccion %>% 
+  head(.,20) %>% 
+  knitr::kable()
+```
+
+```{r Tune&Dials: grafica de ejemplo}
+autoplot(WF_hiper_parametros)
+```
+
+```{r Tune&Dials: grafica de ejemplo 2}
+WF_hiper_parametros %>% 
+  collect_metrics() %>% 
+  pivot_longer(cols = c('mtry','trees', 'min_n'), names_to = 'tipo_parametro', values_to = 'valor_parametro') %>% 
+  ggplot(aes(valor_parametro,mean, color=mean)) +
+  geom_point() +
+  facet_grid(.metric~tipo_parametro, scales = 'free' ) +
+  scale_color_viridis_b()
+```
+
+```{r Tune&Dials: show_best}
+WF_hiperparametros_mejor <- WF_hiper_parametros %>%  show_best("roc_auc",1)
+
+WF_hiperparametros_mejor %>% 
+  knitr::kable()
+```
+
+# La conversión de todo, "fit" y "predict"
+
+Ya hemos hecho todos los procesos previos. Todo lo que a un modelo de machine learning le puede hacer falta. Finalmente, una vez que lo tenemos todo hilado, hay que proceder a entrenar el modelo y dejarlo listo.
+
+```{r Modelo_1_final}
+Modelo_fitted <- WF_Receta_modelo_1_Random_forest %>% 
+  # 🔴 Finalizamos el flujo de trabajo con la mejor combinación de Hiper paraemtros encontrada
+  finalize_workflow(WF_hiperparametros_mejor) %>%
+  # 🔴 finalmente ajustamos con fit
+  fit(data= Training_datos)
+```
+
+Con fit ya por fin tenemos nuestro modelo, ya podemos ponernos a hacer lo que hace el aprendizaje automático: predecir. vamos a crear una observación nueva y a ver como la trabaja.
+
+```{r}
+Nuevo_caso <- tibble(
+  'Cognicion_01' = 123,
+  'Cognicion_02' = 102,
+  'Cognicion_03' = 89,
+  'Cognicion_04' = 100,
+  'Cognicion_05' = 179,
+  'Escala_01'    = 12,
+  'Escala_02'    = 22,
+  'Escala_03'    = 20
+)
+```
+
+```{r Haciendo una predicicon}
+tibble(
+  # 🔴 La función predict de la librería stats tiene sinergias con Tidymodels, neecsitra de estos argumentos:
+  # - 🟡 El modelo ya ajustado (model_fitted) 
+  # - 🟡 Un tibble/dataframe con la nueva prediccion (debe contener las mismas variables)
+  # - 🟡 Un tipo de prediccion en los casos de clasificación, si queremos las probabiliadades de cada categoria o la categoría predicha  directamente
+  predict(Modelo_fitted, Nuevo_caso, type = "prob" ),
+  predict(Modelo_fitted, Nuevo_caso, type = "class")) %>% 
+  knitr::kable()
+```
+
+```{r fit predictions,class.source = 'fold-hide'}
+tibble(predict(Modelo_fitted, Testing_datos, type = "prob" ),predict(Modelo_fitted, Testing_datos, type = "class")) %>% 
+  head(.,10) %>% 
+  knitr::kable()
+```
+
+## last_fit
+
+Crear las predcciones y todo es un sistema engorroso. Además de que se pierde mucha informaciíon por el camino, ya que todo sigue estando en objetos dispersos. Para ello los desarrolladores crearon **last_fit**.
+
+La función **last_fit** permite tener todo unificado en un solo tibble, al tener que ajustarse con un objeto **split**, esta recibe directamente los datos de entrenamiento y los datos de evaulación (revibe datos de training y testing) y entonces crea sus métricas y sus predicciones.
+
+Con lsat_fit contamos con una serie de funciones para extraer todo lo que necesitemos de ellas: - extract_fit_engine() : permite extraer el modelo crudo como si no hubiera sido ajustado con tidymodels, de modo que si es un modelo explicativo puede ser tratado con normalidad - collect_metrics() : extraer un tibble con las métricas del modelo (puestas con metric set) - collect_predictions() : extrae un tibble con las predicciones de los datos de evaluacion. (Por defecto el umbral de rendimiento en esta función es 0.5, y estoy buscando alguna forma de cambiar esto, pero se puede manipular el mismo tibble como cualquier otro, de modo que no es un drama.) - extract_workflow() : Permite extraer todo el flujo del modelo, de incluyendo la receta de modo que podemos hacer predicciones:
+
+```{r ModeloFinal: último ajuste con last_fit}
+Modelo_1_final <-  WF_Receta_modelo_1_Random_forest %>% 
+  # 🔴 Finalizamos el flujo de trabajo con la mejor combinación de Hiper paraemtros encontrada
+  finalize_workflow(WF_hiperparametros_mejor) %>%
+  # 🔴 Ajustamos con last_fit, poniendo el split de datos inicial y las metricas para las predicciones
+  last_fit(Split_datos_strat, metrics = Modelo_Metricas)
+
+Modelo_1_final
+```
+
+```{r last_fit: predict}
+Modelo_1_final %>%
+  # 🔴 dentro del flujo de trabajo están la receta y el modelo ya ajustado
+  extract_workflow() %>% 
+  # de modo que lo podemos usar para hacer predicciones
+  predict(Testing_datos, type = "prob" )
+
+```
+
+A partir de aquí podemos manipular el objeto fit de múltiples maneras múltiples
+
+```{r ModeloFinal: Coleccion de métricas}
+Modelo_1_final %>%
+  # 🔴 Con esta funcion podemos recopilar todas las metricas de un modelo
+  collect_metrics() %>% 
+  select(-.estimator,-.config) %>%  
+  mutate(.estimate= round(.estimate,2)) %>% 
+  knitr::kable()
+```
+
+```{r Curva Roc,  class.source = 'fold-hide'}
+
+options(yardstick.event_first = FALSE)
+
+Modelo_1_final %>%  collect_predictions() %>% 
+  # 🔴 Esta funcion permite calcular rapidamente la curva roc de un modelo ya ajustado
+  roc_curve(truth = Var_respuesta,  .pred_0 ) %>% 
+  ggplot(aes( x = 1- specificity ,y= sensitivity ) ) +
+  geom_path() +
+  geom_abline(intercept=0, slope=1, linetype=3) +
+  labs(title= 'Cruva roc del modelo_1_final')
+```
+
+**Advertencia:** en la función de curva roc, ved que puesto prediccioón del 0 en vez del 1. Esto es un error interno en la clasificación dentro del del paquete **yardstick**. Hay que tener cuidado sobre si estas funciones utilizan el primer / segundo / x nivel de su factor como el "evento". Por defecto, yardstick elige el primer nivel de verdad como "evento" al calcular la curva roc. Podeíos encontrar más de este suceso en el github de los desarrolladores <https://github.com/tidymodels/yardstick/issues/94>
+
+# Rendimiento del umbral(Threshold performance en modelos de clasificación)
+
+El concepto de rendimiento del umbral (threshold performance) de es crucial a la hora de evaluar y ajustar modelos de clasificación binaria.
+
+El umbral es el valor de probabilidad por encima del cual un resultado predicho se considera de clase positiva. *Por defecto, muchos modelos utilizan un umbral de 0,5*. Sin embargo, en casi todos los casos, el umbral óptimo no estará otro punto. Este "óptimo lo tendremo que deifnir que en función de los objetivos y requisitos específicos del problema.
+
+Ajustar el umbral permite elegir entre precisión y la recall. Bajar el umbral aumenta la sensibilidad (recall) pero disminuye la precisión, y viceversa. Básicamente, *el umbral óptimo depende de la importancia relativa de los falsos positivos y los falsos negativos en una aplicación concreta.*
+
+En tidymodels está la librería **probably** con la función threshold_perf, la cual nos permite, dadas las predicciones del modelo ver como se desenvolupa este umbral.
+
+```{r}
+pacman::p_load(probably)
+
+
+Modelo_1_final_Threshold_performance <- 
+  # Llamamos al modelo ya finallizado con "last_fit"
+  Modelo_1_final %>% 
+  # Coleccionamos sus predicciones
+  collect_predictions() %>% 
+  # 🔴 Ejecutamos el redimeinto de umbral con la siguiente función
+  threshold_perf(
+    # Le decimos que variable es la verdadera respuesta
+    truth = Var_respuesta,  
+    # le decimos que vairbale es la predicción (aviso: debido a un bugg en la version )
+    .pred_1, 
+    # ajustamos un rango en el qeu se evaluará el umbral en cada punto
+    thresholds = seq(0.5,1,0.01) )
+
+# displayment
+Modelo_1_final_Threshold_performance %>% 
+  head(.,10) %>% 
+  mutate(.estimate= round(.estimate,2)) %>% 
+  knitr::kable()
+```
+
+```{r Threshold, class.source = 'fold-hide'}
+Modelo_1_final_Threshold_performance %>% 
+  ggplot(aes(x=.threshold,y=.estimate ,color=.metric)) +
+  geom_line(size=1.1)+
+  scale_color_manual(values=c('purple','blue','pink'))+
+  geom_vline(xintercept = 
+    Modelo_1_final_Threshold_performance %>%  
+      filter(.metric=='j_index') %>%
+      arrange(desc(.estimate)) %>% 
+      slice(1) %>% 
+      pull(.threshold), linetype = 'dashed', size=1.5)
+```
+
+# El cielo es el límite, workflow_set
+
+Bien, ya hemos aprendido a crear todo un flujo entero de machine learning con Tidymodels, desde la base hasta su final. Muy útil todo. pero calibrar modelos de 1 en 1 es un auténtico petardazo. No me acaba de ser útil este taller. ¿Cómo me va a ser útil si tengo que porbar unas 20 fórmulas con datos?
+
+Lo entiendo perfectamente, a mi también me pasó. Los médicos me preguntaron que era mejor para tener en cuenta, si las escalas, las congniciones la bioquimica o la genetica a la hora de diagnosticar al paciente.
+
+Comprovemoslo.
+
+## Todas las recetas
+
+```{r Workflow_set: creacion de recetas, class.source = 'fold-hide'}
+
+Receta_modelo_Escalas_formula <- Training_datos %>% 
+  dplyr::select(dplyr::matches('Esc')) %>% 
+  names() %>% 
+  paste(., collapse = ' + ') %>% 
+  paste('Var_respuesta ~' ,.) %>% 
+  as.formula() 
+
+  # 🔴 1.) Iniciamos la receta
+Receta_modelo_Escalas <- recipe(  
+    formula = Receta_modelo_Escalas_formula,
+    data = Training_datos , 
+    strata = Var_respuesta)  %>% 
+  # 🔴 2.) Steps
+    #  🟡 2.1) Eliminamos las variables que contengan más de un 25% de datos perdidos 
+  step_filter_missing(all_predictors(),  threshold = 0.25) %>% 
+    #  🟡 2.2) Imputamos las variables númericas con un algoritmo de bagged trees
+  step_impute_bag(all_numeric(),-all_outcomes()) %>%
+    # 2.3) Normalizamos los datos (restamos la media)
+  step_normalize(all_numeric(),-all_outcomes() ) %>% 
+    # 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
+  step_scale(all_numeric(),-all_outcomes()) %>% 
+    # 2.5) Convertimos a Dummy las variables factor (no hará nada por que nop tenemos variables factor)
+  step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
+    # 2.6) Sobre muestreamos la variable para equilibrar grupos
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
+  # 3.) Preparamos la receta
+  prep()
+
+
+
+Receta_modelo_Cognicion_formula <- Training_datos %>% 
+  dplyr::select(
+   dplyr::matches('Cog')) %>% 
+  names() %>% 
+  paste(., collapse = ' + ') %>% 
+  paste('Var_respuesta ~' ,.) %>% 
+  as.formula() 
+
+  # 🔴 1.) Iniciamos la receta
+Receta_modelo_Cognicion <- recipe(  
+    formula = Receta_modelo_Cognicion_formula,
+    data = Training_datos , 
+    strata = Var_respuesta)  %>% 
+  # 🔴 2.) Steps
+    #  🟡 2.1) Eliminamos las variables que contengan más de un 25% de datos perdidos 
+  step_filter_missing(all_predictors(),  threshold = 0.25) %>%
+    #  🟡 2.2) Imputamos las variables númericas con un algoritmo de bagged trees
+  step_impute_mean(all_numeric(),-all_outcomes()) %>%
+    # 2.3) Normalizamos los datos (restamos la media)
+  step_normalize(all_numeric(),-all_outcomes() ) %>% 
+    # 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
+  step_scale(all_numeric(),-all_outcomes()) %>% 
+    # 2.5) Convertimos a Dummy las variables factor (no hará nada por que nop tenemos variables factor)
+  step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
+    # 2.6) Sobre muestreamos la variable para equilibrar grupos
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
+  # 3.) Preparamos la receta
+  prep()
+
+bake(Receta_modelo_Cognicion, new_data = NULL)
+
+Receta_modelo_Bioquimicas_formula <- Training_datos %>% 
+  dplyr::select(
+   dplyr::matches('Bio')) %>% 
+  names() %>% 
+  paste(., collapse = ' + ') %>% 
+  paste('Var_respuesta ~' ,.) %>% 
+  as.formula() 
+
+  # 🔴 1.) Iniciamos la receta
+Receta_modelo_Bioquimica <- recipe(  
+    formula = Receta_modelo_Bioquimicas_formula,
+    data = Training_datos , 
+    strata = Var_respuesta)  %>% 
+  # 🔴 2.) Steps
+    #  🟡 2.1) Eliminamos las variables que contengan más de un 25% de datos perdidos 
+  step_filter_missing(all_predictors(),  threshold = 0.25) %>% 
+    #  🟡 2.2) Imputamos las variables númericas con un algoritmo de bagged trees
+  step_impute_mean(all_numeric()) %>%
+    # 2.3) Normalizamos los datos (restamos la media)
+  step_normalize(all_numeric(),-all_outcomes() )  %>% 
+    # 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
+  step_scale(all_numeric(),-all_outcomes()) %>% 
+    # 2.5) Convertimos a Dummy las variables factor (no hará nada por que nop tenemos variables factor)
+  step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
+    # 2.6) Sobre muestreamos la variable para equilibrar grupos
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
+  # 3.) Preparamos la receta
+  prep()
+
+Receta_modelo_Popurri <- Training_datos %>%
+  dplyr::select(
+    Cognicion_01, Cognicion_02, Escala_01,Escala_02, Bioquimica_01,Bioquimica_02, Genetica_01,Genetica_02) %>% 
+  names() %>% 
+  paste(., collapse = ' + ') %>% 
+  paste('Var_respuesta ~' ,.) %>% 
+  as.formula() 
+
+  # 🔴 1.) Iniciamos la receta
+Receta_modelo_Popurri <- recipe(  
+    formula = Receta_modelo_Popurri,
+    data = Training_datos , 
+    strata = Var_respuesta)  %>% 
+  # 🔴 2.) Steps
+    #  🟡 2.1) Eliminamos las variables que contengan más de un 5% de datos perdidos 
+  step_filter_missing(all_predictors(),  threshold = 0.25) %>% 
+    #  🟡 2.2) Imputamos las variables númericas con un algoritmo de bagged trees
+  step_impute_bag(all_numeric(),-all_outcomes()) %>%
+    # 2.3) Normalizamos los datos (restamos la media)
+  step_normalize(all_numeric(),-all_outcomes() ) %>% 
+    # 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
+  step_scale(all_numeric(),-all_outcomes()) %>% 
+    # 2.5) Convertimos a Dummy las variables factor (no hará nada por que nop tenemos variables factor)
+  step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
+    # 2.6) Sobre muestreamos la variable para equilibrar grupos
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
+  # 3.) Preparamos la receta
+  prep()
+
+```
+
+## Workflow_set para unificarlas todas
+
+Ahora, esto son muchas recetas y mucho texto. Será dificil combinarlo todo, ¿no?.¡Que va! Workflow_set ya está pensado para esto. Funciona como el crossing de la libreia purrr o como el expand.grid de la librería base, crear workflows con todas las combinaciones.
+
+```{r Workflow_set: todos los workflows en uno solo}
+Receta_list <- list(
+  'Modelo_Escalas'    = Receta_modelo_Escalas,
+  'Modelo_Cognicion'  = Receta_modelo_Cognicion,
+  'Modelo_Bioquimica' = Receta_modelo_Bioquimica,
+  'Modelo_Popurri'    = Receta_modelo_Popurri
+  )
+  
+Model_list <- list(
+  RandomForest     = Model_RandomForest
+  # ,XGBoost          = Model_XGBoost
+  # ,Bagged_Trees     = Model_Bagged_Tree
+  )
+
+Wokflows_set <- workflow_set(
+  preproc = Receta_list, 
+  models = Model_list, 
+  # 🔴 La opcion Cross es para que haga todos los cruces de modelos con recetas
+  cross = T)
+
+
+Wokflows_set
+```
+
+Una vez hecho el workfñow_set, se pone a trabajr con workflow_map.
+
+```{r Workflow_set: Workflow_map}
+Wokflows_set_map <- 
+  Wokflows_set %>% 
+  # 🔴 workflow maps es una funcion que permite ajustar multiples flujos de trabajo
+    workflow_map(
+    resamples = Folds_training, 
+    fn = "tune_grid",
+    grid = grid_max_entropy(
+      mtry(range  = c(1, 4)),
+      min_n(range = c(10, 30)),
+      trees(range = c(1, 1000)),
+      size = 10),
+    # verbose = TRUE, 
+    metrics = Modelo_Metricas, 
+    control = control_grid( save_pred = T),
+    # 🔴 para garantizare replicabildiad, podemos fijar la semilla en el proceso
+    seed = 2465)
+
+Wokflows_set_map
+```
+
+**AVISO**, workflow_map puede paralelizarse, pero aún estoy descubriendo como integrarlo de forma efectiva.
+
+Finalmnete, podemos calibrar cada modelo individualmente y tener todo finiquitado. Ese proceso sería más eficiente con una funcion. desde luego. Pero se me acaba el tiempo para dedicar al taller :(
+
+```{r Workflow_set: last_fit de todos los modelos}
+
+# Modelo Escalas ----
+Modelo_Escalas_RandomForest_hyperparametros <- Wokflows_set_map %>% 
+  # 🔴 Extraemos el flujo correspondiente al modelo que queremos 
+  extract_workflow_set_result('Modelo_Escalas_RandomForest') %>%
+  # 🔴 podemos ver una tabla con los mejores resultados, acorde a una metrica
+  show_best(metric = 'sensitivity', n=50) %>% 
+  filter(row_number()==1) %>% 
+  select(mtry,trees,min_n,.config )
+
+Modelo_Escalas_RandomForest_final <- Wokflows_set_map %>% 
+  # 🔴 Extraemos el flujo correspondiente al modelo que queremos 
+  extract_workflow('Modelo_Escalas_RandomForest') %>% 
+  finalize_workflow(Modelo_Escalas_RandomForest_hyperparametros) %>%
+  last_fit(Split_datos_strat, metrics = Modelo_Metricas )
+
+# Modelo_Cognicion ----
+
+Modelo_Cognicion_RandomForest_hyperparametros <- Wokflows_set_map %>% 
+  extract_workflow_set_result('Modelo_Cognicion_RandomForest') %>%
+  show_best(metric = 'sensitivity', n=50) %>% 
+  filter(row_number()==1) %>% 
+  select(mtry,trees,min_n,.config )
+
+Modelo_Cognicion_RandomForest_final <- Wokflows_set_map %>% 
+  extract_workflow('Modelo_Cognicion_RandomForest') %>% 
+  finalize_workflow(Modelo_Cognicion_RandomForest_hyperparametros) %>%
+  last_fit(Split_datos_strat, metrics = Modelo_Metricas )
+
+# Modelo_Bioquimico ----
+
+Modelo_Bioquimica_RandomForest_hyperparametros <- Wokflows_set_map %>% 
+  extract_workflow_set_result('Modelo_Bioquimica_RandomForest') %>%
+  show_best(metric = 'sensitivity', n=50) %>% 
+  filter(row_number()==1) %>% 
+  select(mtry,trees,min_n,.config )
+
+Modelo_Bioquimica_RandomForest_final <- Wokflows_set_map %>% 
+  extract_workflow('Modelo_Bioquimica_RandomForest') %>% 
+  finalize_workflow(Modelo_Bioquimica_RandomForest_hyperparametros) %>%
+  last_fit(Split_datos_strat, metrics = Modelo_Metricas )
+
+# Modelo Popurri ----
+Modelo_Popurri_RandomForest_hyperparametros <- Wokflows_set_map %>% 
+  extract_workflow_set_result('Modelo_Popurri_RandomForest') %>%
+  show_best(metric = 'sensitivity', n=50) %>% 
+  filter(row_number()==1) %>% 
+  select(mtry,trees,min_n,.config )
+
+Modelo_Popurri_RandomForest_final <- Wokflows_set_map %>% 
+  extract_workflow('Modelo_Popurri_RandomForest') %>% 
+  finalize_workflow(Modelo_Popurri_RandomForest_hyperparametros) %>%
+  last_fit(Split_datos_strat, metrics = Modelo_Metricas )
+
+```
+
+Una vez acabado todo, podemos ver todo lo necesario usando unos pocos verbos como collect y las lógicas del tidyverse.
+
+## Metricas de todos los modelos
+
+```{r}
+map2(
+  list(
+    Modelo_Escalas_RandomForest_final,
+    Modelo_Cognicion_RandomForest_final,
+    Modelo_Bioquimica_RandomForest_final,
+    Modelo_Popurri_RandomForest_final),
+  list('Modelo_Escala','Modelo_Cognicion','Modelo_Bioquimica','Modelo_Popurri'),
+  ~ ..1 %>% 
+    collect_metrics() %>% 
+    mutate('Modelo'= ..2) %>% 
+    select(.metric,.estimate,Modelo )) %>% 
+  bind_rows() %>% 
+  pivot_wider(names_from = Modelo, values_from = .estimate) %>% 
+  knitr::kable()
+```
+
+## Cruvas roc todos los modelos
+
+```{r Workflow_set: Roc todos los modelos,class.source = 'fold-hide'}
+
+ROC_CURVE_training_todos_los_posibles_modelos <- Wokflows_set_map %>%  
+  collect_predictions() %>%
+  group_split(wflow_id) %>% 
+  set_names(list('Escala','Cognicion','Bioquimica','Popurri')) %>% 
+  map(~ .x %>% roc_curve(truth=Var_respuesta , .pred_0)) %>% 
+  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+               ~ .x %>%  mutate(model= .y)) %>% 
+         bind_rows() 
+
+Plot_ROC_CURVE_training_todos_los_posibles_modelos <- ROC_CURVE_training_todos_los_posibles_modelos %>% 
+  ggplot(aes( x = 1- specificity ,y= sensitivity, color= model ) ) +
+  geom_path() +
+  geom_abline(intercept=0, slope=1, linetype=3)
+  
+
+
+ROC_CURVE_training_modelos_finales <- list(
+  list('Esc' ,Modelo_Escalas_RandomForest_hyperparametros$.config),
+  list('Cog' ,Modelo_Cognicion_RandomForest_hyperparametros$.config),
+  list('Bio' ,Modelo_Bioquimica_RandomForest_hyperparametros$.config),
+  list('Pop' ,Modelo_Popurri_RandomForest_hyperparametros$.config)) %>% 
+  map(~ Wokflows_set_map %>% 
+        collect_predictions() %>% 
+        filter(
+          str_detect(wflow_id, .x[[1]]) & 
+            .config== .x[[2]]
+        )) %>% 
+  
+  map(~ .x %>%
+        mutate(Model= str_extract(wflow_id, '^.{2}') ) %>% 
+        select(Model,Var_respuesta, .pred_0, .pred_1, .pred_class)
+  ) %>% 
+  set_names(list('Escala','Cognicion','Bioquimica','Popurri') ) %>%
+  map(~ .x %>% roc_curve(truth = Var_respuesta, .pred_0)) %>% 
+  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+       ~ .x %>% mutate(model= .y)) %>% 
+  bind_rows() 
+  
+Plot_ROC_CURVE_training_modelos_finales <- ROC_CURVE_training_modelos_finales %>% 
+  ggplot(aes( x = 1- specificity ,y= sensitivity, color= model ) ) +
+  geom_path() +
+  geom_abline(intercept=0, slope=1, linetype=3) 
+
+
+ROC_CURVE_testing_modelos_finales <-list(
+  Modelo_Escalas_RandomForest_final,
+  Modelo_Cognicion_RandomForest_final,
+  Modelo_Bioquimica_RandomForest_final,
+  Modelo_Popurri_RandomForest_final
+  ) %>% 
+  map(~.x %>% 
+        collect_predictions() %>% 
+        roc_curve(Var_respuesta, .pred_0)) %>% 
+  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+       ~ .x %>%  mutate(model= .y)) %>% 
+  bind_rows()
+
+Plot_ROC_CURVE_testing_modelos_finales <- ROC_CURVE_testing_modelos_finales %>% 
+  ggplot(aes(x = 1- specificity ,y = sensitivity, color = model ) ) +
+  geom_path()+
+  geom_abline(intercept=0, slope=1, linetype=3)
+
+```
+
+```{r Workflow_set: todas las curvas, }
+ggpubr::ggarrange( Plot_ROC_CURVE_training_todos_los_posibles_modelos,
+                   Plot_ROC_CURVE_training_modelos_finales, 
+                   Plot_ROC_CURVE_testing_modelos_finales ,
+                   nrow=1 , 
+                   common.legend = T,
+                   legend="bottom",
+                   labels = c('Todos_training','Training','Test')) 
+```
+
+# Haciendo el machine learning entendible: SHAP values
+
+Los valores de Shapley (shap values), que deben su nombre al premio Nobel Lloyd Shapley, son un concepto de la teoría de juegos cooperativos que ha acabado encontrado aplicaciones en el aprendizaje automático.
+
+En teoría de juegos, los valores de Shapley son la distribución equitativa de la contribución de cada jugador en un juego cooperativo entre todos los jugadores. En el contexto del aprendizaje automático, las características o variables se consideran jugadores, y el juego consiste en cuánto contribuye cada característica a la predicción de un modelo.
+
+Es decir, los valores de Shapley son sencillamente las marginales de cada variable dentro del modelo. Compilarlos es computacionalmente extenso, ya que hay que hacer cada combinación de valores para una fila y evaluar de cuanto es su marginal. El valor final llamado Shap value es promedio de todas las aportaciones de una variable marginal.
+
+Aparte de su extenso coste computacional, todo shap value asume que está utilizando un modelo de caja negra. de manera que si el modelo no está bien especificado en tema de interacciones, etc. es posible que estén dando indicaciones erróneas.
+
+Actualmente se pueden compilar en tidymodels utilizando la libreria **agua**, al ser una extensión de Tidymodels del entorno de h2o. El problema es que esto hace que el motor de los modelos deba ser a la fuerza h2o.
+
+Una propuesta sería buscar un modelo bien calibrado con Tidymodels y pasarlo por h2o para hacer un diagnostico más eficaz.
+
+```{r}
+h2o_start()
+
+modelo_h20 <- rand_forest() %>% 
+  set_engine("h2o", max_runtime_secs = 20) %>% 
+  set_mode('classification') %>% 
+  fit(Var_respuesta ~ ., data = Receta_modelo_Bioquimica %>% bake(new_data = NULL) )
+
+entrada_h20 <- h2o::as.h2o(
+  Receta_modelo_Bioquimica %>% bake(new_data = NULL) %>%
+    dplyr::rename(.outcome = Var_respuesta))
+
+modelo_h20 %>%  
+  extract_fit_engine() %>% 
+  h2o::h2o.shap_summary_plot(entrada_h20)
+
+# modelo_h20 %>%  
+#   extract_fit_engine() %>% 
+#   h2o::h2o.explain(entrada_h20)
+
+h2o_end()
+```
+
+Para cada predicción, los valores de Shapley representan la contribución de cada característica a la diferencia entre la predicción del modelo y la predicción media. En otras palabras, indican cuánto añade o resta cada característica a la predicción media.
+
+Si una predicción media es de 0.5, y el shap value es de 0.1, indicará que esa variable sola podría llegar a tener un impacto tal que haga que la predicción llege a 0.6.
