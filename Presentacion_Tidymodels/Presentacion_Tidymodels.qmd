@@ -1,5 +1,7 @@
 ---
 title: "Taller de Tidymodels"
+execute: 
+  error: true
 format:
   revealjs:
     #incremental: true  
@@ -58,7 +60,6 @@ format:
 
 ::: {.column .incremental width="70%"}
 -   En 2008 desarrolló la librería Caret, la cual asentó las bases del modelado estadístico en R.
-
 :::
 :::
 
@@ -121,7 +122,6 @@ format:
 -   Tidyverse proporciona múltiples herramientas para poder manipular datos facilmente.
 
 ::: incremental
-
 -   Se ha convertido en uno de los paquetes más populares de R y de la ciencia de datos.
 
 -   Tiene una sintáxis fácil y fluida que se enfoca más en la resolver necesidades que en la programación.
@@ -317,7 +317,6 @@ naniar::gg_miss_upset(datos, nsets = 10, nintersects = 50)
 
 ![](Imagenes/Flujo_tidymodels.png){fig-align="center"}
 
-
 ## 4. ¿De qué se compone Tidymodels? {auto-animate="true"}
 
 -   La idea detrás consiste en una sola sintaxis que resuma todo este flujo de trabajo.
@@ -341,49 +340,45 @@ naniar::gg_miss_upset(datos, nsets = 10, nintersects = 50)
 ::: incremental
 ![](Imagenes/paquetes_tidymodels.png){fig-align="center" width="500"}
 
-
-
-- **Rsample**: Funciones para crear distintos tipos de remuestreos.
-- **Recipes**: Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.
-- **Parsnip**: Interfaz para ajustar modelos, hasta 155 tipos a fecha de esta presentación
-- **Yarstick**: Creación de métricas para la evaluación de un modelo.
-- **Workflows**: Cohesión interna de tidymodels.
-- **Tune & Dials**: Creación y gestión de hiper-parámetros de cualquier modelo presente en Tidymodels.
-::: 
+-   **Rsample**: Funciones para crear distintos tipos de remuestreos.
+-   **Recipes**: Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.
+-   **Parsnip**: Interfaz para ajustar modelos, hasta 155 tipos a fecha de esta presentación
+-   **Yarstick**: Creación de métricas para la evaluación de un modelo.
+-   **Workflows**: Cohesión interna de tidymodels.
+-   **Tune & Dials**: Creación y gestión de hiper-parámetros de cualquier modelo presente en Tidymodels.
+:::
 
 ::: titulo-seccion
 ## 5. Preparando la partición de datos con Rsample
-:::  
+:::
 
 ## 5.1. ¡Necesitamos datos! {auto-animate="true"}
 
 ::: incremental
-- Suelen ser difíciles de conseguir
-- Requieren tiempo, esfuerzo y **dinero**
+-   Suelen ser difíciles de conseguir
+-   Requieren tiempo, esfuerzo y **dinero**
 :::
 
 ## 5.1. ¡Necesitamos datos! {auto-animate="true"}
 
-- Suelen ser difíciles de conseguir
-- Requieren tiempo, esfuerzo y **dinero**
+-   Suelen ser difíciles de conseguir
+-   Requieren tiempo, esfuerzo y **dinero**
 
-:::incremental
-- Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.
-- Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.
+::: incremental
+-   Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.
+-   Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.
 :::
 
 ## 5.1. ¡Necesitamos datos! {auto-animate="true"}
 
-- Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.
-- Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.
+-   Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.
+-   Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.
 
 ![](Imagenes/meme_spiderman_remuestreo.jpeg){fig-align="center"}
 
-
 ## 5.1.1. Remuestreo con *RSample* {auto-animate="true"}
 
-
-- Crearemos una partición de la muestra en unos datos para “entrenar” el modelo y la otra para “evaluarlo”.
+-   Crearemos una partición de la muestra en unos datos para “entrenar” el modelo y la otra para “evaluarlo”.
 
 ::: {layout-ncol="2"}
 ![](Imagenes/esquema_training_test.jpeg){fig-align="center"}
@@ -391,11 +386,9 @@ naniar::gg_miss_upset(datos, nsets = 10, nintersects = 50)
 ![](Imagenes/logo_rsample.png){fig-align="center"}
 :::
 
-
 ## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
 
-- initial_split: Principal función dentro de la librería. Crea un objeto “split” sencillo para hacer una partición de datos.
-
+-   initial_split: Principal función dentro de la librería. Crea un objeto “split” sencillo para hacer una partición de datos.
 
 ```{r echo=TRUE}
 initial_split(datos, prop = 0.6 )
@@ -404,8 +397,7 @@ initial_split(datos, prop = 0.6 )
 
 ## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
 
-- bootstraps: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En las muestras tipo bootsrap, los individuos pueden aparecer más de una vez en el conjunto de datos.
-
+-   bootstraps: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En las muestras tipo bootsrap, los individuos pueden aparecer más de una vez en el conjunto de datos.
 
 ```{r echo=TRUE}
 rsample::bootstraps(datos,5)
@@ -413,19 +405,17 @@ rsample::bootstraps(datos,5)
 
 ## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
 
-- rolling_origin: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contiene datos consecutivos.
-
+-   rolling_origin: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contiene datos consecutivos.
 
 ```{r echo=TRUE}
 rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = FALSE)
 ```
 
-
 ## 5.2. Estratificación {auto-animate="true"}
 
-- Como las particiones son aleatorias, puede que uno de los conjuntos contenga más datos de un tipo que de otro.
+-   Como las particiones son aleatorias, puede que uno de los conjuntos contenga más datos de un tipo que de otro.
 
-- Idealmente querríamos que el conjunto de entrenamiento y el de evaluación contuvieran la misma proporción de las categorías.
+-   Idealmente querríamos que el conjunto de entrenamiento y el de evaluación contuvieran la misma proporción de las categorías.
 
 ## 5.2. Estratificación {auto-animate="true"}
 
@@ -440,7 +430,6 @@ Split_datos_no_strat <- initial_split(datos, prop = 0.70 )
 ## Estratificados 
 Split_datos_strat <- initial_split(datos, prop = 0.70, strata = Var_respuesta)
 ```
-
 
 ## 5.2. Estratificación {auto-animate="true"}
 
@@ -497,7 +486,6 @@ ggpubr::ggarrange(
   plot()
 ```
 
-
 ## 5.3. Deshacer la partición {auto-animate="true"}
 
 ```{r echo=TRUE}
@@ -508,7 +496,6 @@ Testing_datos  <- testing(Split_datos_strat)
 
 knitr::kable(head(Training_datos,10))
 ```
-
 
 ## 5.3. Deshacer la partición {auto-animate="true"}
 
@@ -529,49 +516,45 @@ knitr::kable(head(Testing_datos,10))
 Folds_training <- vfold_cv(Training_datos, v = 5 ,strata = Var_respuesta)
 ```
 
-
 ::: titulo-seccion
 ## 6. Pre-procesamiento de datos con Parsnip
-:::  
-
-## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
-
-:::incremental
-- El pre-procesamiento es clave en el proceso de creación de modelos de machine learning.
-
-- Cuando queremos hacer un data frame para modelizar en aprendizaje automático hay que tener en cuenta:
-
-1. Hay modelos que no aceptan valores perdidos. 
-2. Dependiendo de cómo queramos escalar el modelo los datos deberán estar normalizados o no.
-3. Re-equilibrar grupos disparejos aumenta la eficiencia de preddición, aunque no siempre.
-4. Reconvertir/transformar variables para maximizar el rendimiento del modelo.
 :::
 
 ## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
 
-¿Cómo hacemos cuando queramos poner un modelo a grane scala y entren datos a cada momento? 
-¿Debemos ejecutar el pre-procesamiento una y otra vez?
+::: incremental
+-   El pre-procesamiento es clave en el proceso de creación de modelos de machine learning.
 
+-   Cuando queremos hacer un data frame para modelizar en aprendizaje automático hay que tener en cuenta:
+
+1.  Hay modelos que no aceptan valores perdidos.
+2.  Dependiendo de cómo queramos escalar el modelo los datos deberán estar normalizados o no.
+3.  Re-equilibrar grupos disparejos aumenta la eficiencia de preddición, aunque no siempre.
+4.  Reconvertir/transformar variables para maximizar el rendimiento del modelo.
+:::
+
+## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
+
+¿Cómo hacemos cuando queramos poner un modelo a grane scala y entren datos a cada momento? ¿Debemos ejecutar el pre-procesamiento una y otra vez?
 
 ## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
 
 ::: {layout-ncol="2"}
-![](Imagenes/meme_kuzco.jpeg){fig-align="center"}
+![](Imagenes/meme_kuzco.jpeg){fig-align="center" width="425"}
 
-![](Imagenes/logo_recipes.png){fig-align="center"}
+![](Imagenes/logo_recipes.png){fig-align="center" width="439"}
 :::
-
 
 ## 6.2. ¿Cómo cocinamos una receta? {auto-animate="true"}
-:::incremental
+
+::: incremental
 Para poder elaborar un flujo completo de pre-procesamiento debemos seguir los siguientes pasos:
 
-- **Recipe**: la base. Requiere de qué fórmula queremos para el modelo y de qué conjunto de datos partimos. Los datos aquí incorporados serán los datos de entrenamiento.
-- **Step**: el proceso que queramos aplicar a nuestros datos, cualquier transofrmación de datos va aquí.
-- **Prep**: la receta se prepara, es decir, se aplica al conjunto de entrenamiento y se abstrae para un modelado cualquiera.
-- **Bake**: pone el pre-procesamiento en producción para un conjunto de datos cualquiera.
+-   **Recipe**: la base. Requiere de qué fórmula queremos para el modelo y de qué conjunto de datos partimos. Los datos aquí incorporados serán los datos de entrenamiento.
+-   **Step**: el proceso que queramos aplicar a nuestros datos, cualquier transofrmación de datos va aquí.
+-   **Prep**: la receta se prepara, es decir, se aplica al conjunto de entrenamiento y se abstrae para un modelado cualquiera.
+-   **Bake**: pone el pre-procesamiento en producción para un conjunto de datos cualquiera.
 :::
-
 
 ## 6.2.1. Hagamos un ejemplo {auto-animate="true"}
 
@@ -594,8 +577,6 @@ Training_datos %>%
   knitr::kable()
 ```
 
-
-
 ## 6.2.2. Imputación múltiple {auto-animate="true"}
 
 ```{r}
@@ -616,7 +597,6 @@ Training_datos %>%
   head(.,10) %>% 
   knitr::kable()
 ```
-
 
 ## 6.2.3. PCA {auto-animate="true"}
 
@@ -640,7 +620,6 @@ Training_datos %>%
   knitr::kable()
 ```
 
-
 ## 6.2.4. Remuestrear {auto-animate="true"}
 
 ```{r}
@@ -663,7 +642,6 @@ Training_datos_adasyn <- Training_datos %>%
   #  4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)
   bake(., new_data=NULL)
 ```
-
 
 ## 6.2.4. Remuestrear {auto-animate="true"}
 
@@ -731,9 +709,7 @@ Receta_modelo_1 <- recipe(
     # 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)
   step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
     # 2.6) Sobre muestreamos la variable para equilibrar grupos
-  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
-  # 3.) Preparamos la receta
-  prep()
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) 
 ```
 
 ::: titulo-seccion
@@ -746,8 +722,7 @@ Receta_modelo_1 <- recipe(
 
 ## 7.1. Modelos a la carrera con Parsnip {auto-animate="true"}
 
-![](Imagenes/search_parsnip_models.png){fig-align="center"}
-https://www.tidymodels.org/find/parsnip/
+![](Imagenes/search_parsnip_models.png){fig-align="center"} https://www.tidymodels.org/find/parsnip/
 
 ## 7.2. Empezamos a modelar {auto-animate="true"}
 
@@ -788,7 +763,6 @@ Model_RandomForest <-
   set_mode("classification")
 ```
 
-
 ::: titulo-seccion
 ## 8. Unificando todo: Workflow
 :::
@@ -810,7 +784,8 @@ WF_Receta_modelo_1_Random_forest <-
 :::
 
 ## 9. Eligiendo métricas con Yardstick {auto-animate="true"}
-```{r echo=TRUE, eval=FALSE}
+
+```{r echo=TRUE}
 # 🔴 Seleccionamos las métricas que queremos para nuestro modelo
 Modelo_Metricas <- metric_set(accuracy, j_index, precision, sensitivity, specificity, roc_auc, f_meas,recall, mcc)
 ```
@@ -823,21 +798,21 @@ Se puede encontrar más información en: https://yardstick.tidymodels.org/articl
 
 ## 10.1. Eligiendo hiperparámetros: Tune y Dials {auto-animate="true"}
 
-:::incremental
-- Los hiperparámetros no pueden aprenderse a partir de los datos, pero que influyen significativamente en el rendimiento del modelo. 
+::: incremental
+-   Los hiperparámetros no pueden aprenderse a partir de los datos, pero que influyen significativamente en el rendimiento del modelo.
 
-- A diferencia de los parámetros del modelo, que se aprenden durante el entrenamiento, los hiperparámetros se establecen antes de que comience el entrenamiento.
+-   A diferencia de los parámetros del modelo, que se aprenden durante el entrenamiento, los hiperparámetros se establecen antes de que comience el entrenamiento.
 
-- La selección de los hiperparámetros adecuados es esencial para conseguir un modelo generalizable y con buen rendimiento.
+-   La selección de los hiperparámetros adecuados es esencial para conseguir un modelo generalizable y con buen rendimiento.
 
-- Los hiperparámetros desempeñan un papel crucial a la hora de controlar el equilibrio entre la sobreadaptación y la inadaptación (oiverfitting y underfitting). 
+-   Los hiperparámetros desempeñan un papel crucial a la hora de controlar el equilibrio entre la sobreadaptación y la inadaptación (oiverfitting y underfitting).
 
-- Ajustar los hiperparámetros puede ayudar a encontrar el nivel adecuado de complejidad del modelo, haciendo un buen equilibrio entre la varianza del conjunto de entrenamiento y el de evaluación.
+-   Ajustar los hiperparámetros puede ayudar a encontrar el nivel adecuado de complejidad del modelo, haciendo un buen equilibrio entre la varianza del conjunto de entrenamiento y el de evaluación.
 :::
 
 ## 10.1. Eligiendo hiperparámetros: Tune y Dials {auto-animate="true"}
 
-- Los paquetes Tune y Dials son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.
+-   Los paquetes Tune y Dials son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.
 
 ::: columns
 ::: {.column width="30%"}
@@ -847,26 +822,25 @@ Se puede encontrar más información en: https://yardstick.tidymodels.org/articl
 :::
 
 ::: {.column width="30%"}
-1. Creamos unas réplicas del conjunto de entrenamiento, para tener subconjunto de entrenamiento y de validación (que ya hicimos en el apartado de Rsample con el objeto ““)
-2. Elegimos un modelo con Parsnip y dejamos sus hiperparámetros en abierto con `tune()`.
-3. Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los hiperparámetros que dejamos en abierto en el paso 2.
-4. Ponemos todo junto con la función `tune_grid()`.
+1.  Creamos unas réplicas del conjunto de entrenamiento, para tener subconjunto de entrenamiento y de validación (que ya hicimos en el apartado de Rsample con el objeto ““)
+2.  Elegimos un modelo con Parsnip y dejamos sus hiperparámetros en abierto con `tune()`.
+3.  Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los hiperparámetros que dejamos en abierto en el paso 2.
+4.  Ponemos todo junto con la función `tune_grid()`.
 :::
-::: 
-
+:::
 
 ## 10.2. Montando un espacio de hiperparámetros: familia `grid_` {auto-animate="true"}
 
-:::incremental
-- `grid_regular`: hará todas las combinaciones entre los rangos de la variable.
-- `grid_random`: probará hiperparámetros aleatoriamente.
-- `grid_max_entropy`: propondrá una combinación de hiperpárametros que garanticen que se cubrirá todo el espectro, con fin de evitar mínimos locales en la conversión de algoritmos.
-- `grid_latin_hypercube`: propondrá una matriz.
+::: incremental
+-   `grid_regular`: hará todas las combinaciones entre los rangos de la variable.
+-   `grid_random`: probará hiperparámetros aleatoriamente.
+-   `grid_max_entropy`: propondrá una combinación de hiperpárametros que garanticen que se cubrirá todo el espectro, con fin de evitar mínimos locales en la conversión de algoritmos.
+-   `grid_latin_hypercube`: propondrá una matriz.
 :::
 
 ## 10.2.1. Grid_regular {auto-animate="true"}
 
-- `Grid_regular` hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.
+-   `Grid_regular` hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.
 
 ```{r rid-regular-1, echo=TRUE}
 
@@ -879,7 +853,7 @@ grid_regular(
 
 ## 10.2.1. Grid_regular() {auto-animate="true"}
 
-- `Grid_regular` hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.
+-   `Grid_regular` hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.
 
 ```{r rid-regular-2, echo=TRUE}
 
@@ -958,7 +932,6 @@ WF_hiper_parametros %>%
   scale_color_viridis_b()
 ```
 
-
 ## 10.3. Ajustando los hiperparámetros: convergen Yardstick con dial y tune {auto-animate="true"}
 
 ```{r hiperpar-5, echo=TRUE}
@@ -967,7 +940,6 @@ WF_hiperparametros_mejor <- WF_hiper_parametros %>%  show_best("roc_auc",1)
 WF_hiperparametros_mejor %>% 
   knitr::kable()
 ```
-
 
 ::: titulo-seccion
 ## 11. La conversión de todo: `fit()` y `predict()`
@@ -1008,25 +980,26 @@ tibble(
   # - 🟡 Un tipo de predicción en los casos de clasificación, si queremos las probabilidades de cada categoría o la categoría predicha  directamente
   predict(Modelo_fitted, Nuevo_caso, type = "prob" ),
   predict(Modelo_fitted, Nuevo_caso, type = "class")) %>% 
-  knitr::kable()v
+  knitr::kable()
 
 ```
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
 
-:::incremental
-- La función `last_fit()` permite tener todo unificado en un solo tibble. Recibe directamente los datos de entrenamiento y los datos de evaulación y crea sus métricas y sus predicciones.
+::: incremental
+-   La función `last_fit()` permite tener todo unificado en un solo tibble. Recibe directamente los datos de entrenamiento y los datos de evaulación y crea sus métricas y sus predicciones.
 
-- Contamos con una serie de funciones para extraer todo lo que necesitemos de ellas: 
-1. `extract_fit_engine()`: permite extraer el modelo crudo como si no hubiera sido ajustado con tidymodels.
-2. `collect_metrics()`: extraer un tibble con las métricas del modelo (puestas con metric set) 
-3. `collect_predictions()`: extrae un tibble con las predicciones de los datos de evaluación. 
-4. `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
+-   Contamos con una serie de funciones para extraer todo lo que necesitemos de ellas:
+
+1.  `extract_fit_engine()`: permite extraer el modelo crudo como si no hubiera sido ajustado con tidymodels.
+2.  `collect_metrics()`: extraer un tibble con las métricas del modelo (puestas con metric set)
+3.  `collect_predictions()`: extrae un tibble con las predicciones de los datos de evaluación.
+4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
 :::
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
 
-4. `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
+4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
 
 ```{r extract-workflow-1, echo=TRUE}
 Modelo_1_final <-  WF_Receta_modelo_1_Random_forest %>% 
@@ -1040,25 +1013,21 @@ Modelo_1_final
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
 
-4. `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
+4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
 
 ```{r extract-workflow-2, echo=TRUE}
-Modelo_1_final <-  WF_Receta_modelo_1_Random_forest %>% 
+WF_Receta_modelo_1_Random_forest %>%
   # 🔴 Finalizamos el flujo de trabajo con la mejor combinación de hiperparámetros encontrada
   finalize_workflow(WF_hiperparametros_mejor) %>%
   # 🔴 Ajustamos con last_fit(), poniendo el split de datos inicial y las métricas para las predicciones
-  last_fit(Split_datos_strat, metrics = Modelo_Metricas) %>% 
+  last_fit(Split_datos_strat, metrics = Modelo_Metricas) %>%
   # 🔴 dentro del flujo de trabajo están la receta y el modelo ya ajustado
-  extract_workflow() %>% 
-  # de modo que lo podemos usar para hacer predicciones
-  predict(Testing_datos, type = "prob" )
-
-Modelo_1_final
+  extract_workflow() 
 ```
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
 
-- A partir de aquí podemos manipular el objeto fit de múltiples maneras múltiples:
+-   A partir de aquí podemos manipular el objeto fit de múltiples maneras múltiples:
 
 ```{r extract-workflow-3, echo=TRUE}
 Modelo_1_final %>%
@@ -1085,21 +1054,20 @@ Modelo_1_final %>%  collect_predictions() %>%
 
 Advertencia: en la función de curva roc, ved que he puesto predicción del 0 en vez del 1. Esto es un error interno en la clasificación dentro del paquete yardstick. Hay que tener cuidado sobre si estas funciones utilizan el primer / segundo / x nivel de su factor como el “evento”. Por defecto, yardstick elige el primer nivel de verdad como “evento” al calcular la curva roc. Podéis encontrar más de este suceso en el github de los desarrolladores https://github.com/tidymodels/yardstick/issues/94
 
-
 ::: titulo-seccion
 ## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación)
 :::
 
 ## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación) {auto-animate="true"}
 
-:::incremental
-- El concepto de rendimiento del umbral (threshold performance) es crucial a la hora de evaluar y ajustar modelos de clasificación binaria.
+::: incremental
+-   El concepto de rendimiento del umbral (threshold performance) es crucial a la hora de evaluar y ajustar modelos de clasificación binaria.
 
-- El umbral es el valor de probabilidad por encima del cual un resultado predicho se considera de clase positiva. Por defecto, muchos modelos utilizan un umbral de 0,5.
+-   El umbral es el valor de probabilidad por encima del cual un resultado predicho se considera de clase positiva. Por defecto, muchos modelos utilizan un umbral de 0,5.
 
-- Ajustar el umbral permite elegir entre precisión y la recall. Bajar el umbral aumenta la sensibilidad (recall) pero disminuye la precisión, y viceversa.
+-   Ajustar el umbral permite elegir entre precisión y la recall. Bajar el umbral aumenta la sensibilidad (recall) pero disminuye la precisión, y viceversa.
 
-- En tidymodels está la librería `probably` con la función `threshold_perf()`, la cual nos permite, dadas las predicciones del modelo, ver como se desenvuelve este umbral.
+-   En tidymodels está la librería `probably` con la función `threshold_perf()`, la cual nos permite, dadas las predicciones del modelo, ver como se desenvuelve este umbral.
 :::
 
 ## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación) {auto-animate="true"}
@@ -1175,9 +1143,7 @@ Receta_modelo_Escalas <- recipe(
     # 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)
   step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
     # 2.6) Sobremuestreamos la variable para equilibrar grupos
-  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
-  # 3.) Preparamos la receta
-  prep()
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) 
 
 
 
@@ -1206,22 +1172,18 @@ Receta_modelo_Cognicion <- recipe(
     # 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)
   step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
     # 2.6) Sobremuestreamos la variable para equilibrar grupos
-  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) %>% 
-  # 3.) Preparamos la receta
-  prep()
+  step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10)
 
-bake(Receta_modelo_Cognicion, new_data = NULL)
 ```
-
 
 ## 13.2. `workflow_set()` para unificarlas todas {auto-animate="true"}
 
 ```{r workflow-set-1, echo=TRUE}
 Receta_list <- list(
   'Modelo_Escalas'    = Receta_modelo_Escalas,
-  'Modelo_Cognicion'  = Receta_modelo_Cognicion,
-  'Modelo_Bioquimica' = Receta_modelo_Bioquimica,
-  'Modelo_Popurri'    = Receta_modelo_Popurri
+  'Modelo_Cognicion'  = Receta_modelo_Cognicion
+  #,'Modelo_Bioquimica' = Receta_modelo_Bioquimica
+  #,'Modelo_Popurri'    = Receta_modelo_Popurri
   )
   
 Model_list <- list(
@@ -1265,7 +1227,7 @@ Wokflows_set_map
 
 ## 13.2. `workflow_set()` para unificarlas todas {auto-animate="true"}
 
-```{r workflow-set-3, echo=TRUE, eval=FALSE}
+```{r workflow-set-3, echo=F}
 
 # Modelo Escalas ----
 Modelo_Escalas_RandomForest_hyperparametros <- Wokflows_set_map %>% 
@@ -1294,44 +1256,21 @@ Modelo_Cognicion_RandomForest_final <- Wokflows_set_map %>%
   extract_workflow('Modelo_Cognicion_RandomForest') %>% 
   finalize_workflow(Modelo_Cognicion_RandomForest_hyperparametros) %>%
   last_fit(Split_datos_strat, metrics = Modelo_Metricas )
-
-# Modelo Bioquímico ----
-
-Modelo_Bioquimica_RandomForest_hyperparametros <- Wokflows_set_map %>% 
-  extract_workflow_set_result('Modelo_Bioquimica_RandomForest') %>%
-  show_best(metric = 'sensitivity', n=50) %>% 
-  filter(row_number()==1) %>% 
-  select(mtry,trees,min_n,.config )
-
-Modelo_Bioquimica_RandomForest_final <- Wokflows_set_map %>% 
-  extract_workflow('Modelo_Bioquimica_RandomForest') %>% 
-  finalize_workflow(Modelo_Bioquimica_RandomForest_hyperparametros) %>%
-  last_fit(Split_datos_strat, metrics = Modelo_Metricas )
-
-# Modelo Popurri ----
-Modelo_Popurri_RandomForest_hyperparametros <- Wokflows_set_map %>% 
-  extract_workflow_set_result('Modelo_Popurri_RandomForest') %>%
-  show_best(metric = 'sensitivity', n=50) %>% 
-  filter(row_number()==1) %>% 
-  select(mtry,trees,min_n,.config )
-
-Modelo_Popurri_RandomForest_final <- Wokflows_set_map %>% 
-  extract_workflow('Modelo_Popurri_RandomForest') %>% 
-  finalize_workflow(Modelo_Popurri_RandomForest_hyperparametros) %>%
-  last_fit(Split_datos_strat, metrics = Modelo_Metricas )
 ```
-
 
 ## 13.3. Métricas de todos los modelos {auto-animate="true"}
 
-```{r metricas-1, echo=TRUE}
+```{r metricas-1, echo=F}
+
 map2(
   list(
     Modelo_Escalas_RandomForest_final,
-    Modelo_Cognicion_RandomForest_final,
-    Modelo_Bioquimica_RandomForest_final,
-    Modelo_Popurri_RandomForest_final),
-  list('Modelo_Escala','Modelo_Cognicion','Modelo_Bioquimica','Modelo_Popurri'),
+    Modelo_Cognicion_RandomForest_final
+    ),
+  list(
+    'Modelo_Escala',
+    'Modelo_Cognicion'
+    ),
   ~ ..1 %>% 
     collect_metrics() %>% 
     mutate('Modelo'= ..2) %>% 
@@ -1343,6 +1282,73 @@ map2(
 
 ## 13.4. Curvas roc de todos los modelos {auto-animate="true"}
 
+```{r}
+ROC_CURVE_training_todos_los_posibles_modelos <- Wokflows_set_map %>%  
+  collect_predictions() %>%
+  group_split(wflow_id) %>% 
+  set_names(list('Escala','Cognicion','Bioquimica','Popurri')) %>% 
+  map(~ .x %>% roc_curve(truth=Var_respuesta , .pred_0)) %>% 
+  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+               ~ .x %>%  mutate(model= .y)) %>% 
+         bind_rows() 
+
+Plot_ROC_CURVE_training_todos_los_posibles_modelos <- ROC_CURVE_training_todos_los_posibles_modelos %>% 
+  ggplot(aes( x = 1- specificity ,y= sensitivity, color= model ) ) +
+  geom_path() +
+  geom_abline(intercept=0, slope=1, linetype=3)
+  
+
+
+ROC_CURVE_training_modelos_finales <- list(
+  list('Esc' ,Modelo_Escalas_RandomForest_hyperparametros$.config),
+  list('Cog' ,Modelo_Cognicion_RandomForest_hyperparametros$.config),
+  list('Bio' ,Modelo_Bioquimica_RandomForest_hyperparametros$.config),
+  list('Pop' ,Modelo_Popurri_RandomForest_hyperparametros$.config)) %>% 
+  map(~ Wokflows_set_map %>% 
+        collect_predictions() %>% 
+        filter(
+          str_detect(wflow_id, .x[[1]]) & 
+            .config== .x[[2]]
+        )) %>% 
+  
+  map(~ .x %>%
+        mutate(Model= str_extract(wflow_id, '^.{2}') ) %>% 
+        select(Model,Var_respuesta, .pred_0, .pred_1, .pred_class)
+  ) %>% 
+  set_names(list('Escala','Cognicion','Bioquimica','Popurri') ) %>%
+  map(~ .x %>% roc_curve(truth = Var_respuesta, .pred_0)) %>% 
+  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+       ~ .x %>% mutate(model= .y)) %>% 
+  bind_rows() 
+  
+Plot_ROC_CURVE_training_modelos_finales <- ROC_CURVE_training_modelos_finales %>% 
+  ggplot(aes( x = 1- specificity ,y= sensitivity, color= model ) ) +
+  geom_path() +
+  geom_abline(intercept=0, slope=1, linetype=3) 
+
+
+ROC_CURVE_testing_modelos_finales <-list(
+  Modelo_Escalas_RandomForest_final,
+  Modelo_Cognicion_RandomForest_final,
+  Modelo_Bioquimica_RandomForest_final,
+  Modelo_Popurri_RandomForest_final
+  ) %>% 
+  map(~.x %>% 
+        collect_predictions() %>% 
+        roc_curve(Var_respuesta, .pred_0)) %>% 
+  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+       ~ .x %>%  mutate(model= .y)) %>% 
+  bind_rows()
+
+Plot_ROC_CURVE_testing_modelos_finales <- ROC_CURVE_testing_modelos_finales %>% 
+  ggplot(aes(x = 1- specificity ,y = sensitivity, color = model ) ) +
+  geom_path()+
+  geom_abline(intercept=0, slope=1, linetype=3)
+```
+
+
+
+
 ```{r curvas-roc-todos-modelos, echo=FALSE}
 ggpubr::ggarrange( Plot_ROC_CURVE_training_todos_los_posibles_modelos,
                    Plot_ROC_CURVE_training_modelos_finales, 
@@ -1353,26 +1359,28 @@ ggpubr::ggarrange( Plot_ROC_CURVE_training_todos_los_posibles_modelos,
                    labels = c('Todos_training','Training','Test'))
 ```
 
-
 ::: titulo-seccion
 ## 14. Haciendo el machine learning entendible: SHAP values
 :::
 
 ## 14. Haciendo el machine learning entendible: SHAP values
 
-:::incremental
-- Los valores de Shapley (shap values), que deben su nombre al premio Nobel Lloyd Shapley, son un concepto de la teoría de juegos cooperativos que ha acabado encontrado aplicaciones en el aprendizaje automático.
+::: incremental
+-   Los valores de Shapley (shap values), que deben su nombre al premio Nobel Lloyd Shapley, son un concepto de la teoría de juegos cooperativos que ha acabado encontrado aplicaciones en el aprendizaje automático.
 
-- En teoría de juegos, los valores de Shapley son la distribución equitativa de la contribución de cada jugador en un juego cooperativo entre todos los jugadores. En el contexto del aprendizaje automático, las características o variables se consideran jugadores, y el juego consiste en cuánto contribuye cada característica a la predicción de un modelo.
+-   En teoría de juegos, los valores de Shapley son la distribución equitativa de la contribución de cada jugador en un juego cooperativo entre todos los jugadores. En el contexto del aprendizaje automático, las características o variables se consideran jugadores, y el juego consiste en cuánto contribuye cada característica a la predicción de un modelo.
 
-- Es decir, los valores de Shapley son sencillamente las marginales de cada variable dentro del modelo. 
+-   Es decir, los valores de Shapley son sencillamente las marginales de cada variable dentro del modelo.
 
-- El valor final llamado Shap value es promedio de todas las aportaciones de una variable marginal.
+-   El valor final llamado Shap value es promedio de todas las aportaciones de una variable marginal.
 
-- Aparte de su extenso coste computacional, todo shap value asume que está utilizando un modelo de caja negra, de manera que es posible que el modelo esté dando indicaciones erróneas.
+-   Aparte de su extenso coste computacional, todo shap value asume que está utilizando un modelo de caja negra, de manera que es posible que el modelo esté dando indicaciones erróneas.
 
-- Actualmente se pueden compilar en tidymodels utilizando la libreria agua, al ser una extensión de Tidymodels del entorno de h2o. 
+-   Actualmente se pueden compilar en tidymodels utilizando la libreria agua, al ser una extensión de Tidymodels del entorno de h2o.
 
-- Una propuesta sería buscar un modelo bien calibrado con Tidymodels y pasarlo por h2o para hacer un diagnóstico más eficaz.
+-   Una propuesta sería buscar un modelo bien calibrado con Tidymodels y pasarlo por h2o para hacer un diagnóstico más eficaz.
 :::
 
+$$
+VarRespuesta \sim . 
+$$
