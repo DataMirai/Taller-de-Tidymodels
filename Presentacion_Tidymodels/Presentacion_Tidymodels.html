@@ -384,18 +384,6 @@
       margin-right: 0; 
     }
   </style>
-  <style>
-  .titulo-seccion {
-    font-size: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    position: absolute;
-    top: 45%;
-    left: 15%;
-  }
-  </style>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -414,7 +402,6 @@
 <ul>
 <li class="fragment"><p>Me llamo Aitor González.</p></li>
 <li class="fragment"><p>Soy estadístico en la Unidad de Bioestadística de la Facultad de Medicina de la UAB.</p></li>
-<li class="fragment"><p>También explico cosas de estadística en mi canal de YouTube <em>ReEstimando</em>.</p></li>
 </ul>
 </div>
 </section>
@@ -423,20 +410,25 @@
 <ul>
 <li><p>Me llamo Aitor González.</p></li>
 <li><p>Soy estadístico en la Unidad de Bioestadística de la Facultad de Medicina de la UAB.</p></li>
-<li><p>También explico cosas de estadística en mi canal de YouTube <em>ReEstimando</em>.</p></li>
+<li><p>También explico cosas de estadística en mi canal de YouTube <a href="https://www.youtube.com/@ReEstimando"><em>ReEstimando</em></a>.</p></li>
 </ul>
 
 <img data-src="Imagenes/Logo_reestimando_logo_YT.jpg" width="300" class="r-stretch quarto-figure-center"></section>
-<section id="porqué-tidymodels" class="slide level2 titulo-seccion">
-<h2>2. ¿Porqué Tidymodels?</h2>
+<section>
+<section id="porqué-tidymodels" class="title-slide slide level1 center">
+<h1>2. ¿Porqué Tidymodels?</h1>
+
 </section>
 <section id="un-poquito-de-historia" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">2.1. Un poquito de historia</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/Max_Kuhn.jpeg" data-top-margin="200px" width="400" height="400"></p>
+<p><img data-src="Imagenes/Max_Kuhn.jpeg" data-margin-top="200px" data-margin-bottom="0px" data-padding="0px" width="400" height="400"></p>
 </figure>
 </div>
+<p style="text-align: center; margin-top:0; padding:0">
+Max Kuhn
+</p>
 </section>
 <section id="un-poquito-de-historia-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">2.1. Un poquito de historia</h2>
@@ -449,7 +441,7 @@
 </div>
 </div><div class="column" style="width:70%;">
 <ul>
-<li class="fragment">En 2008 desarrolló la librería Caret, la cual asentó las bases del modelado estadístico en R.</li>
+<li class="fragment">En 2008 desarrolló la librería <strong>Caret</strong>, la cual asentó las bases del modelado estadístico en R.</li>
 </ul>
 </div>
 </div>
@@ -470,7 +462,7 @@
 </div>
 </div><div class="column" style="width:70%;">
 <ul>
-<li><p>En 2008 desarrolló la librería Caret, la cual asentó las bases del modelado estadístico en R.</p></li>
+<li><p>En 2008 desarrolló la librería <strong>Caret</strong>, la cual asentó las bases del modelado estadístico en R.</p></li>
 <li><p>El paquete cuenta con más de 7.000 citas en publicaciones académicas.</p></li>
 </ul>
 </div>
@@ -480,10 +472,12 @@
 <h2 data-id="quarto-animate-title">2.1. Un poquito de historia</h2>
 <div class="columns">
 <div class="column" style="width:30%;">
+<div style="margin-top:100px">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Imagenes/Caret_logo.png" width="300"></p>
 </figure>
+</div>
 </div>
 </div><div class="column" style="width:70%;">
 <ul>
@@ -497,15 +491,15 @@
 <section id="un-poquito-de-historia-2-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">2.1. Un poquito de historia (2)</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
+<div class="column" style="width:20%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Imagenes/Hadley_Wickham.jpeg" width="300"></p>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
+</div><div class="column" style="width:80%;">
 <ul>
-<li class="fragment">En 2012 aparece el entorno de Tidyverse de la mano de Hadley Wickham.</li>
+<li class="fragment">En 2012 aparece el entorno de Tidyverse de la mano de <strong>Hadley Wickham</strong>.</li>
 </ul>
 </div>
 </div>
@@ -513,7 +507,7 @@
 <section id="un-poquito-de-historia-2-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">2.1. Un poquito de historia (2)</h2>
 <div class="columns">
-<div class="column" style="width:30%;">
+<div class="column" style="width:20%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Imagenes/Hadley_Wickham.jpeg" class="fade-out" width="150"></p>
@@ -524,9 +518,9 @@
 <p><img data-src="Imagenes/Paquetes_Tidyverse.jpeg" class="fade-in" width="300"></p>
 </figure>
 </div>
-</div><div class="column" style="width:70%;">
+</div><div class="column" style="width:80%;">
 <ul>
-<li><p>En 2012 aparece el entorno de Tidyverse de la mano de Hadley Wickham.</p></li>
+<li><p>En 2012 aparece el entorno de Tidyverse de la mano de <strong>Hadley Wickham</strong>.</p></li>
 <li><p>Tidyverse proporciona múltiples herramientas para poder manipular datos facilmente.</p></li>
 </ul>
 <div>
@@ -542,17 +536,17 @@
 <h2 data-id="quarto-animate-title">2.1. Un poquito de historia (3)</h2>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/Hadley_Wickham.jpeg" width="150"></p>
+<p><img data-src="Imagenes/Hadley_Wickham.jpeg" width="140"></p>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 60.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/Max_Kuhn.jpeg" width="150"></p>
+<p><img data-src="Imagenes/Max_Kuhn.jpeg" width="210"></p>
 </figure>
 </div>
 </div>
@@ -566,24 +560,24 @@
 <h2 data-id="quarto-animate-title">2.1.Un poquito de historia (3)</h2>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/Hadley_Wickham.jpeg" width="150"></p>
+<p><img data-src="Imagenes/Hadley_Wickham.jpeg" width="140"></p>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 37.5%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/Max_Kuhn.jpeg" width="150"></p>
+<p><img data-src="Imagenes/Max_Kuhn.jpeg" width="210"></p>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 37.5%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/Julia_Silge.jpeg" width="150"></p>
+<p><img data-src="Imagenes/Julia_Silge.jpeg" width="210"></p>
 </figure>
 </div>
 </div>
@@ -591,7 +585,7 @@
 </div>
 <ul>
 <li><p>En 2019 Max Kuhn se une al <em>Tidyverso</em> y comienza a crear Tidymodels junto con el equipo de Hadley Wickham.</p></li>
-<li><p>Actualmente Julia Silge es, junto con Max Kuhn, la principal desarrolladora de Tidymodels.</p></li>
+<li><p>Actualmente <strong>Julia Silge</strong> es, junto con Max Kuhn, la principal desarrolladora de Tidymodels.</p></li>
 </ul>
 </section>
 <section id="un-breve-ejemplo" class="slide level2" data-auto-animate="true">
@@ -656,6 +650,7 @@
 <section id="qué-aporta-tidymodels" class="slide level2">
 <h2>2.3. ¿Qué aporta Tidymodels?</h2>
 <div>
+<div style="font-size:32px;">
 <ul>
 <li class="fragment"><p><strong>No más Caret</strong>: el paquete no tendrá más actualizaciones, sólo mantenimiento</p></li>
 <li class="fragment"><p><strong>Consistencia</strong>: Misma sintáxis para todos los procesos</p></li>
@@ -665,13 +660,74 @@
 <li class="fragment"><p><strong>Posibilidades</strong>: Tidymodels da soporte a 155 modelos, incluyendo modelos para datos censurados o series temporales</p></li>
 </ul>
 </div>
+</div>
+</section></section>
+<section>
+<section id="de-qué-se-compone-tidymodels" class="title-slide slide level1 center">
+<h1>3. ¿De qué se compone Tidymodels?</h1>
+
 </section>
-<section id="presentando-los-datos" class="slide level2 titulo-seccion">
-<h2>3. Presentando los datos</h2>
+<section id="de-qué-se-compone-tidymodels-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">3. ¿De qué se compone Tidymodels?</h2>
+<ul>
+<li>El flujo de trabajo de Tidymodels es el siguiente:</li>
+</ul>
+
+<img data-src="Imagenes/Flujo_tidymodels.png" class="r-stretch quarto-figure-center"></section>
+<section id="de-qué-se-compone-tidymodels-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">3. ¿De qué se compone Tidymodels?</h2>
+<ul>
+<li>La idea detrás consiste en una sola sintaxis que resuma todo este flujo de trabajo.</li>
+</ul>
+<div>
+<div style="font-size:32px; margin-left:40px;">
+<ol type="1">
+<li class="fragment"><p>Partición de los datos</p></li>
+<li class="fragment"><p>Pre-procesamos los datos de entrenamiento</p></li>
+<li class="fragment"><p>Buscamos los hiper-parámetros ideales para nuestros datos en el modelo</p></li>
+<li class="fragment"><p>Ajustamos el modelo</p></li>
+<li class="fragment"><p>Comprobamos con las métricas</p></li>
+<li class="fragment"><p>Vemos si funciona con unos datos que el modelo no haya visto</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="de-qué-se-compone-tidymodels-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">3. ¿De qué se compone Tidymodels?</h2>
+<div class="columns">
+<div class="column" style="width:30%;">
+<div style="margin-top:100px">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Imagenes/paquetes_tidymodels.png" width="500"></p>
+</figure>
+</div>
+</div>
+</div><div class="column" style="width:70%;">
+<div>
+<div style="font-size:30px;">
+<ul>
+<li class="fragment"><strong>Rsample</strong>: Funciones para crear distintos tipos de remuestreos.</li>
+<li class="fragment"><strong>Recipes</strong>: Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.</li>
+<li class="fragment"><strong>Parsnip</strong>: Interfaz para ajustar modelos, hasta 155 tipos a fecha de esta presentación</li>
+<li class="fragment"><strong>Yarstick</strong>: Creación de métricas para la evaluación de un modelo.</li>
+<li class="fragment"><strong>Workflows</strong>: Cohesión interna de tidymodels.</li>
+<li class="fragment"><strong>Tune &amp; Dials</strong>: Creación y gestión de hiper-parámetros de cualquier modelo presente en Tidymodels.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="presentando-los-datos" class="title-slide slide level1 center">
+<h1>4. Presentando los datos</h1>
+
 </section>
 <section id="caso-práctico" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">3.1. Caso práctico</h2>
+<h2 data-id="quarto-animate-title">4.1. Caso práctico</h2>
 <div>
+<div style="font-size:30px;">
 <ul>
 <li class="fragment"><p>Somos unos expertos en aprendizaje automático y nos piden ayuda de un hospital 🏥</p></li>
 <li class="fragment"><p>Al parecer, nuestra variable, <em>Var_respuesta</em>, es una enfermedad complicada de diagnosticar.</p></li>
@@ -680,9 +736,10 @@
 <li class="fragment"><p>Además de de nuestra variable <em>Var_respuesta</em>, tenemos otras 25 variables: de cognición, bioquímicas, genéticas, etc.</p></li>
 </ul>
 </div>
+</div>
 </section>
 <section id="caso-práctico-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">3.1. Caso práctico</h2>
+<h2 data-id="quarto-animate-title">4.1. Caso práctico</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb5-1" class="hljs-ln-code"><a href="#cb5-1"></a><span class="co"># Librerías | Carga de datos </span></span>
 <span id="cb5-2" class="hljs-ln-code"><a href="#cb5-2"></a></span>
@@ -695,12 +752,13 @@
 <span id="cb5-9" class="hljs-ln-code"><a href="#cb5-9"></a>  themis,      <span class="co"># Soporte de la librería "recipes" para añadir sobremuestreo</span></span>
 <span id="cb5-10" class="hljs-ln-code"><a href="#cb5-10"></a>  skimr,       <span class="co"># Descriptiva rápida de datos  </span></span>
 <span id="cb5-11" class="hljs-ln-code"><a href="#cb5-11"></a>  naniar,</span>
-<span id="cb5-12" class="hljs-ln-code"><a href="#cb5-12"></a>  knitr        <span class="co"># Renderización en html para este formato</span></span>
-<span id="cb5-13" class="hljs-ln-code"><a href="#cb5-13"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-12" class="hljs-ln-code"><a href="#cb5-12"></a>  ranger,</span>
+<span id="cb5-13" class="hljs-ln-code"><a href="#cb5-13"></a>  knitr        <span class="co"># Renderización en html para este formato</span></span>
+<span id="cb5-14" class="hljs-ln-code"><a href="#cb5-14"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="caso-práctico-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">3.1. Caso práctico</h2>
+<h2 data-id="quarto-animate-title">4.1. Caso práctico</h2>
 <ul>
 <li>Antes de empezar, podemos ver la estructura del dataset:</li>
 </ul>
@@ -920,166 +978,14 @@
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.3998781</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">93.54</td>
-<td style="text-align: right;">81.16</td>
-<td style="text-align: right;">89.32</td>
-<td style="text-align: right;">115.83</td>
-<td style="text-align: right;">65.07</td>
-<td style="text-align: right;">93.17</td>
-<td style="text-align: right;">32.35</td>
-<td style="text-align: right;">3.50</td>
-<td style="text-align: right;">17.95</td>
-<td style="text-align: right;">132.61</td>
-<td style="text-align: right;">67.61</td>
-<td style="text-align: right;">4.10</td>
-<td style="text-align: right;">76.30</td>
-<td style="text-align: right;">1.11</td>
-<td style="text-align: right;">36.50</td>
-<td style="text-align: right;">32.24</td>
-<td style="text-align: right;">33.45837</td>
-<td style="text-align: right;">7.376139</td>
-<td style="text-align: right;">22.080631</td>
-<td style="text-align: right;">1.3081069</td>
-<td style="text-align: right;">0.5763763</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.5438819</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.4705209</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">114.25</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">8.14</td>
-<td style="text-align: right;">5.68</td>
-<td style="text-align: right;">12.25</td>
-<td style="text-align: right;">149.89</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">91.22</td>
-<td style="text-align: right;">1.28</td>
-<td style="text-align: right;">35.86</td>
-<td style="text-align: right;">40.11</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">18.489371</td>
-<td style="text-align: right;">10.365972</td>
-<td style="text-align: right;">1.5581016</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.1597700</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.6242926</td>
-<td style="text-align: right;">0.0579575</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">74.80</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">93.32</td>
-<td style="text-align: right;">4.77</td>
-<td style="text-align: right;">8.88</td>
-<td style="text-align: right;">164.33</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">4.33</td>
-<td style="text-align: right;">84.49</td>
-<td style="text-align: right;">1.07</td>
-<td style="text-align: right;">23.16</td>
-<td style="text-align: right;">27.76</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">18.749210</td>
-<td style="text-align: right;">9.068513</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">66.78</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">54.33</td>
-<td style="text-align: right;">2.56</td>
-<td style="text-align: right;">16.07</td>
-<td style="text-align: right;">161.64</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">99.47</td>
-<td style="text-align: right;">0.92</td>
-<td style="text-align: right;">30.14</td>
-<td style="text-align: right;">34.27</td>
-<td style="text-align: right;">133.14928</td>
-<td style="text-align: right;">18.116769</td>
-<td style="text-align: right;">31.680105</td>
-<td style="text-align: right;">1.6247538</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.9775707</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.9699578</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.1983120</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">84.13</td>
-<td style="text-align: right;">100.23</td>
-<td style="text-align: right;">69.62</td>
-<td style="text-align: right;">137.84</td>
-<td style="text-align: right;">91.24</td>
-<td style="text-align: right;">78.76</td>
-<td style="text-align: right;">28.80</td>
-<td style="text-align: right;">4.22</td>
-<td style="text-align: right;">14.38</td>
-<td style="text-align: right;">151.67</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">5.23</td>
-<td style="text-align: right;">91.19</td>
-<td style="text-align: right;">1.75</td>
-<td style="text-align: right;">18.24</td>
-<td style="text-align: right;">37.76</td>
-<td style="text-align: right;">113.35402</td>
-<td style="text-align: right;">20.327740</td>
-<td style="text-align: right;">21.101902</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.1801013</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.0568568</td>
-<td style="text-align: right;">NA</td>
-</tr>
 </tbody>
 </table>
 </div>
 </div>
 </section>
 <section id="caso-práctico-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">3.1. Caso práctico</h2>
+<h2 data-id="quarto-animate-title">4.1. Caso práctico</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a><span class="co"># Valoración general</span></span>
-<span id="cb6-2" class="hljs-ln-code"><a href="#cb6-2"></a>skimr<span class="sc">::</span><span class="fu">skim</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table>
 <caption>Data summary</caption>
@@ -1541,94 +1447,29 @@
 </div>
 </section>
 <section id="caso-práctico-4" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">3.1. Caso práctico</h2>
+<h2 data-id="quarto-animate-title">4.1. Caso práctico</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a><span class="co"># Valores perdidos</span></span>
-<span id="cb7-2" class="hljs-ln-code"><a href="#cb7-2"></a>naniar<span class="sc">::</span><span class="fu">vis_miss</span>(datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb6-1" class="hljs-ln-code"><a href="#cb6-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_upset</span>(datos, <span class="at">nsets =</span> <span class="dv">10</span>, <span class="at">nintersects =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="Presentacion_Tidymodels_files/figure-revealjs/caso-practico-3-1.png" width="960" class="r-stretch"></section>
-<section id="caso-práctico-5" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">3.1. Caso práctico</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb8-1" class="hljs-ln-code"><a href="#cb8-1"></a>naniar<span class="sc">::</span><span class="fu">gg_miss_upset</span>(datos, <span class="at">nsets =</span> <span class="dv">10</span>, <span class="at">nintersects =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/caso-practico-4-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="preparando-la-partición-de-datos-con-rsample" class="title-slide slide level1 center">
+<h1>5. Preparando la partición de datos con Rsample</h1>
 
-</div>
-<img data-src="Presentacion_Tidymodels_files/figure-revealjs/caso-practico-4-1.png" width="960" class="r-stretch"></section>
-<section id="de-qué-se-compone-tidymodels" class="slide level2 titulo-seccion">
-<h2>4. ¿De qué se compone Tidymodels?</h2>
 </section>
-<section id="de-qué-se-compone-tidymodels-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">4. ¿De qué se compone Tidymodels?</h2>
-<ul>
-<li>El flujo de trabajo de Tidymodels es el siguiente:</li>
-</ul>
-
-<img data-src="Imagenes/Flujo_tidymodels.png" class="r-stretch quarto-figure-center"></section>
-<section id="de-qué-se-compone-tidymodels-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">4. ¿De qué se compone Tidymodels?</h2>
-<ul>
-<li>La idea detrás consiste en una sola sintaxis que resuma todo este flujo de trabajo.</li>
-</ul>
-<div>
-<ol type="1">
-<li class="fragment"><p>Partición de los datos</p></li>
-<li class="fragment"><p>Pre-procesamos los datos de entrenamiento</p></li>
-<li class="fragment"><p>Buscamos los hiper-parámetros ideales para nuestros datos en el modelo</p></li>
-<li class="fragment"><p>Ajustamos el modelo</p></li>
-<li class="fragment"><p>Comprobamos con las métricas</p></li>
-<li class="fragment"><p>Vemos si funciona con unos datos que el modelo no haya visto</p></li>
-</ol>
-</div>
-</section>
-<section id="de-qué-se-compone-tidymodels-3" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">4. ¿De qué se compone Tidymodels?</h2>
-<div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Imagenes/paquetes_tidymodels.png" width="500"></p>
-</figure>
-</div>
-<ul>
-<li class="fragment"><strong>Rsample</strong>: Funciones para crear distintos tipos de remuestreos.</li>
-<li class="fragment"><strong>Recipes</strong>: Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.</li>
-<li class="fragment"><strong>Parsnip</strong>: Interfaz para ajustar modelos, hasta 155 tipos a fecha de esta presentación</li>
-<li class="fragment"><strong>Yarstick</strong>: Creación de métricas para la evaluación de un modelo.</li>
-<li class="fragment"><strong>Workflows</strong>: Cohesión interna de tidymodels.</li>
-<li class="fragment"><strong>Tune &amp; Dials</strong>: Creación y gestión de hiper-parámetros de cualquier modelo presente en Tidymodels.</li>
-</ul>
-</div>
-</section>
-<section id="preparando-la-partición-de-datos-con-rsample" class="slide level2 titulo-seccion">
-<h2>5. Preparando la partición de datos con Rsample</h2>
-</section>
-<section id="necesitamos-datos" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">5.1. ¡Necesitamos datos!</h2>
+<section id="cuidado-con-los-datos" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.1. Cuidado con los datos</h2>
 <div>
 <ul>
-<li class="fragment">Suelen ser difíciles de conseguir</li>
-<li class="fragment">Requieren tiempo, esfuerzo y <strong>dinero</strong></li>
+<li class="fragment">Es necesario controlar qué datos utilizamos en el entrenamiento del modelo para que cuando se use en producción, el modelo sea capaz de responder.</li>
 </ul>
 </div>
 </section>
-<section id="necesitamos-datos-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">5.1. ¡Necesitamos datos!</h2>
+<section id="cuidado-con-los-datos-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.1. Cuidado con los datos</h2>
 <ul>
-<li>Suelen ser difíciles de conseguir</li>
-<li>Requieren tiempo, esfuerzo y <strong>dinero</strong></li>
-</ul>
-<div>
-<ul>
-<li class="fragment">Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.</li>
-<li class="fragment">Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.</li>
-</ul>
-</div>
-</section>
-<section id="necesitamos-datos-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">5.1. ¡Necesitamos datos!</h2>
-<ul>
-<li>Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.</li>
-<li>Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.</li>
+<li>Es necesario controlar qué datos utilizamos en el entrenamiento del modelo para que cuando se use en producción, el modelo sea capaz de responder.</li>
 </ul>
 
 <img data-src="Imagenes/meme_spiderman_remuestreo.jpeg" class="r-stretch quarto-figure-center"></section>
@@ -1639,17 +1480,17 @@
 </ul>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 60.2%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/esquema_training_test.jpeg"></p>
+<p><img data-src="Imagenes/esquema_training_test.jpeg" width="300"></p>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 39.8%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/logo_rsample.png"></p>
+<p><img data-src="Imagenes/logo_rsample.png" width="198"></p>
 </figure>
 </div>
 </div>
@@ -1659,10 +1500,10 @@
 <section id="algunas-funciones-importantes-en-rsample" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.1.2. Algunas funciones importantes en <em>RSample</em></h2>
 <ul>
-<li>initial_split: Principal función dentro de la librería. Crea un objeto “split” sencillo para hacer una partición de datos.</li>
+<li><code>initial_split</code>: Principal función dentro de la librería. Crea un objeto “split” sencillo para hacer una partición de datos.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a href="#cb9-1"></a><span class="fu">initial_split</span>(datos, <span class="at">prop =</span> <span class="fl">0.6</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb7-1" class="hljs-ln-code"><a href="#cb7-1"></a><span class="fu">initial_split</span>(datos, <span class="at">prop =</span> <span class="fl">0.6</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;Training/Testing/Total&gt;
 &lt;171/114/285&gt;</code></pre>
@@ -1672,78 +1513,78 @@
 <section id="algunas-funciones-importantes-en-rsample-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.1.2. Algunas funciones importantes en <em>RSample</em></h2>
 <ul>
-<li>bootstraps: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En las muestras tipo bootsrap, los individuos pueden aparecer más de una vez en el conjunto de datos.</li>
+<li><code>bootstraps</code>: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En las muestras tipo bootsrap, los individuos pueden aparecer más de una vez en el conjunto de datos.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a href="#cb11-1"></a>rsample<span class="sc">::</span><span class="fu">bootstraps</span>(datos,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb9-1" class="hljs-ln-code"><a href="#cb9-1"></a>rsample<span class="sc">::</span><span class="fu">bootstraps</span>(datos,<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># Bootstrap sampling 
 # A tibble: 5 × 2
   splits            id        
   &lt;list&gt;            &lt;chr&gt;     
-1 &lt;split [285/102]&gt; Bootstrap1
-2 &lt;split [285/110]&gt; Bootstrap2
-3 &lt;split [285/103]&gt; Bootstrap3
+1 &lt;split [285/106]&gt; Bootstrap1
+2 &lt;split [285/94]&gt;  Bootstrap2
+3 &lt;split [285/101]&gt; Bootstrap3
 4 &lt;split [285/103]&gt; Bootstrap4
-5 &lt;split [285/94]&gt;  Bootstrap5</code></pre>
+5 &lt;split [285/102]&gt; Bootstrap5</code></pre>
 </div>
 </div>
 </section>
 <section id="algunas-funciones-importantes-en-rsample-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.1.2. Algunas funciones importantes en <em>RSample</em></h2>
 <ul>
-<li>rolling_origin: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contiene datos consecutivos.</li>
+<li><code>rolling_origin</code>: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contiene datos consecutivos.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a href="#cb13-1"></a><span class="fu">rolling_origin</span>(datos, <span class="at">initial =</span> <span class="dv">20</span>, <span class="at">assess =</span> <span class="dv">20</span>, <span class="at">skip =</span> <span class="dv">40</span>, <span class="at">cumulative =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># Rolling origin forecast resampling 
-# A tibble: 6 × 2
-  splits          id    
-  &lt;list&gt;          &lt;chr&gt; 
-1 &lt;split [20/20]&gt; Slice1
-2 &lt;split [20/20]&gt; Slice2
-3 &lt;split [20/20]&gt; Slice3
-4 &lt;split [20/20]&gt; Slice4
-5 &lt;split [20/20]&gt; Slice5
-6 &lt;split [20/20]&gt; Slice6</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb11-1" class="hljs-ln-code"><a href="#cb11-1"></a><span class="fu">rolling_origin</span>(datos, <span class="at">initial =</span> <span class="dv">20</span>, <span class="at">assess =</span> <span class="dv">20</span>, <span class="at">skip =</span> <span class="dv">40</span>, <span class="at">cumulative =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="algunas-funciones-importantes-en-rsample-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">5.1.2. Algunas funciones importantes en <em>RSample</em></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb12-1" class="hljs-ln-code"><a href="#cb12-1"></a><span class="fu">rolling_origin</span>(datos, <span class="at">initial =</span> <span class="dv">20</span>, <span class="at">assess =</span> <span class="dv">20</span>, <span class="at">skip =</span> <span class="dv">40</span>, <span class="at">cumulative =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-2" class="hljs-ln-code"><a href="#cb12-2"></a><span class="fu">rolling_origin</span>(datos, <span class="at">initial =</span> <span class="dv">50</span>, <span class="at">assess =</span> <span class="dv">20</span>, <span class="at">skip =</span> <span class="dv">70</span>, <span class="at">cumulative =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-3" class="hljs-ln-code"><a href="#cb12-3"></a><span class="fu">rolling_origin</span>(datos, <span class="at">initial =</span> <span class="dv">20</span>, <span class="at">assess =</span> <span class="dv">20</span>, <span class="at">skip =</span> <span class="dv">40</span>, <span class="at">cumulative =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-4" class="hljs-ln-code"><a href="#cb12-4"></a><span class="fu">rolling_origin</span>(datos, <span class="at">initial =</span> <span class="dv">50</span>, <span class="at">assess =</span> <span class="dv">50</span>, <span class="at">skip =</span> <span class="dv">70</span>, <span class="at">cumulative =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
 <section id="estratificación" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.2. Estratificación</h2>
+<div>
 <ul>
-<li><p>Como las particiones son aleatorias, puede que uno de los conjuntos contenga más datos de un tipo que de otro.</p></li>
-<li><p>Idealmente querríamos que el conjunto de entrenamiento y el de evaluación contuvieran la misma proporción de las categorías.</p></li>
+<li class="fragment"><p>Como las particiones son aleatorias, puede que uno de los conjuntos contenga más datos de un tipo que de otro.</p></li>
+<li class="fragment"><p>Idealmente querríamos que el conjunto de entrenamiento y el de evaluación contuvieran la misma proporción de las categorías.</p></li>
 </ul>
+</div>
 </section>
 <section id="estratificación-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.2. Estratificación</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a href="#cb15-1"></a><span class="fu">set.seed</span>(<span class="dv">4147</span>)</span>
-<span id="cb15-2" class="hljs-ln-code"><a href="#cb15-2"></a><span class="co"># Splits ----</span></span>
-<span id="cb15-3" class="hljs-ln-code"><a href="#cb15-3"></a></span>
-<span id="cb15-4" class="hljs-ln-code"><a href="#cb15-4"></a><span class="do">## Sin estratificar </span></span>
-<span id="cb15-5" class="hljs-ln-code"><a href="#cb15-5"></a>Split_datos_no_strat <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(datos, <span class="at">prop =</span> <span class="fl">0.70</span> )</span>
-<span id="cb15-6" class="hljs-ln-code"><a href="#cb15-6"></a><span class="co"># Put 3/4 of the data into the training set </span></span>
-<span id="cb15-7" class="hljs-ln-code"><a href="#cb15-7"></a><span class="co"># 🔴 Initial_split con datos estratificados 🔴</span></span>
-<span id="cb15-8" class="hljs-ln-code"><a href="#cb15-8"></a><span class="do">## Estratificados </span></span>
-<span id="cb15-9" class="hljs-ln-code"><a href="#cb15-9"></a>Split_datos_strat <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(datos, <span class="at">prop =</span> <span class="fl">0.70</span>, <span class="at">strata =</span> Var_respuesta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb13-1" class="hljs-ln-code"><a href="#cb13-1"></a><span class="fu">set.seed</span>(<span class="dv">4147</span>)</span>
+<span id="cb13-2" class="hljs-ln-code"><a href="#cb13-2"></a><span class="co"># Splits ----</span></span>
+<span id="cb13-3" class="hljs-ln-code"><a href="#cb13-3"></a></span>
+<span id="cb13-4" class="hljs-ln-code"><a href="#cb13-4"></a><span class="do">## Sin estratificar </span></span>
+<span id="cb13-5" class="hljs-ln-code"><a href="#cb13-5"></a>Split_datos_no_strat <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(datos, <span class="at">prop =</span> <span class="fl">0.70</span> )</span>
+<span id="cb13-6" class="hljs-ln-code"><a href="#cb13-6"></a><span class="co"># Put 3/4 of the data into the training set </span></span>
+<span id="cb13-7" class="hljs-ln-code"><a href="#cb13-7"></a><span class="co"># 🔴 Initial_split con datos estratificados 🔴</span></span>
+<span id="cb13-8" class="hljs-ln-code"><a href="#cb13-8"></a><span class="do">## Estratificados </span></span>
+<span id="cb13-9" class="hljs-ln-code"><a href="#cb13-9"></a>Split_datos_strat <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(datos, <span class="at">prop =</span> <span class="fl">0.70</span>, <span class="at">strata =</span> Var_respuesta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="estratificación-2" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.2. Estratificación</h2>
 
-<img data-src="Presentacion_Tidymodels_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
 <section id="deshacer-la-partición" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.3. Deshacer la partición</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a href="#cb16-1"></a><span class="co"># 🔴 Deshacemos las particiones con las funciones training y testing 🔴</span></span>
-<span id="cb16-2" class="hljs-ln-code"><a href="#cb16-2"></a></span>
-<span id="cb16-3" class="hljs-ln-code"><a href="#cb16-3"></a>Training_datos <span class="ot">&lt;-</span> <span class="fu">training</span>(Split_datos_strat)</span>
-<span id="cb16-4" class="hljs-ln-code"><a href="#cb16-4"></a>Testing_datos  <span class="ot">&lt;-</span> <span class="fu">testing</span>(Split_datos_strat)</span>
-<span id="cb16-5" class="hljs-ln-code"><a href="#cb16-5"></a></span>
-<span id="cb16-6" class="hljs-ln-code"><a href="#cb16-6"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(Training_datos,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb14-1" class="hljs-ln-code"><a href="#cb14-1"></a><span class="co"># 🔴 Deshacemos las particiones con las funciones training y testing 🔴</span></span>
+<span id="cb14-2" class="hljs-ln-code"><a href="#cb14-2"></a></span>
+<span id="cb14-3" class="hljs-ln-code"><a href="#cb14-3"></a>Training_datos <span class="ot">&lt;-</span> <span class="fu">training</span>(Split_datos_strat)</span>
+<span id="cb14-4" class="hljs-ln-code"><a href="#cb14-4"></a>Testing_datos  <span class="ot">&lt;-</span> <span class="fu">testing</span>(Split_datos_strat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table>
 <colgroup>
@@ -1829,7 +1670,7 @@
 <td style="text-align: right;">30.14</td>
 <td style="text-align: right;">34.27</td>
 <td style="text-align: right;">133.149284</td>
-<td style="text-align: right;">18.116769</td>
+<td style="text-align: right;">18.11677</td>
 <td style="text-align: right;">31.680105</td>
 <td style="text-align: right;">1.6247538</td>
 <td style="text-align: right;">NA</td>
@@ -1859,7 +1700,7 @@
 <td style="text-align: right;">35.75</td>
 <td style="text-align: right;">34.03</td>
 <td style="text-align: right;">68.943373</td>
-<td style="text-align: right;">12.183308</td>
+<td style="text-align: right;">12.18331</td>
 <td style="text-align: right;">15.670177</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">1.797438</td>
@@ -1889,7 +1730,7 @@
 <td style="text-align: right;">32.57</td>
 <td style="text-align: right;">26.89</td>
 <td style="text-align: right;">2.898493</td>
-<td style="text-align: right;">11.236520</td>
+<td style="text-align: right;">11.23652</td>
 <td style="text-align: right;">6.628174</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
@@ -1919,7 +1760,7 @@
 <td style="text-align: right;">34.73</td>
 <td style="text-align: right;">29.83</td>
 <td style="text-align: right;">99.600374</td>
-<td style="text-align: right;">25.026820</td>
+<td style="text-align: right;">25.02682</td>
 <td style="text-align: right;">12.949102</td>
 <td style="text-align: right;">0.1247104</td>
 <td style="text-align: right;">NA</td>
@@ -1949,7 +1790,7 @@
 <td style="text-align: right;">30.74</td>
 <td style="text-align: right;">34.95</td>
 <td style="text-align: right;">0.000000</td>
-<td style="text-align: right;">16.798451</td>
+<td style="text-align: right;">16.79845</td>
 <td style="text-align: right;">7.607729</td>
 <td style="text-align: right;">0.8493442</td>
 <td style="text-align: right;">NA</td>
@@ -1959,156 +1800,6 @@
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">30</td>
-<td style="text-align: right;">105.60</td>
-<td style="text-align: right;">104.09</td>
-<td style="text-align: right;">86.45</td>
-<td style="text-align: right;">149.99</td>
-<td style="text-align: right;">105.02</td>
-<td style="text-align: right;">93.65</td>
-<td style="text-align: right;">7.20</td>
-<td style="text-align: right;">4.51</td>
-<td style="text-align: right;">15.65</td>
-<td style="text-align: right;">145.00</td>
-<td style="text-align: right;">90.13</td>
-<td style="text-align: right;">3.57</td>
-<td style="text-align: right;">90.67</td>
-<td style="text-align: right;">1.05</td>
-<td style="text-align: right;">28.98</td>
-<td style="text-align: right;">31.50</td>
-<td style="text-align: right;">51.087736</td>
-<td style="text-align: right;">6.731747</td>
-<td style="text-align: right;">10.894387</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.349131</td>
-<td style="text-align: right;">0.3128530</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.9916249</td>
-<td style="text-align: right;">1.2268437</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">91.73</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">30.29</td>
-<td style="text-align: right;">3.15</td>
-<td style="text-align: right;">13.94</td>
-<td style="text-align: right;">134.92</td>
-<td style="text-align: right;">103.40</td>
-<td style="text-align: right;">3.97</td>
-<td style="text-align: right;">96.92</td>
-<td style="text-align: right;">1.27</td>
-<td style="text-align: right;">21.42</td>
-<td style="text-align: right;">29.26</td>
-<td style="text-align: right;">160.752695</td>
-<td style="text-align: right;">17.851526</td>
-<td style="text-align: right;">18.519326</td>
-<td style="text-align: right;">0.8739840</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.5427362</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.2463796</td>
-<td style="text-align: right;">0.8887141</td>
-<td style="text-align: right;">0.7917460</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">91.97</td>
-<td style="text-align: right;">95.35</td>
-<td style="text-align: right;">80.65</td>
-<td style="text-align: right;">172.32</td>
-<td style="text-align: right;">122.78</td>
-<td style="text-align: right;">68.50</td>
-<td style="text-align: right;">40.55</td>
-<td style="text-align: right;">2.77</td>
-<td style="text-align: right;">12.49</td>
-<td style="text-align: right;">145.84</td>
-<td style="text-align: right;">74.00</td>
-<td style="text-align: right;">4.01</td>
-<td style="text-align: right;">86.12</td>
-<td style="text-align: right;">1.16</td>
-<td style="text-align: right;">27.01</td>
-<td style="text-align: right;">33.90</td>
-<td style="text-align: right;">15.319511</td>
-<td style="text-align: right;">14.058768</td>
-<td style="text-align: right;">17.484487</td>
-<td style="text-align: right;">0.2352628</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.3039570</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.9261596</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: right;">69.65</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">55.17</td>
-<td style="text-align: right;">4.87</td>
-<td style="text-align: right;">11.98</td>
-<td style="text-align: right;">165.35</td>
-<td style="text-align: right;">91.39</td>
-<td style="text-align: right;">5.73</td>
-<td style="text-align: right;">52.67</td>
-<td style="text-align: right;">1.21</td>
-<td style="text-align: right;">29.25</td>
-<td style="text-align: right;">32.46</td>
-<td style="text-align: right;">76.930164</td>
-<td style="text-align: right;">22.999587</td>
-<td style="text-align: right;">14.681546</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">34</td>
-<td style="text-align: right;">111.50</td>
-<td style="text-align: right;">58.99</td>
-<td style="text-align: right;">101.17</td>
-<td style="text-align: right;">181.40</td>
-<td style="text-align: right;">119.87</td>
-<td style="text-align: right;">106.90</td>
-<td style="text-align: right;">9.96</td>
-<td style="text-align: right;">3.19</td>
-<td style="text-align: right;">14.47</td>
-<td style="text-align: right;">159.95</td>
-<td style="text-align: right;">102.97</td>
-<td style="text-align: right;">3.98</td>
-<td style="text-align: right;">85.87</td>
-<td style="text-align: right;">0.91</td>
-<td style="text-align: right;">30.43</td>
-<td style="text-align: right;">29.18</td>
-<td style="text-align: right;">7.373436</td>
-<td style="text-align: right;">8.195322</td>
-<td style="text-align: right;">6.718927</td>
-<td style="text-align: right;">1.2862183</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.2123626</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -2117,12 +1808,12 @@
 <section id="deshacer-la-partición-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.3. Deshacer la partición</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb17-1" class="hljs-ln-code"><a href="#cb17-1"></a><span class="co"># 🔴 Deshacemos las particiones con las funciones training y testing 🔴</span></span>
-<span id="cb17-2" class="hljs-ln-code"><a href="#cb17-2"></a></span>
-<span id="cb17-3" class="hljs-ln-code"><a href="#cb17-3"></a>Training_datos <span class="ot">&lt;-</span> <span class="fu">training</span>(Split_datos_strat)</span>
-<span id="cb17-4" class="hljs-ln-code"><a href="#cb17-4"></a>Testing_datos  <span class="ot">&lt;-</span> <span class="fu">testing</span>(Split_datos_strat)</span>
-<span id="cb17-5" class="hljs-ln-code"><a href="#cb17-5"></a></span>
-<span id="cb17-6" class="hljs-ln-code"><a href="#cb17-6"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(Testing_datos,<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb15-1" class="hljs-ln-code"><a href="#cb15-1"></a><span class="co"># 🔴 Deshacemos las particiones con las funciones training y testing 🔴</span></span>
+<span id="cb15-2" class="hljs-ln-code"><a href="#cb15-2"></a></span>
+<span id="cb15-3" class="hljs-ln-code"><a href="#cb15-3"></a>Training_datos <span class="ot">&lt;-</span> <span class="fu">training</span>(Split_datos_strat)</span>
+<span id="cb15-4" class="hljs-ln-code"><a href="#cb15-4"></a>Testing_datos  <span class="ot">&lt;-</span> <span class="fu">testing</span>(Split_datos_strat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
 <div class="cell-output-display">
 <table>
 <colgroup>
@@ -2333,160 +2024,10 @@
 <td style="text-align: right;">1.5581016</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.159770</td>
+<td style="text-align: right;">1.15977</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">0.6242926</td>
 <td style="text-align: right;">0.0579575</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">74.80</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">93.32</td>
-<td style="text-align: right;">4.77</td>
-<td style="text-align: right;">8.88</td>
-<td style="text-align: right;">164.33</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">4.33</td>
-<td style="text-align: right;">84.49</td>
-<td style="text-align: right;">1.07</td>
-<td style="text-align: right;">23.16</td>
-<td style="text-align: right;">27.76</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">18.749210</td>
-<td style="text-align: right;">9.068513</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">1</td>
-<td style="text-align: right;">17</td>
-<td style="text-align: right;">84.13</td>
-<td style="text-align: right;">100.23</td>
-<td style="text-align: right;">69.62</td>
-<td style="text-align: right;">137.84</td>
-<td style="text-align: right;">91.24</td>
-<td style="text-align: right;">78.76</td>
-<td style="text-align: right;">28.80</td>
-<td style="text-align: right;">4.22</td>
-<td style="text-align: right;">14.38</td>
-<td style="text-align: right;">151.67</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">5.23</td>
-<td style="text-align: right;">91.19</td>
-<td style="text-align: right;">1.75</td>
-<td style="text-align: right;">18.24</td>
-<td style="text-align: right;">37.76</td>
-<td style="text-align: right;">113.35402</td>
-<td style="text-align: right;">20.327740</td>
-<td style="text-align: right;">21.101902</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.180101</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">1.0568568</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: right;">128.68</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">99.23</td>
-<td style="text-align: right;">173.48</td>
-<td style="text-align: right;">144.55</td>
-<td style="text-align: right;">101.62</td>
-<td style="text-align: right;">21.34</td>
-<td style="text-align: right;">5.61</td>
-<td style="text-align: right;">14.16</td>
-<td style="text-align: right;">147.96</td>
-<td style="text-align: right;">104.95</td>
-<td style="text-align: right;">4.06</td>
-<td style="text-align: right;">91.39</td>
-<td style="text-align: right;">1.23</td>
-<td style="text-align: right;">31.89</td>
-<td style="text-align: right;">32.58</td>
-<td style="text-align: right;">118.10758</td>
-<td style="text-align: right;">17.200513</td>
-<td style="text-align: right;">14.212995</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.972422</td>
-<td style="text-align: right;">1.642294</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">0.5527762</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">110.69</td>
-<td style="text-align: right;">88.69</td>
-<td style="text-align: right;">72.28</td>
-<td style="text-align: right;">143.15</td>
-<td style="text-align: right;">193.88</td>
-<td style="text-align: right;">86.83</td>
-<td style="text-align: right;">25.79</td>
-<td style="text-align: right;">4.50</td>
-<td style="text-align: right;">13.12</td>
-<td style="text-align: right;">134.66</td>
-<td style="text-align: right;">68.58</td>
-<td style="text-align: right;">3.56</td>
-<td style="text-align: right;">81.48</td>
-<td style="text-align: right;">1.11</td>
-<td style="text-align: right;">28.27</td>
-<td style="text-align: right;">31.64</td>
-<td style="text-align: right;">225.00452</td>
-<td style="text-align: right;">17.789336</td>
-<td style="text-align: right;">20.238253</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">0</td>
-<td style="text-align: right;">16</td>
-<td style="text-align: right;">83.73</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">23.32</td>
-<td style="text-align: right;">4.16</td>
-<td style="text-align: right;">12.12</td>
-<td style="text-align: right;">137.10</td>
-<td style="text-align: right;">83.00</td>
-<td style="text-align: right;">5.53</td>
-<td style="text-align: right;">71.56</td>
-<td style="text-align: right;">0.99</td>
-<td style="text-align: right;">32.46</td>
-<td style="text-align: right;">35.09</td>
-<td style="text-align: right;">133.40626</td>
-<td style="text-align: right;">20.677244</td>
-<td style="text-align: right;">15.434748</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
 </tr>
 </tbody>
 </table>
@@ -2496,48 +2037,61 @@
 <section id="folds-creando-conjuntos-de-validación" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">5.4. Folds, creando conjuntos de validación</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a><span class="co"># 🔴 Creamos Folds 🔴</span></span>
-<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a></span>
-<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>Folds_training <span class="ot">&lt;-</span> <span class="fu">vfold_cv</span>(Training_datos, <span class="at">v =</span> <span class="dv">5</span> ,<span class="at">strata =</span> Var_respuesta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb16-1" class="hljs-ln-code"><a href="#cb16-1"></a><span class="co"># 🔴 Creamos Folds 🔴</span></span>
+<span id="cb16-2" class="hljs-ln-code"><a href="#cb16-2"></a></span>
+<span id="cb16-3" class="hljs-ln-code"><a href="#cb16-3"></a>Folds_training <span class="ot">&lt;-</span> <span class="fu">vfold_cv</span>(Training_datos, <span class="at">v =</span> <span class="dv">5</span> ,<span class="at">strata =</span> Var_respuesta)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>#  5-fold cross-validation using stratification 
+# A tibble: 5 × 2
+  splits           id   
+  &lt;list&gt;           &lt;chr&gt;
+1 &lt;split [158/40]&gt; Fold1
+2 &lt;split [158/40]&gt; Fold2
+3 &lt;split [158/40]&gt; Fold3
+4 &lt;split [159/39]&gt; Fold4
+5 &lt;split [159/39]&gt; Fold5</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="pre-procesamiento-de-datos-con-parsnip" class="title-slide slide level1 center">
+<h1>6. Pre-procesamiento de datos con Parsnip</h1>
+
 </section>
-<section id="pre-procesamiento-de-datos-con-parsnip" class="slide level2 titulo-seccion">
-<h2>6. Pre-procesamiento de datos con Parsnip</h2>
-</section>
-<section id="qué-es-el-pre-procesamiento-de-datos" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">6.1. ¿Qué es el pre-procesamiento de datos?</h2>
+<section id="pre-procesamiento-de-datos" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">6.1. Pre-procesamiento de datos</h2>
 <div>
-<ul>
-<li class="fragment"><p>El pre-procesamiento es clave en el proceso de creación de modelos de machine learning.</p></li>
-<li class="fragment"><p>Cuando queremos hacer un data frame para modelizar en aprendizaje automático hay que tener en cuenta:</p></li>
-</ul>
 <ol type="1">
-<li class="fragment">Hay modelos que no aceptan valores perdidos.</li>
-<li class="fragment">Dependiendo de cómo queramos escalar el modelo los datos deberán estar normalizados o no.</li>
-<li class="fragment">Re-equilibrar grupos disparejos aumenta la eficiencia de preddición, aunque no siempre.</li>
-<li class="fragment">Reconvertir/transformar variables para maximizar el rendimiento del modelo.</li>
+<li class="fragment">Imputación</li>
+<li class="fragment">Normalización</li>
+<li class="fragment">Re-equilibración de grupos</li>
+<li class="fragment">Conversión</li>
 </ol>
 </div>
 </section>
-<section id="qué-es-el-pre-procesamiento-de-datos-1" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">6.1. ¿Qué es el pre-procesamiento de datos?</h2>
-<p>¿Cómo hacemos cuando queramos poner un modelo a grane scala y entren datos a cada momento? ¿Debemos ejecutar el pre-procesamiento una y otra vez?</p>
+<section id="pre-procesamiento-de-datos-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">6.1. Pre-procesamiento de datos</h2>
+<p style="margin-top:200px">
+¿Debemos ejecutar el pre-procesamiento una y otra vez?
+</p>
 </section>
-<section id="qué-es-el-pre-procesamiento-de-datos-2" class="slide level2" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">6.1. ¿Qué es el pre-procesamiento de datos?</h2>
+<section id="pre-procesamiento-de-datos-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">6.1. Pre-procesamiento de datos</h2>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 53.5%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/meme_kuzco.jpeg"></p>
+<p><img data-src="Imagenes/meme_kuzco.jpeg" width="400"></p>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 46.5%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Imagenes/logo_recipes.png"></p>
+<p><img data-src="Imagenes/logo_recipes.png" width="347"></p>
 </figure>
 </div>
 </div>
@@ -2547,7 +2101,8 @@
 <section id="cómo-cocinamos-una-receta" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.2. ¿Cómo cocinamos una receta?</h2>
 <div>
-<p>Para poder elaborar un flujo completo de pre-procesamiento debemos seguir los siguientes pasos:</p>
+Para poder elaborar un flujo completo de pre-procesamiento debemos seguir los siguientes pasos:
+<div style="font-size:32px">
 <ul>
 <li class="fragment"><strong>Recipe</strong>: la base. Requiere de qué fórmula queremos para el modelo y de qué conjunto de datos partimos. Los datos aquí incorporados serán los datos de entrenamiento.</li>
 <li class="fragment"><strong>Step</strong>: el proceso que queramos aplicar a nuestros datos, cualquier transofrmación de datos va aquí.</li>
@@ -2555,9 +2110,25 @@
 <li class="fragment"><strong>Bake</strong>: pone el pre-procesamiento en producción para un conjunto de datos cualquiera.</li>
 </ul>
 </div>
+</div>
 </section>
 <section id="hagamos-un-ejemplo" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.2.1. Hagamos un ejemplo</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb18-1" class="hljs-ln-code"><a href="#cb18-1"></a>Ejemplo_receta <span class="ot">&lt;-</span> Training_datos <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2" class="hljs-ln-code"><a href="#cb18-2"></a>  <span class="co"># 🔴 1. Recipe (crea la fórmula generalizada del modelo) </span></span>
+<span id="cb18-3" class="hljs-ln-code"><a href="#cb18-3"></a>  <span class="fu">recipe</span>(  </span>
+<span id="cb18-4" class="hljs-ln-code"><a href="#cb18-4"></a>    <span class="fu">as.formula</span>(<span class="st">"Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"</span>),</span>
+<span id="cb18-5" class="hljs-ln-code"><a href="#cb18-5"></a>    <span class="at">data =</span> . , </span>
+<span id="cb18-6" class="hljs-ln-code"><a href="#cb18-6"></a>    <span class="at">strata =</span> Var_respuesta )  <span class="sc">%&gt;%</span> </span>
+<span id="cb18-7" class="hljs-ln-code"><a href="#cb18-7"></a>  <span class="co"># 🔴 2. step</span></span>
+<span id="cb18-8" class="hljs-ln-code"><a href="#cb18-8"></a>  <span class="co"># 🟡 En este caso no aplicamos ninguna transformación </span></span>
+<span id="cb18-9" class="hljs-ln-code"><a href="#cb18-9"></a>  <span class="co"># Step_log</span></span>
+<span id="cb18-10" class="hljs-ln-code"><a href="#cb18-10"></a>  <span class="co"># 🔴 3. Prep (asienta la receta y generalízala) </span></span>
+<span id="cb18-11" class="hljs-ln-code"><a href="#cb18-11"></a>  <span class="fu">prep</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-12" class="hljs-ln-code"><a href="#cb18-12"></a>  <span class="co"># 🔴 4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)</span></span>
+<span id="cb18-13" class="hljs-ln-code"><a href="#cb18-13"></a>  <span class="fu">bake</span>(., <span class="at">new_data=</span><span class="cn">NULL</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table>
@@ -2575,70 +2146,35 @@
 <td style="text-align: right;">66.78</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">133.149284</td>
-<td style="text-align: right;">18.116769</td>
+<td style="text-align: right;">18.11677</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">108.18</td>
 <td style="text-align: right;">84.49</td>
 <td style="text-align: right;">68.943373</td>
-<td style="text-align: right;">12.183308</td>
+<td style="text-align: right;">12.18331</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">2.898493</td>
-<td style="text-align: right;">11.236520</td>
+<td style="text-align: right;">11.23652</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">52.88</td>
 <td style="text-align: right;">NA</td>
 <td style="text-align: right;">99.600374</td>
-<td style="text-align: right;">25.026820</td>
+<td style="text-align: right;">25.02682</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">109.25</td>
 <td style="text-align: right;">88.04</td>
 <td style="text-align: right;">0.000000</td>
-<td style="text-align: right;">16.798451</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">105.60</td>
-<td style="text-align: right;">104.09</td>
-<td style="text-align: right;">51.087736</td>
-<td style="text-align: right;">6.731747</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">91.73</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">160.752695</td>
-<td style="text-align: right;">17.851526</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">91.97</td>
-<td style="text-align: right;">95.35</td>
-<td style="text-align: right;">15.319511</td>
-<td style="text-align: right;">14.058768</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">69.65</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">76.930164</td>
-<td style="text-align: right;">22.999587</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">111.50</td>
-<td style="text-align: right;">58.99</td>
-<td style="text-align: right;">7.373436</td>
-<td style="text-align: right;">8.195322</td>
+<td style="text-align: right;">16.79845</td>
 <td style="text-align: left;">0</td>
 </tr>
 </tbody>
@@ -2648,6 +2184,21 @@
 </section>
 <section id="imputación-múltiple" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.2.2. Imputación múltiple</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a>Imputacion_multiple <span class="ot">&lt;-</span> Training_datos <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a>  <span class="co"># 🔴 1. Recipe (crea la fórmula generalizada del modelo) </span></span>
+<span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>  <span class="fu">recipe</span>(  </span>
+<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>    <span class="fu">as.formula</span>(<span class="st">"Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"</span>),</span>
+<span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>    <span class="at">data =</span> . , </span>
+<span id="cb19-6" class="hljs-ln-code"><a href="#cb19-6"></a>    <span class="at">strata =</span> Var_respuesta )  <span class="sc">%&gt;%</span> </span>
+<span id="cb19-7" class="hljs-ln-code"><a href="#cb19-7"></a>  <span class="co"># 🔴 2. Step (haz la transformación que requieras) </span></span>
+<span id="cb19-8" class="hljs-ln-code"><a href="#cb19-8"></a>  <span class="co"># 🟡 Este step será la imputación por regresiópn lineal con otras covariables</span></span>
+<span id="cb19-9" class="hljs-ln-code"><a href="#cb19-9"></a>  <span class="fu">step_impute_linear</span>( Cognicion_02, <span class="at">impute_with =</span> <span class="fu">imp_vars</span>(Cognicion_01, Escala_02) ) <span class="sc">%&gt;%</span></span>
+<span id="cb19-10" class="hljs-ln-code"><a href="#cb19-10"></a>  <span class="co"># 🔴 3. Prep (asienta la receta y generalízala) </span></span>
+<span id="cb19-11" class="hljs-ln-code"><a href="#cb19-11"></a>  <span class="fu">prep</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb19-12" class="hljs-ln-code"><a href="#cb19-12"></a>  <span class="co"># 🔴 4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)</span></span>
+<span id="cb19-13" class="hljs-ln-code"><a href="#cb19-13"></a>  <span class="fu">bake</span>(., <span class="at">new_data=</span><span class="cn">NULL</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table>
@@ -2665,70 +2216,35 @@
 <td style="text-align: right;">66.78</td>
 <td style="text-align: right;">95.30378</td>
 <td style="text-align: right;">133.149284</td>
-<td style="text-align: right;">18.116769</td>
+<td style="text-align: right;">18.11677</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">108.18</td>
 <td style="text-align: right;">84.49000</td>
 <td style="text-align: right;">68.943373</td>
-<td style="text-align: right;">12.183308</td>
+<td style="text-align: right;">12.18331</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">0.00</td>
 <td style="text-align: right;">105.71896</td>
 <td style="text-align: right;">2.898493</td>
-<td style="text-align: right;">11.236520</td>
+<td style="text-align: right;">11.23652</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="even">
 <td style="text-align: right;">52.88</td>
 <td style="text-align: right;">97.79188</td>
 <td style="text-align: right;">99.600374</td>
-<td style="text-align: right;">25.026820</td>
+<td style="text-align: right;">25.02682</td>
 <td style="text-align: left;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: right;">109.25</td>
 <td style="text-align: right;">88.04000</td>
 <td style="text-align: right;">0.000000</td>
-<td style="text-align: right;">16.798451</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">105.60</td>
-<td style="text-align: right;">104.09000</td>
-<td style="text-align: right;">51.087736</td>
-<td style="text-align: right;">6.731747</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">91.73</td>
-<td style="text-align: right;">91.30365</td>
-<td style="text-align: right;">160.752695</td>
-<td style="text-align: right;">17.851526</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">91.97</td>
-<td style="text-align: right;">95.35000</td>
-<td style="text-align: right;">15.319511</td>
-<td style="text-align: right;">14.058768</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">69.65</td>
-<td style="text-align: right;">95.03224</td>
-<td style="text-align: right;">76.930164</td>
-<td style="text-align: right;">22.999587</td>
-<td style="text-align: left;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">111.50</td>
-<td style="text-align: right;">58.99000</td>
-<td style="text-align: right;">7.373436</td>
-<td style="text-align: right;">8.195322</td>
+<td style="text-align: right;">16.79845</td>
 <td style="text-align: left;">0</td>
 </tr>
 </tbody>
@@ -2738,6 +2254,22 @@
 </section>
 <section id="pca" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.2.3. PCA</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a>PCA <span class="ot">&lt;-</span> Training_datos <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a>  <span class="co"># 🔴 1. Recipe (crea la fórmula generalizada del modelo) </span></span>
+<span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a>  <span class="fu">recipe</span>(  </span>
+<span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a>    <span class="fu">as.formula</span>(<span class="st">"Var_respuesta ~ Cognicion_01 + Cognicion_02 + Cognicion_03 + Escala_01 + Escala_02  + Escala_03"</span>),</span>
+<span id="cb20-5" class="hljs-ln-code"><a href="#cb20-5"></a>    <span class="at">data =</span> . , </span>
+<span id="cb20-6" class="hljs-ln-code"><a href="#cb20-6"></a>    <span class="at">strata =</span> Var_respuesta )  <span class="sc">%&gt;%</span> </span>
+<span id="cb20-7" class="hljs-ln-code"><a href="#cb20-7"></a>  <span class="co"># 🔴 2. Step (haz la transformación que requieras) </span></span>
+<span id="cb20-8" class="hljs-ln-code"><a href="#cb20-8"></a>  <span class="co"># 🟡 Este step será la imputación por regresión lineal con otras covariables</span></span>
+<span id="cb20-9" class="hljs-ln-code"><a href="#cb20-9"></a>  <span class="fu">step_impute_bag</span>(<span class="fu">all_numeric</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-10" class="hljs-ln-code"><a href="#cb20-10"></a>  <span class="fu">step_pca</span>( Cognicion_01 , Cognicion_02 , Cognicion_03, <span class="at">num_comp =</span> <span class="dv">2</span>,  <span class="at">id =</span> <span class="st">"pca"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-11" class="hljs-ln-code"><a href="#cb20-11"></a>  <span class="co"># 🔴 3. Prep (asienta la receta y generalízala) </span></span>
+<span id="cb20-12" class="hljs-ln-code"><a href="#cb20-12"></a>  <span class="fu">prep</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb20-13" class="hljs-ln-code"><a href="#cb20-13"></a>  <span class="co"># 🔴 4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)</span></span>
+<span id="cb20-14" class="hljs-ln-code"><a href="#cb20-14"></a>  <span class="fu">tidy</span>(<span class="at">id =</span> <span class="st">"pca"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <div class="cell">
 <div class="cell-output-display">
 <table>
@@ -2780,30 +2312,6 @@
 <td style="text-align: left;">PC2</td>
 <td style="text-align: left;">pca</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Cognicion_03</td>
-<td style="text-align: right;">-0.0547522</td>
-<td style="text-align: left;">PC2</td>
-<td style="text-align: left;">pca</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Cognicion_01</td>
-<td style="text-align: right;">0.3135956</td>
-<td style="text-align: left;">PC3</td>
-<td style="text-align: left;">pca</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Cognicion_02</td>
-<td style="text-align: right;">0.4145176</td>
-<td style="text-align: left;">PC3</td>
-<td style="text-align: left;">pca</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Cognicion_03</td>
-<td style="text-align: right;">-0.8543026</td>
-<td style="text-align: left;">PC3</td>
-<td style="text-align: left;">pca</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -2811,49 +2319,66 @@
 </section>
 <section id="remuestrear" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.2.4. Remuestrear</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a href="#cb21-1"></a><span class="co"># 🔴 Librería que permite instalar algoritmos y hacer sobremuestreo en Tidymodels.</span></span>
+<span id="cb21-2" class="hljs-ln-code"><a href="#cb21-2"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(themis)</span>
+<span id="cb21-3" class="hljs-ln-code"><a href="#cb21-3"></a></span>
+<span id="cb21-4" class="hljs-ln-code"><a href="#cb21-4"></a>Training_datos_adasyn <span class="ot">&lt;-</span> Training_datos <span class="sc">%&gt;%</span> </span>
+<span id="cb21-5" class="hljs-ln-code"><a href="#cb21-5"></a>  <span class="co"># 1. Recipe (crea la fórmula generalizada del modelo) </span></span>
+<span id="cb21-6" class="hljs-ln-code"><a href="#cb21-6"></a>  <span class="fu">recipe</span>(  </span>
+<span id="cb21-7" class="hljs-ln-code"><a href="#cb21-7"></a>    <span class="fu">as.formula</span>(<span class="st">"Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"</span>),</span>
+<span id="cb21-8" class="hljs-ln-code"><a href="#cb21-8"></a>    <span class="at">data =</span> . , </span>
+<span id="cb21-9" class="hljs-ln-code"><a href="#cb21-9"></a>    <span class="at">strata =</span> Var_respuesta )  <span class="sc">%&gt;%</span> </span>
+<span id="cb21-10" class="hljs-ln-code"><a href="#cb21-10"></a>  <span class="co">#  2. Step (haz la transoformación que requieras) </span></span>
+<span id="cb21-11" class="hljs-ln-code"><a href="#cb21-11"></a>  <span class="co">#  step de  imputación por árboles manteniendo la estructura de todas las covariables</span></span>
+<span id="cb21-12" class="hljs-ln-code"><a href="#cb21-12"></a>  <span class="fu">step_impute_bag</span>(<span class="fu">all_numeric</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-13" class="hljs-ln-code"><a href="#cb21-13"></a>  <span class="co"># 🔴 step para sobremuestrear el nivel menor en la variable respuesta.</span></span>
+<span id="cb21-14" class="hljs-ln-code"><a href="#cb21-14"></a>  <span class="fu">step_adasyn</span>(Var_respuesta, <span class="at">over_ratio =</span> <span class="dv">1</span>, <span class="at">neighbors =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-15" class="hljs-ln-code"><a href="#cb21-15"></a>  <span class="co">#  3. Prep (asienta la receta y generalízala) </span></span>
+<span id="cb21-16" class="hljs-ln-code"><a href="#cb21-16"></a>  <span class="fu">prep</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-17" class="hljs-ln-code"><a href="#cb21-17"></a>  <span class="co">#  4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)</span></span>
+<span id="cb21-18" class="hljs-ln-code"><a href="#cb21-18"></a>  <span class="fu">bake</span>(., <span class="at">new_data=</span><span class="cn">NULL</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="remuestrear-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.2.4. Remuestrear</h2>
 
-<img data-src="Presentacion_Tidymodels_files/figure-revealjs/unnamed-chunk-14-1.png" width="960" class="r-stretch"></section>
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/unnamed-chunk-22-1.png" width="960" class="r-stretch"></section>
 <section id="caso-práctico-receta" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">6.3. Caso práctico: Receta</h2>
-<p>Por el momento dejaré una receta lista para continuar con el taller.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb19-1" class="hljs-ln-code"><a href="#cb19-1"></a><span class="co"># Creamos la Fórmula para la receta a partir </span></span>
-<span id="cb19-2" class="hljs-ln-code"><a href="#cb19-2"></a><span class="co"># de nombres de las variables y un poco de magia con paste()</span></span>
-<span id="cb19-3" class="hljs-ln-code"><a href="#cb19-3"></a>Receta_modelo_1_formula <span class="ot">&lt;-</span> Training_datos <span class="sc">%&gt;%</span> </span>
-<span id="cb19-4" class="hljs-ln-code"><a href="#cb19-4"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(</span>
-<span id="cb19-5" class="hljs-ln-code"><a href="#cb19-5"></a>   dplyr<span class="sc">::</span><span class="fu">matches</span>(<span class="st">'Cog'</span>), dplyr<span class="sc">::</span><span class="fu">matches</span>(<span class="st">'escala'</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-6" class="hljs-ln-code"><a href="#cb19-6"></a>  <span class="fu">names</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb19-7" class="hljs-ln-code"><a href="#cb19-7"></a>  <span class="fu">paste</span>(., <span class="at">collapse =</span> <span class="st">' + '</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-8" class="hljs-ln-code"><a href="#cb19-8"></a>  <span class="fu">paste</span>(<span class="st">'Var_respuesta ~'</span> ,.) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-9" class="hljs-ln-code"><a href="#cb19-9"></a>  <span class="fu">as.formula</span>() </span>
-<span id="cb19-10" class="hljs-ln-code"><a href="#cb19-10"></a></span>
-<span id="cb19-11" class="hljs-ln-code"><a href="#cb19-11"></a>  <span class="co"># 🔴 1.) Iniciamos la receta</span></span>
-<span id="cb19-12" class="hljs-ln-code"><a href="#cb19-12"></a>Receta_modelo_1 <span class="ot">&lt;-</span> <span class="fu">recipe</span>(  </span>
-<span id="cb19-13" class="hljs-ln-code"><a href="#cb19-13"></a>    <span class="at">formula =</span> Receta_modelo_1_formula,</span>
-<span id="cb19-14" class="hljs-ln-code"><a href="#cb19-14"></a>    <span class="at">data =</span> Training_datos , </span>
-<span id="cb19-15" class="hljs-ln-code"><a href="#cb19-15"></a>    <span class="at">strata =</span> Var_respuesta)  <span class="sc">%&gt;%</span> </span>
-<span id="cb19-16" class="hljs-ln-code"><a href="#cb19-16"></a>  <span class="co"># 🔴 2.) Steps</span></span>
-<span id="cb19-17" class="hljs-ln-code"><a href="#cb19-17"></a>    <span class="co">#  🟡 2.1) Eliminamos las variables que contengan más de un 20% de datos perdidos </span></span>
-<span id="cb19-18" class="hljs-ln-code"><a href="#cb19-18"></a>  <span class="fu">step_filter_missing</span>(<span class="fu">all_predictors</span>(),  <span class="at">threshold =</span> <span class="fl">0.1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-19" class="hljs-ln-code"><a href="#cb19-19"></a>    <span class="co">#  🟡 2.2) Imputamos las variables numéricas con un algoritmo de bagged trees</span></span>
-<span id="cb19-20" class="hljs-ln-code"><a href="#cb19-20"></a>  <span class="fu">step_impute_bag</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span></span>
-<span id="cb19-21" class="hljs-ln-code"><a href="#cb19-21"></a>    <span class="co"># 2.3) Normalizamos los datos (restamos la media)</span></span>
-<span id="cb19-22" class="hljs-ln-code"><a href="#cb19-22"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>() ) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-23" class="hljs-ln-code"><a href="#cb19-23"></a>    <span class="co"># 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)</span></span>
-<span id="cb19-24" class="hljs-ln-code"><a href="#cb19-24"></a>  <span class="fu">step_scale</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-25" class="hljs-ln-code"><a href="#cb19-25"></a>    <span class="co"># 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)</span></span>
-<span id="cb19-26" class="hljs-ln-code"><a href="#cb19-26"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal</span>(), <span class="sc">-</span><span class="fu">all_outcomes</span>(), <span class="at">one_hot =</span> T) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-27" class="hljs-ln-code"><a href="#cb19-27"></a>    <span class="co"># 2.6) Sobre muestreamos la variable para equilibrar grupos</span></span>
-<span id="cb19-28" class="hljs-ln-code"><a href="#cb19-28"></a>  <span class="fu">step_adasyn</span>(Var_respuesta, <span class="at">over_ratio =</span> <span class="dv">1</span>, <span class="at">neighbors =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-29" class="hljs-ln-code"><a href="#cb19-29"></a>  <span class="co"># 3.) Preparamos la receta</span></span>
-<span id="cb19-30" class="hljs-ln-code"><a href="#cb19-30"></a>  <span class="fu">prep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div style="margin-top:200px">
+<p><span class="math display">\[ \textbf{VarRespuesta} \sim Cognicion01 + Cognicion02 +\\
+    Cognicion03 + Cognicion04 + Cognicion05 + \\
+    Escala01 + Escala02 + Escala03 \]</span></p>
 </div>
 </section>
-<section id="dónde-está-el-modelo-creando-modelos-con-parsnip" class="slide level2 titulo-seccion">
-<h2>7. ¿Dónde está el modelo? Creando modelos con Parsnip</h2>
+<section id="caso-práctico-receta-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">6.3. Caso práctico: Receta</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb22-1" class="hljs-ln-code"><a href="#cb22-1"></a><span class="co"># 🔴 1.) Iniciamos la receta</span></span>
+<span id="cb22-2" class="hljs-ln-code"><a href="#cb22-2"></a>Receta_modelo_1 <span class="ot">&lt;-</span> <span class="fu">recipe</span>(  </span>
+<span id="cb22-3" class="hljs-ln-code"><a href="#cb22-3"></a>    <span class="at">formula =</span> Receta_modelo_1_formula,</span>
+<span id="cb22-4" class="hljs-ln-code"><a href="#cb22-4"></a>    <span class="at">data =</span> Training_datos , </span>
+<span id="cb22-5" class="hljs-ln-code"><a href="#cb22-5"></a>    <span class="at">strata =</span> Var_respuesta)  <span class="sc">%&gt;%</span> </span>
+<span id="cb22-6" class="hljs-ln-code"><a href="#cb22-6"></a>  <span class="co"># 🔴 2.) Steps</span></span>
+<span id="cb22-7" class="hljs-ln-code"><a href="#cb22-7"></a>    <span class="co">#  🟡 2.1) Eliminamos las variables que contengan más de un 20% de datos perdidos </span></span>
+<span id="cb22-8" class="hljs-ln-code"><a href="#cb22-8"></a>  <span class="fu">step_filter_missing</span>(<span class="fu">all_predictors</span>(),  <span class="at">threshold =</span> <span class="fl">0.1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-9" class="hljs-ln-code"><a href="#cb22-9"></a>    <span class="co">#  🟡 2.2) Imputamos las variables numéricas con un algoritmo de bagged trees</span></span>
+<span id="cb22-10" class="hljs-ln-code"><a href="#cb22-10"></a>  <span class="fu">step_impute_bag</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb22-11" class="hljs-ln-code"><a href="#cb22-11"></a>    <span class="co">#  🟡 2.3) Normalizamos los datos (restamos la media)</span></span>
+<span id="cb22-12" class="hljs-ln-code"><a href="#cb22-12"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>() ) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-13" class="hljs-ln-code"><a href="#cb22-13"></a>    <span class="co">#  🟡 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)</span></span>
+<span id="cb22-14" class="hljs-ln-code"><a href="#cb22-14"></a>  <span class="fu">step_scale</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-15" class="hljs-ln-code"><a href="#cb22-15"></a>    <span class="co">#  🟡 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)</span></span>
+<span id="cb22-16" class="hljs-ln-code"><a href="#cb22-16"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal</span>(), <span class="sc">-</span><span class="fu">all_outcomes</span>(), <span class="at">one_hot =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-17" class="hljs-ln-code"><a href="#cb22-17"></a>    <span class="co">#  🟡 2.6) Sobre muestreamos la variable para equilibrar grupos</span></span>
+<span id="cb22-18" class="hljs-ln-code"><a href="#cb22-18"></a>  <span class="fu">step_adasyn</span>(Var_respuesta, <span class="at">over_ratio =</span> <span class="dv">1</span>, <span class="at">neighbors =</span> <span class="dv">10</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="dónde-está-el-modelo-creando-modelos-con-parsnip" class="title-slide slide level1 center">
+<h1>7. ¿Dónde está el modelo? Creando modelos con Parsnip</h1>
+
 </section>
 <section id="modelos-a-la-carrera-con-parsnip" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">7.1. Modelos a la carrera con Parsnip</h2>
@@ -2861,87 +2386,1019 @@
 <img data-src="Imagenes/parsnip_img.jpeg" class="r-stretch quarto-figure-center"></section>
 <section id="modelos-a-la-carrera-con-parsnip-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">7.1. Modelos a la carrera con Parsnip</h2>
-<p><img data-src="Imagenes/search_parsnip_models.png" data-fig-align="center"> https://www.tidymodels.org/find/parsnip/</p>
+<img data-src="Imagenes/search_parsnip_models.png" data-fig-align="center" width="3500">
+<p style="font-size:20px; text-align: center;">
+<a href="https://www.tidymodels.org/find/parsnip/">Search Parsnip Models</a>
+</p>
 </section>
 <section id="empezamos-a-modelar" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">7.2. Empezamos a modelar</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb20-1" class="hljs-ln-code"><a href="#cb20-1"></a><span class="co"># 🔴 Ver los posibles motores de un tipo de modelo</span></span>
-<span id="cb20-2" class="hljs-ln-code"><a href="#cb20-2"></a><span class="fu">show_engines</span>(<span class="st">'logistic_reg'</span>) </span>
-<span id="cb20-3" class="hljs-ln-code"><a href="#cb20-3"></a></span>
-<span id="cb20-4" class="hljs-ln-code"><a href="#cb20-4"></a></span>
-<span id="cb20-5" class="hljs-ln-code"><a href="#cb20-5"></a><span class="fu">logistic_reg</span>(</span>
-<span id="cb20-6" class="hljs-ln-code"><a href="#cb20-6"></a>  <span class="at">engine =</span> <span class="st">"glmnet"</span>,</span>
-<span id="cb20-7" class="hljs-ln-code"><a href="#cb20-7"></a>  <span class="co">#Hiperparámetros           </span></span>
-<span id="cb20-8" class="hljs-ln-code"><a href="#cb20-8"></a>  <span class="at">penalty =</span> <span class="cn">NULL</span>, <span class="at">mixture =</span> <span class="cn">NULL</span>, <span class="at">mode =</span> <span class="st">'classification'</span>)</span>
-<span id="cb20-9" class="hljs-ln-code"><a href="#cb20-9"></a></span>
-<span id="cb20-10" class="hljs-ln-code"><a href="#cb20-10"></a></span>
-<span id="cb20-11" class="hljs-ln-code"><a href="#cb20-11"></a><span class="fu">logistic_reg</span>(</span>
-<span id="cb20-12" class="hljs-ln-code"><a href="#cb20-12"></a>  <span class="at">engine =</span> <span class="st">"glmnet"</span>,</span>
-<span id="cb20-13" class="hljs-ln-code"><a href="#cb20-13"></a>  <span class="co">#Hiperparámetros           </span></span>
-<span id="cb20-14" class="hljs-ln-code"><a href="#cb20-14"></a>  <span class="at">penalty =</span> <span class="dv">0</span>, <span class="at">mixture =</span> <span class="dv">0</span>, <span class="at">mode =</span> <span class="st">'classification'</span>)</span>
-<span id="cb20-15" class="hljs-ln-code"><a href="#cb20-15"></a></span>
-<span id="cb20-16" class="hljs-ln-code"><a href="#cb20-16"></a></span>
-<span id="cb20-17" class="hljs-ln-code"><a href="#cb20-17"></a><span class="fu">logistic_reg</span>(</span>
-<span id="cb20-18" class="hljs-ln-code"><a href="#cb20-18"></a>  <span class="at">engine =</span> <span class="st">"glmnet"</span>,</span>
-<span id="cb20-19" class="hljs-ln-code"><a href="#cb20-19"></a>  <span class="co">#Hiperparámetros           </span></span>
-<span id="cb20-20" class="hljs-ln-code"><a href="#cb20-20"></a>  <span class="at">penalty =</span> <span class="fu">tune</span>(), <span class="at">mixture =</span> <span class="fu">tune</span>(), <span class="at">mode =</span> <span class="st">'classification'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a><span class="co"># 🔴 Ver los posibles motores de un tipo de modelo</span></span>
+<span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a><span class="fu">show_engines</span>(<span class="st">'logistic_reg'</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="empezamos-a-modelar-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">7.2. Empezamos a modelar</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb24-1" class="hljs-ln-code"><a href="#cb24-1"></a><span class="fu">logistic_reg</span>(</span>
+<span id="cb24-2" class="hljs-ln-code"><a href="#cb24-2"></a>  <span class="at">engine =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb24-3" class="hljs-ln-code"><a href="#cb24-3"></a>  <span class="co">#Hiperparámetros           </span></span>
+<span id="cb24-4" class="hljs-ln-code"><a href="#cb24-4"></a>  <span class="at">penalty =</span> <span class="cn">NULL</span>, <span class="at">mixture =</span> <span class="cn">NULL</span>, <span class="at">mode =</span> <span class="st">'classification'</span>)</span>
+<span id="cb24-5" class="hljs-ln-code"><a href="#cb24-5"></a></span>
+<span id="cb24-6" class="hljs-ln-code"><a href="#cb24-6"></a></span>
+<span id="cb24-7" class="hljs-ln-code"><a href="#cb24-7"></a><span class="fu">logistic_reg</span>(</span>
+<span id="cb24-8" class="hljs-ln-code"><a href="#cb24-8"></a>  <span class="at">engine =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb24-9" class="hljs-ln-code"><a href="#cb24-9"></a>  <span class="co">#Hiperparámetros           </span></span>
+<span id="cb24-10" class="hljs-ln-code"><a href="#cb24-10"></a>  <span class="at">penalty =</span> <span class="dv">0</span>, <span class="at">mixture =</span> <span class="dv">0</span>, <span class="at">mode =</span> <span class="st">'classification'</span>)</span>
+<span id="cb24-11" class="hljs-ln-code"><a href="#cb24-11"></a></span>
+<span id="cb24-12" class="hljs-ln-code"><a href="#cb24-12"></a></span>
+<span id="cb24-13" class="hljs-ln-code"><a href="#cb24-13"></a><span class="fu">logistic_reg</span>(</span>
+<span id="cb24-14" class="hljs-ln-code"><a href="#cb24-14"></a>  <span class="at">engine =</span> <span class="st">"glmnet"</span>,</span>
+<span id="cb24-15" class="hljs-ln-code"><a href="#cb24-15"></a>  <span class="co">#Hiperparámetros           </span></span>
+<span id="cb24-16" class="hljs-ln-code"><a href="#cb24-16"></a>  <span class="at">penalty =</span> <span class="fu">tune</span>(), <span class="at">mixture =</span> <span class="fu">tune</span>(), <span class="at">mode =</span> <span class="st">'classification'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="caso-práctico-modelo-de-random-forest" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">7.3. Caso práctico: modelo de Random Forest</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb21-1" class="hljs-ln-code"><a href="#cb21-1"></a>Model_RandomForest <span class="ot">&lt;-</span> </span>
-<span id="cb21-2" class="hljs-ln-code"><a href="#cb21-2"></a>  <span class="co"># 🔴 Especificamos el modelo que queremos, en este caso un random forest</span></span>
-<span id="cb21-3" class="hljs-ln-code"><a href="#cb21-3"></a>  <span class="fu">rand_forest</span>(</span>
-<span id="cb21-4" class="hljs-ln-code"><a href="#cb21-4"></a>  <span class="co"># 🟡 Ajustamos los hiperparámetros </span></span>
-<span id="cb21-5" class="hljs-ln-code"><a href="#cb21-5"></a>    <span class="at">mtry =</span> <span class="fu">tune</span>(),  <span class="at">trees =</span> <span class="fu">tune</span>(),  <span class="at">min_n =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb21-6" class="hljs-ln-code"><a href="#cb21-6"></a>  <span class="co"># 🔴 Ponemos el motor, es decir, la librería por la queremos que se ejecute el modelo</span></span>
-<span id="cb21-7" class="hljs-ln-code"><a href="#cb21-7"></a>  <span class="fu">set_engine</span>(<span class="st">"ranger"</span>, <span class="at">importance =</span> <span class="st">"impurity"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb21-8" class="hljs-ln-code"><a href="#cb21-8"></a>  <span class="co"># 🔴 Ajustamos el modo del modelo, es decir, si queremos regresión o clasifiación </span></span>
-<span id="cb21-9" class="hljs-ln-code"><a href="#cb21-9"></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb25-1" class="hljs-ln-code"><a href="#cb25-1"></a>Model_RandomForest <span class="ot">&lt;-</span> </span>
+<span id="cb25-2" class="hljs-ln-code"><a href="#cb25-2"></a>  <span class="co"># 🔴 Especificamos el modelo que queremos, en este caso un random forest</span></span>
+<span id="cb25-3" class="hljs-ln-code"><a href="#cb25-3"></a>  <span class="fu">rand_forest</span>(</span>
+<span id="cb25-4" class="hljs-ln-code"><a href="#cb25-4"></a>  <span class="co"># 🟡 Ajustamos los hiperparámetros </span></span>
+<span id="cb25-5" class="hljs-ln-code"><a href="#cb25-5"></a>    <span class="at">mtry =</span> <span class="fu">tune</span>(),  <span class="at">trees =</span> <span class="fu">tune</span>(),  <span class="at">min_n =</span> <span class="fu">tune</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-6" class="hljs-ln-code"><a href="#cb25-6"></a>  <span class="co"># 🔴 Ponemos el motor, es decir, la librería por la queremos que se ejecute el modelo</span></span>
+<span id="cb25-7" class="hljs-ln-code"><a href="#cb25-7"></a>  <span class="fu">set_engine</span>(<span class="st">"ranger"</span>, <span class="at">importance =</span> <span class="st">"impurity"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-8" class="hljs-ln-code"><a href="#cb25-8"></a>  <span class="co"># 🔴 Ajustamos el modo del modelo, es decir, si queremos regresión o clasifiación </span></span>
+<span id="cb25-9" class="hljs-ln-code"><a href="#cb25-9"></a>  <span class="fu">set_mode</span>(<span class="st">"classification"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="unificando-todo-workflow" class="slide level2 titulo-seccion">
-<h2>8. Unificando todo: Workflow</h2>
+</section></section>
+<section>
+<section id="unificando-todo-workflow" class="title-slide slide level1 center">
+<h1>8. Unificando todo: Workflow</h1>
+
 </section>
 <section id="unificando-todo-workflow-1" class="slide level2">
 <h2>8. Unificando todo: Workflow</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>WF_Receta_modelo_1_Random_forest <span class="ot">&lt;-</span> </span>
-<span id="cb22-2"><a href="#cb22-2"></a>  <span class="co"># 🔴 Activamos el workflow </span></span>
-<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">workflow</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb22-4"><a href="#cb22-4"></a>  <span class="co"># 🔴 Añadimos la receta</span></span>
-<span id="cb22-5"><a href="#cb22-5"></a>  <span class="fu">add_recipe</span>(Receta_modelo_1) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-6"><a href="#cb22-6"></a>  <span class="co"># 🔴 Añadimos el modelo</span></span>
-<span id="cb22-7"><a href="#cb22-7"></a>  <span class="fu">add_model</span>(Model_RandomForest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div style="margin-top:100px">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Imagenes/workflows_logo.png" width="300"></p>
+</figure>
+</div>
+</div>
+</div><div class="column" style="width:80%;">
+<div style="font-size:32px;">
+<p>Un flujo de trabajo (Workflow) es un objeto que puede agrupar preprocesamiento, modelado y postprocesamiento.</p>
+<ul>
+<li>La preparación de la receta y el ajuste del modelo pueden ejecutarse utilizando una única llamada a <code>fit()</code>.</li>
+<li>Si tiene configuración personalizada de parámetros de ajuste, éstos pueden definirse utilizando una interfaz más sencilla cuando se combinan con tune.</li>
+<li>En el futuro, los flujos de trabajo podrán añadir operaciones de postprocesamiento, como modificar el corte de probabilidad para modelos de dos clases.</li>
+</ul>
+</div>
+</div>
 </div>
 </section>
-<section id="eligiendo-métricas-con-yardstick" class="slide level2 titulo-seccion" data-auto-animate="true">
-<h2 data-id="quarto-animate-title">9. Eligiendo métricas con Yardstick</h2>
+<section id="unificando-todo-workflow-2" class="slide level2">
+<h2>8. Unificando todo: Workflow</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>WF_Receta_modelo_1_Random_forest <span class="ot">&lt;-</span> </span>
+<span id="cb26-2"><a href="#cb26-2"></a>  <span class="co"># 🔴 Activamos el workflow </span></span>
+<span id="cb26-3"><a href="#cb26-3"></a>  <span class="fu">workflow</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb26-4"><a href="#cb26-4"></a>  <span class="co"># 🔴 Añadimos la receta</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>  <span class="fu">add_recipe</span>(Receta_modelo_1) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="co"># 🔴 Añadimos el modelo</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>  <span class="fu">add_model</span>(Model_RandomForest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>══ Workflow ════════════════════════════════════════════════════════════════════
+Preprocessor: Recipe
+Model: rand_forest()
+
+── Preprocessor ────────────────────────────────────────────────────────────────
+6 Recipe Steps
+
+• step_filter_missing()
+• step_impute_bag()
+• step_normalize()
+• step_scale()
+• step_dummy()
+• step_adasyn()
+
+── Model ───────────────────────────────────────────────────────────────────────
+Random Forest Model Specification (classification)
+
+Main Arguments:
+  mtry = tune()
+  trees = tune()
+  min_n = tune()
+
+Engine-Specific Arguments:
+  importance = impurity
+
+Computational engine: ranger </code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="eligiendo-métricas-con-yardstick" class="title-slide slide level1 center" data-auto-animate="true">
+<h1 data-id="quarto-animate-title">9. Eligiendo métricas con Yardstick</h1>
+
 </section>
 <section id="eligiendo-métricas-con-yardstick-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">9. Eligiendo métricas con Yardstick</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb23-1" class="hljs-ln-code"><a href="#cb23-1"></a><span class="co"># 🔴 Seleccionamos las métricas que queremos para nuestro modelo</span></span>
-<span id="cb23-2" class="hljs-ln-code"><a href="#cb23-2"></a>Modelo_Metricas <span class="ot">&lt;-</span> <span class="fu">metric_set</span>(accuracy, j_index, precision, sensitivity, specificity, roc_auc, f_meas,recall, mcc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="columns">
+<div class="column" style="width:20%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Imagenes/yardstick_logo.png" width="300"></p>
+</figure>
 </div>
-<p>Se puede encontrar más información en: https://yardstick.tidymodels.org/articles/custom-metrics.html</p>
+</div><div class="column" style="width:80%;">
+<ul>
+<li>Yardstick es un paquete para estimar lo bien que funcionan los modelos, dentro del workflow o de forma aislada.
+<p style="font-size:25px; margin-top:20px">
+<a href="https://yardstick.tidymodels.org/articles/custom-metrics.html">Más información</a>
+</p></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="eligiendo-hiperparámetros-tune-y-dials" class="slide level2 titulo-seccion">
-<h2>10. Eligiendo hiperparámetros: Tune y Dials</h2>
+<section id="eligiendo-métricas-con-yardstick-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">9. Eligiendo métricas con Yardstick</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb28-1" class="hljs-ln-code"><a href="#cb28-1"></a><span class="co"># 🔴 Seleccionamos las métricas que queremos para nuestro modelo</span></span>
+<span id="cb28-2" class="hljs-ln-code"><a href="#cb28-2"></a>Modelo_Metricas <span class="ot">&lt;-</span> <span class="fu">metric_set</span>(accuracy, j_index, precision, sensitivity, specificity, roc_auc, f_meas,recall, mcc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>A metric set, consisting of:
+- `accuracy()`, a class metric      | direction: maximize
+- `j_index()`, a class metric       | direction: maximize
+- `precision()`, a class metric     | direction: maximize
+- `sensitivity()`, a class metric   | direction: maximize
+- `specificity()`, a class metric   | direction: maximize
+- `roc_auc()`, a probability metric | direction: maximize
+- `f_meas()`, a class metric        | direction: maximize
+- `recall()`, a class metric        | direction: maximize
+- `mcc()`, a class metric           | direction: maximize</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="eligiendo-hiperparámetros-tune-y-dials" class="title-slide slide level1 center">
+<h1>10. Eligiendo hiperparámetros: Tune y Dials</h1>
+
 </section>
 <section id="eligiendo-hiperparámetros-tune-y-dials-1" class="slide level2" data-auto-animate="true">
 <h2 data-id="quarto-animate-title">10.1. Eligiendo hiperparámetros: Tune y Dials</h2>
+<div>
 <ul>
-<li>Los paquetes Tune y Dials son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.</li>
+<li class="fragment">Los paquetes <em>Tune</em> y <em>Dials</em> son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.</li>
 </ul>
+</div>
+</section>
+<section id="eligiendo-hiperparámetros-tune-y-dials-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.1. Eligiendo hiperparámetros: Tune y Dials</h2>
+<ul>
+<li>Los paquetes <em>Tune</em> y <em>Dials</em> son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.</li>
+</ul>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Imagenes/logo_tune.png" width="217"></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Imagenes/logo_dials.png" width="217"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="eligiendo-hiperparámetros-tune-y-dials-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.1. Eligiendo hiperparámetros: Tune y Dials</h2>
+<div>
 <ol type="1">
-<li>Creamos unas réplicas del conjunto de entrenamiento, para tener subconjunto de entrenamiento y de validación (que ya hicimos en el apartado de Rsample con el objeto ““)</li>
-<li>Elegimos un modelo con Parsnip y dejamos sus hiperparámetros en abierto con <code>tune()</code>.</li>
-<li>Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los hiperparámetros que dejamos en abierto en el paso 2.</li>
-<li>Ponemos todo junto con la función <code>tune_grid()</code>.</li>
+<li class="fragment"><p>Creamos unas réplicas del conjunto de entrenamiento, Rsample con el objeto <em>cv_Folds</em></p></li>
+<li class="fragment"><p>Elegimos un modelo con Parsnip y dejamos sus hiperparámetros en abierto con <code>tune()</code>.</p></li>
+<li class="fragment"><p>Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los hiperparámetros</p></li>
+<li class="fragment"><p>Ponemos todo junto con la función <code>tune_grid()</code>.</p></li>
 </ol>
+</div>
+</section>
+<section id="montando-un-espacio-de-hiperparámetros-familia-grid_" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.2. Montando un espacio de hiperparámetros: familia <code>grid_</code></h2>
+<div>
+<ul>
+<li class="fragment"><code>grid_regular</code>: hará todas las combinaciones entre los rangos de la variable.</li>
+<li class="fragment"><code>grid_random</code>: probará hiperparámetros aleatoriamente.</li>
+<li class="fragment"><code>grid_max_entropy</code>: propondrá una combinación de hiperpárametros que garantice que se cubrirá todo el espectro, con fin de evitar mínimos locales en la conversión de algoritmos.</li>
+<li class="fragment"><code>grid_latin_hypercube</code>: propondrá una matriz.</li>
+</ul>
+</div>
+</section>
+<section id="grid_regular" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.2.1. Grid_regular()</h2>
+<ul>
+<li><code>Grid_regular</code> hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb30-1" class="hljs-ln-code"><a href="#cb30-1"></a><span class="fu">grid_regular</span>(</span>
+<span id="cb30-2" class="hljs-ln-code"><a href="#cb30-2"></a>  <span class="fu">mtry</span>(<span class="at">range  =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>)),</span>
+<span id="cb30-3" class="hljs-ln-code"><a href="#cb30-3"></a>  <span class="fu">min_n</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>)),</span>
+<span id="cb30-4" class="hljs-ln-code"><a href="#cb30-4"></a>  <span class="fu">trees</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 27 × 3
+    mtry min_n trees
+   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+ 1     2     2     2
+ 2     6     2     2
+ 3    10     2     2
+ 4     2     6     2
+ 5     6     6     2
+ 6    10     6     2
+ 7     2    10     2
+ 8     6    10     2
+ 9    10    10     2
+10     2     2     6
+# ℹ 17 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="grid_regular-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.2.1. Grid_regular()</h2>
+<ul>
+<li><code>Grid_regular</code> hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb32-1" class="hljs-ln-code"><a href="#cb32-1"></a><span class="fu">grid_regular</span>(</span>
+<span id="cb32-2" class="hljs-ln-code"><a href="#cb32-2"></a>  <span class="fu">mtry</span>(<span class="at">range  =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>)),</span>
+<span id="cb32-3" class="hljs-ln-code"><a href="#cb32-3"></a>  <span class="fu">min_n</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>)),</span>
+<span id="cb32-4" class="hljs-ln-code"><a href="#cb32-4"></a>  <span class="fu">trees</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">10</span>)),</span>
+<span id="cb32-5" class="hljs-ln-code"><a href="#cb32-5"></a>  <span class="at">levels =</span> <span class="dv">4</span>) <span class="co"># Podemos ampliar con el parámetro levels: Ahora el mínimo será el cuantil 33 y el máximo el cuantil 66.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 64 × 3
+    mtry min_n trees
+   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+ 1     2     2     2
+ 2     4     2     2
+ 3     7     2     2
+ 4    10     2     2
+ 5     2     4     2
+ 6     4     4     2
+ 7     7     4     2
+ 8    10     4     2
+ 9     2     7     2
+10     4     7     2
+# ℹ 54 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="grid_max_entropy" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.2.2. Grid_max_entropy()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb34-1" class="hljs-ln-code"><a href="#cb34-1"></a><span class="fu">grid_max_entropy</span>(</span>
+<span id="cb34-2" class="hljs-ln-code"><a href="#cb34-2"></a>  <span class="fu">mtry</span>(<span class="at">range  =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)),</span>
+<span id="cb34-3" class="hljs-ln-code"><a href="#cb34-3"></a>  <span class="fu">min_n</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">30</span>)),</span>
+<span id="cb34-4" class="hljs-ln-code"><a href="#cb34-4"></a>  <span class="fu">trees</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1000</span>)),</span>
+<span id="cb34-5" class="hljs-ln-code"><a href="#cb34-5"></a>  <span class="at">size =</span> <span class="dv">10</span></span>
+<span id="cb34-6" class="hljs-ln-code"><a href="#cb34-6"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+    mtry min_n trees
+   &lt;int&gt; &lt;int&gt; &lt;int&gt;
+ 1     2    19   631
+ 2     4    12   162
+ 3     3    23   452
+ 4     4    21     7
+ 5     3    29    98
+ 6     1    27    64
+ 7     3    13   363
+ 8     3    19   882
+ 9     1    29   750
+10     2    10   839</code></pre>
+</div>
+</div>
+</section>
+<section id="hiperparámetros-dial-tune-yardstick" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.3. Hiperparámetros: Dial &amp; Tune + Yardstick</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb36-1" class="hljs-ln-code"><a href="#cb36-1"></a>WF_hiper_parametros <span class="ot">&lt;-</span> </span>
+<span id="cb36-2" class="hljs-ln-code"><a href="#cb36-2"></a>  <span class="co"># 🔴 tune_grid()🔴</span></span>
+<span id="cb36-3" class="hljs-ln-code"><a href="#cb36-3"></a>  <span class="fu">tune_grid</span>(</span>
+<span id="cb36-4" class="hljs-ln-code"><a href="#cb36-4"></a>  <span class="co"># Receta de nuestro modelo, incluye el workflow </span></span>
+<span id="cb36-5" class="hljs-ln-code"><a href="#cb36-5"></a>  <span class="at">object =</span> WF_Receta_modelo_1_Random_forest,</span>
+<span id="cb36-6" class="hljs-ln-code"><a href="#cb36-6"></a>  <span class="co"># 🟡 Ponemos los Folds del conjunto de entrenamiento,  </span></span>
+<span id="cb36-7" class="hljs-ln-code"><a href="#cb36-7"></a>  <span class="at">resamples =</span> Folds_training,</span>
+<span id="cb36-8" class="hljs-ln-code"><a href="#cb36-8"></a>  <span class="co"># 🟡 Grid con diferentes hiperparámetros </span></span>
+<span id="cb36-9" class="hljs-ln-code"><a href="#cb36-9"></a>  <span class="at">grid =</span> <span class="fu">grid_max_entropy</span>(</span>
+<span id="cb36-10" class="hljs-ln-code"><a href="#cb36-10"></a>    <span class="fu">mtry</span>(<span class="at">range  =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)),</span>
+<span id="cb36-11" class="hljs-ln-code"><a href="#cb36-11"></a>    <span class="fu">min_n</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">30</span>)),</span>
+<span id="cb36-12" class="hljs-ln-code"><a href="#cb36-12"></a>    <span class="fu">trees</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1000</span>)),</span>
+<span id="cb36-13" class="hljs-ln-code"><a href="#cb36-13"></a>    <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb36-14" class="hljs-ln-code"><a href="#cb36-14"></a>  <span class="co"># 🟡 Métricas definidas anteriormente</span></span>
+<span id="cb36-15" class="hljs-ln-code"><a href="#cb36-15"></a>  <span class="at">metrics =</span> Modelo_Metricas, </span>
+<span id="cb36-16" class="hljs-ln-code"><a href="#cb36-16"></a>  <span class="co"># 🟡 Con esta opción podemos guardar las predicciones</span></span>
+<span id="cb36-17" class="hljs-ln-code"><a href="#cb36-17"></a>  <span class="at">control =</span> <span class="fu">control_grid</span>( <span class="at">save_pred =</span> T)</span>
+<span id="cb36-18" class="hljs-ln-code"><a href="#cb36-18"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="hiperparámetros-dial-tune-yardstick-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.3. Hiperparámetros: Dial &amp; Tune + Yardstick</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb37-1" class="hljs-ln-code"><a href="#cb37-1"></a>WF_hiperparametros_coleccion <span class="ot">&lt;-</span> </span>
+<span id="cb37-2" class="hljs-ln-code"><a href="#cb37-2"></a>  WF_hiper_parametros <span class="sc">%&gt;%</span> </span>
+<span id="cb37-3" class="hljs-ln-code"><a href="#cb37-3"></a>  <span class="fu">collect_metrics</span>() <span class="co"># 🔴 Esta es la función que retorna las métricas, importante tenerla en cuenta</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 12%">
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 3%">
+<col style="width: 12%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">mtry</th>
+<th style="text-align: right;">trees</th>
+<th style="text-align: right;">min_n</th>
+<th style="text-align: left;">.metric</th>
+<th style="text-align: left;">.estimator</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">std_err</th>
+<th style="text-align: left;">.config</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">830</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">accuracy</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.7116667</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.0512542</td>
+<td style="text-align: left;">Preprocessor1_Model01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">830</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">f_meas</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.8025521</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.0367277</td>
+<td style="text-align: left;">Preprocessor1_Model01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">830</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">j_index</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.3399194</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.1413562</td>
+<td style="text-align: left;">Preprocessor1_Model01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">830</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">mcc</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.2950036</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.1214243</td>
+<td style="text-align: left;">Preprocessor1_Model01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">830</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">precision</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.8784160</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.0349587</td>
+<td style="text-align: left;">Preprocessor1_Model01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="hiperparámetros-dial-tune-yardstick-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.3. Hiperparámetros: Dial &amp; Tune + Yardstick</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb38-1" class="hljs-ln-code"><a href="#cb38-1"></a><span class="fu">autoplot</span>(WF_hiper_parametros)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/hiperpar-3-1.png" width="960" class="r-stretch"></section>
+<section id="hiperparámetros-dial-tune-yardstick-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.3. Hiperparámetros: Dial &amp; Tune + Yardstick</h2>
+
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/hiperpar-4-1.png" width="960" class="r-stretch"></section>
+<section id="hiperparámetros-dial-tune-yardstick-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">10.3. Hiperparámetros: Dial &amp; Tune + Yardstick</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb39-1" class="hljs-ln-code"><a href="#cb39-1"></a>WF_hiperparametros_mejor <span class="ot">&lt;-</span> </span>
+<span id="cb39-2" class="hljs-ln-code"><a href="#cb39-2"></a>  WF_hiper_parametros <span class="sc">%&gt;%</span> <span class="fu">show_best</span>(<span class="at">metric =</span> <span class="st">"roc_auc"</span>,<span class="at">n=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<colgroup>
+<col style="width: 6%">
+<col style="width: 7%">
+<col style="width: 7%">
+<col style="width: 10%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 3%">
+<col style="width: 12%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">mtry</th>
+<th style="text-align: right;">trees</th>
+<th style="text-align: right;">min_n</th>
+<th style="text-align: left;">.metric</th>
+<th style="text-align: left;">.estimator</th>
+<th style="text-align: right;">mean</th>
+<th style="text-align: right;">n</th>
+<th style="text-align: right;">std_err</th>
+<th style="text-align: left;">.config</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">830</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">roc_auc</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.721875</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0.0521491</td>
+<td style="text-align: left;">Preprocessor1_Model01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section>
+<section>
+<section id="la-conversión-de-todo-fit-y-predict" class="title-slide slide level1 center">
+<h1>11. La conversión de todo: <code>fit()</code> y <code>predict()</code></h1>
+
+</section>
+<section id="la-conversión-de-todo-fit-y-predict-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11. La conversión de todo: <code>fit()</code> y <code>predict()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb40-1" class="hljs-ln-code"><a href="#cb40-1"></a>Modelo_fitted <span class="ot">&lt;-</span> WF_Receta_modelo_1_Random_forest <span class="sc">%&gt;%</span> </span>
+<span id="cb40-2" class="hljs-ln-code"><a href="#cb40-2"></a>  <span class="co"># 🔴 Finalizamos el flujo de trabajo con la mejor combinación de Hiperparámetros encontrada</span></span>
+<span id="cb40-3" class="hljs-ln-code"><a href="#cb40-3"></a>  <span class="fu">finalize_workflow</span>(WF_hiperparametros_mejor) <span class="sc">%&gt;%</span></span>
+<span id="cb40-4" class="hljs-ln-code"><a href="#cb40-4"></a>  <span class="co"># 🔴 Finalmente ajustamos con fit()</span></span>
+<span id="cb40-5" class="hljs-ln-code"><a href="#cb40-5"></a>  <span class="fu">fit</span>(<span class="at">data=</span> Training_datos)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>══ Workflow [trained] ══════════════════════════════════════════════════════════
+Preprocessor: Recipe
+Model: rand_forest()
+
+── Preprocessor ────────────────────────────────────────────────────────────────
+6 Recipe Steps
+
+• step_filter_missing()
+• step_impute_bag()
+• step_normalize()
+• step_scale()
+• step_dummy()
+• step_adasyn()
+
+── Model ───────────────────────────────────────────────────────────────────────
+Ranger result
+
+Call:
+ ranger::ranger(x = maybe_data_frame(x), y = y, mtry = min_cols(~1L,      x), num.trees = ~830L, min.node.size = min_rows(~10L, x),      importance = ~"impurity", num.threads = 1, verbose = FALSE,      seed = sample.int(10^5, 1), probability = TRUE) 
+
+Type:                             Probability estimation 
+Number of trees:                  830 
+Sample size:                      316 
+Number of independent variables:  3 
+Mtry:                             1 
+Target node size:                 10 
+Variable importance mode:         impurity 
+Splitrule:                        gini 
+OOB prediction error (Brier s.):  0.1440296 </code></pre>
+</div>
+</div>
+</section>
+<section id="la-conversión-de-todo-fit-y-predict-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11. La conversión de todo: <code>fit()</code> y <code>predict()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb42-1" class="hljs-ln-code"><a href="#cb42-1"></a>Nuevo_caso <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb42-2" class="hljs-ln-code"><a href="#cb42-2"></a>  <span class="st">'Cognicion_01'</span> <span class="ot">=</span> <span class="dv">123</span>,</span>
+<span id="cb42-3" class="hljs-ln-code"><a href="#cb42-3"></a>  <span class="st">'Cognicion_02'</span> <span class="ot">=</span> <span class="dv">102</span>,</span>
+<span id="cb42-4" class="hljs-ln-code"><a href="#cb42-4"></a>  <span class="st">'Cognicion_03'</span> <span class="ot">=</span> <span class="dv">89</span>,</span>
+<span id="cb42-5" class="hljs-ln-code"><a href="#cb42-5"></a>  <span class="st">'Cognicion_04'</span> <span class="ot">=</span> <span class="dv">100</span>,</span>
+<span id="cb42-6" class="hljs-ln-code"><a href="#cb42-6"></a>  <span class="st">'Cognicion_05'</span> <span class="ot">=</span> <span class="dv">179</span>,</span>
+<span id="cb42-7" class="hljs-ln-code"><a href="#cb42-7"></a>  <span class="st">'Escala_01'</span>    <span class="ot">=</span> <span class="dv">12</span>,</span>
+<span id="cb42-8" class="hljs-ln-code"><a href="#cb42-8"></a>  <span class="st">'Escala_02'</span>    <span class="ot">=</span> <span class="dv">22</span>,</span>
+<span id="cb42-9" class="hljs-ln-code"><a href="#cb42-9"></a>  <span class="st">'Escala_03'</span>    <span class="ot">=</span> <span class="dv">20</span></span>
+<span id="cb42-10" class="hljs-ln-code"><a href="#cb42-10"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="la-conversión-de-todo-fit-y-predict-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11. La conversión de todo: <code>fit()</code> y <code>predict()</code></h2>
+<div>
+<p>La función <code>predict()</code> de la librería stats tiene sinergias con Tidymodels y necesita de estos argumentos:</p>
+<ol type="1">
+<li class="fragment"><p>El modelo ya ajustado (model_fitted)</p></li>
+<li class="fragment"><p>Un tibble/dataframe con la nueva predicción (debe contener las mismas variables)</p></li>
+<li class="fragment"><p>Un tipo de predicción en los casos de clasificación, si queremos las probabilidades de cada categoría o la categoría predicha directamente</p></li>
+</ol>
+</div>
+</section>
+<section id="la-conversión-de-todo-fit-y-predict-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11. La conversión de todo: <code>fit()</code> y <code>predict()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb43-1" class="hljs-ln-code"><a href="#cb43-1"></a><span class="fu">tibble</span>(</span>
+<span id="cb43-2" class="hljs-ln-code"><a href="#cb43-2"></a>  <span class="fu">predict</span>(Modelo_fitted, Nuevo_caso, <span class="at">type =</span> <span class="st">"prob"</span> ),</span>
+<span id="cb43-3" class="hljs-ln-code"><a href="#cb43-3"></a>  <span class="fu">predict</span>(Modelo_fitted, Nuevo_caso, <span class="at">type =</span> <span class="st">"class"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .pred_0 .pred_1 .pred_class
+    &lt;dbl&gt;   &lt;dbl&gt; &lt;fct&gt;      
+1   0.929  0.0705 0          </code></pre>
+</div>
+</div>
+</section>
+<section id="la-función-last_fit" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11.1. La función <code>last_fit()</code></h2>
+<div>
+<ul>
+<li class="fragment">La función <code>last_fit()</code> permite tener todo unificado en un solo tibble. Recibe directamente los datos de entrenamiento y los datos de evaluación y crea sus métricas y sus predicciones.</li>
+</ul>
+</div>
+</section>
+<section id="la-función-last_fit-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11.1. La función <code>last_fit()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb45-1" class="hljs-ln-code"><a href="#cb45-1"></a>Modelo_1_final <span class="ot">&lt;-</span>  WF_Receta_modelo_1_Random_forest <span class="sc">%&gt;%</span> </span>
+<span id="cb45-2" class="hljs-ln-code"><a href="#cb45-2"></a>  <span class="co"># 🔴 Finalizamos el flujo de trabajo con la mejor combinación de hiperparámetros encontrada</span></span>
+<span id="cb45-3" class="hljs-ln-code"><a href="#cb45-3"></a>  <span class="fu">finalize_workflow</span>(WF_hiperparametros_mejor) <span class="sc">%&gt;%</span></span>
+<span id="cb45-4" class="hljs-ln-code"><a href="#cb45-4"></a>  <span class="co"># 🔴 Ajustamos con last_fit(), poniendo el split de datos inicial y las métricas para las predicciones</span></span>
+<span id="cb45-5" class="hljs-ln-code"><a href="#cb45-5"></a>  <span class="fu">last_fit</span>(Split_datos_strat, <span class="at">metrics =</span> Modelo_Metricas)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># Resampling results
+# Manual resampling 
+# A tibble: 1 × 6
+  splits           id               .metrics .notes   .predictions .workflow 
+  &lt;list&gt;           &lt;chr&gt;            &lt;list&gt;   &lt;list&gt;   &lt;list&gt;       &lt;list&gt;    
+1 &lt;split [198/87]&gt; train/test split &lt;tibble&gt; &lt;tibble&gt; &lt;tibble&gt;     &lt;workflow&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="la-función-last_fit-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11.1. La función <code>last_fit()</code></h2>
+<div>
+<ul>
+<li class="fragment">Contamos con una serie de funciones para extraer todo lo que necesitemos de ellas:</li>
+</ul>
+<div style="font-size:35px;">
+<ol type="1">
+<li class="fragment"><code>extract_fit_engine()</code>: permite extraer el modelo crudo como si no hubiera sido ajustado con tidymodels.</li>
+<li class="fragment"><code>collect_metrics()</code>: extraer un tibble con las métricas del modelo (puestas con metric set)</li>
+<li class="fragment"><code>collect_predictions()</code>: extrae un tibble con las predicciones de los datos de evaluación.</li>
+<li class="fragment"><code>extract_workflow()</code>: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="la-función-last_fit-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11.1. La función <code>last_fit()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb47-1" class="hljs-ln-code"><a href="#cb47-1"></a>WF_Receta_modelo_1_Random_forest <span class="sc">%&gt;%</span></span>
+<span id="cb47-2" class="hljs-ln-code"><a href="#cb47-2"></a>  <span class="co"># 🔴 Finalizamos el flujo de trabajo con la mejor combinación de hiperparámetros encontrada</span></span>
+<span id="cb47-3" class="hljs-ln-code"><a href="#cb47-3"></a>  <span class="fu">finalize_workflow</span>(WF_hiperparametros_mejor) <span class="sc">%&gt;%</span></span>
+<span id="cb47-4" class="hljs-ln-code"><a href="#cb47-4"></a>  <span class="co"># 🔴 Ajustamos con last_fit(), poniendo el split de datos inicial y las métricas para las predicciones</span></span>
+<span id="cb47-5" class="hljs-ln-code"><a href="#cb47-5"></a>  <span class="fu">last_fit</span>(Split_datos_strat, <span class="at">metrics =</span> Modelo_Metricas) <span class="sc">%&gt;%</span></span>
+<span id="cb47-6" class="hljs-ln-code"><a href="#cb47-6"></a>  <span class="co"># 🔴 dentro del flujo de trabajo están la receta y el modelo ya ajustado</span></span>
+<span id="cb47-7" class="hljs-ln-code"><a href="#cb47-7"></a>  <span class="fu">extract_workflow</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>══ Workflow [trained] ══════════════════════════════════════════════════════════
+Preprocessor: Recipe
+Model: rand_forest()
+
+── Preprocessor ────────────────────────────────────────────────────────────────
+6 Recipe Steps
+
+• step_filter_missing()
+• step_impute_bag()
+• step_normalize()
+• step_scale()
+• step_dummy()
+• step_adasyn()
+
+── Model ───────────────────────────────────────────────────────────────────────
+Ranger result
+
+Call:
+ ranger::ranger(x = maybe_data_frame(x), y = y, mtry = min_cols(~1L,      x), num.trees = ~830L, min.node.size = min_rows(~10L, x),      importance = ~"impurity", num.threads = 1, verbose = FALSE,      seed = sample.int(10^5, 1), probability = TRUE) 
+
+Type:                             Probability estimation 
+Number of trees:                  830 
+Sample size:                      316 
+Number of independent variables:  3 
+Mtry:                             1 
+Target node size:                 10 
+Variable importance mode:         impurity 
+Splitrule:                        gini 
+OOB prediction error (Brier s.):  0.1440296 </code></pre>
+</div>
+</div>
+</section>
+<section id="la-función-last_fit-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11.1. La función <code>last_fit()</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb49-1" class="hljs-ln-code"><a href="#cb49-1"></a>Modelo_1_final <span class="sc">%&gt;%</span></span>
+<span id="cb49-2" class="hljs-ln-code"><a href="#cb49-2"></a>  <span class="co"># 🔴 Con esta función podemos recopilar todas las métricas de un modelo</span></span>
+<span id="cb49-3" class="hljs-ln-code"><a href="#cb49-3"></a>  <span class="fu">collect_metrics</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb49-4" class="hljs-ln-code"><a href="#cb49-4"></a>  <span class="fu">select</span>(<span class="sc">-</span>.estimator,<span class="sc">-</span>.config) <span class="sc">%&gt;%</span>  </span>
+<span id="cb49-5" class="hljs-ln-code"><a href="#cb49-5"></a>  <span class="fu">mutate</span>(<span class="at">.estimate=</span> <span class="fu">round</span>(.estimate,<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 9 × 2
+  .metric     .estimate
+  &lt;chr&gt;           &lt;dbl&gt;
+1 accuracy         0.69
+2 j_index          0.28
+3 precision        0.86
+4 sensitivity      0.72
+5 specificity      0.56
+6 f_meas           0.79
+7 recall           0.72
+8 mcc              0.24
+9 roc_auc          0.71</code></pre>
+</div>
+</div>
+</section>
+<section id="la-función-last_fit-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">11.1. La función <code>last_fit()</code></h2>
+
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/curva-roc-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="threshold-performance" class="title-slide slide level1 center">
+<h1>12. Threshold performance</h1>
+
+</section>
+<section id="threshold-performance-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">12. Threshold performance</h2>
+<div>
+<ul>
+<li class="fragment">En tidymodels está la librería <code>probably</code> con la función <code>threshold_perf()</code>, la cual nos permite, dadas las predicciones del modelo, ver cómo se desenvuelve este umbral.</li>
+</ul>
+</div>
+</section>
+<section id="threshold-performance-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">12. Threshold performance</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb51-1" class="hljs-ln-code"><a href="#cb51-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(probably)</span>
+<span id="cb51-2" class="hljs-ln-code"><a href="#cb51-2"></a></span>
+<span id="cb51-3" class="hljs-ln-code"><a href="#cb51-3"></a>Modelo_1_final_Threshold_performance <span class="ot">&lt;-</span> </span>
+<span id="cb51-4" class="hljs-ln-code"><a href="#cb51-4"></a>  Modelo_1_final <span class="sc">%&gt;%</span> </span>
+<span id="cb51-5" class="hljs-ln-code"><a href="#cb51-5"></a>  <span class="fu">collect_predictions</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb51-6" class="hljs-ln-code"><a href="#cb51-6"></a>  <span class="fu">threshold_perf</span>(</span>
+<span id="cb51-7" class="hljs-ln-code"><a href="#cb51-7"></a>    <span class="co"># Le decimos qué variable es la verdadera respuesta</span></span>
+<span id="cb51-8" class="hljs-ln-code"><a href="#cb51-8"></a>    <span class="at">truth =</span> Var_respuesta,  </span>
+<span id="cb51-9" class="hljs-ln-code"><a href="#cb51-9"></a>    <span class="co"># Le decimos qué variable es la predicción</span></span>
+<span id="cb51-10" class="hljs-ln-code"><a href="#cb51-10"></a>    .pred_1, </span>
+<span id="cb51-11" class="hljs-ln-code"><a href="#cb51-11"></a>    <span class="co"># Rango en el que se evaluará el umbral en cada punto</span></span>
+<span id="cb51-12" class="hljs-ln-code"><a href="#cb51-12"></a>    <span class="at">thresholds =</span> <span class="fu">seq</span>(<span class="fl">0.5</span>,<span class="dv">1</span>,<span class="fl">0.01</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: right;">.threshold</th>
+<th style="text-align: left;">.metric</th>
+<th style="text-align: left;">.estimator</th>
+<th style="text-align: right;">.estimate</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0.50</td>
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.51</td>
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.52</td>
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">0.53</td>
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">0.54</td>
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: left;">binary</td>
+<td style="text-align: right;">0.26</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="threshold-performance-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">12. Threshold performance</h2>
+
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/Threshold-2-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="workflow_set-para-unificarlas-todas" class="title-slide slide level1 center">
+<h1>13. <code>workflow_set()</code> para unificarlas todas</h1>
+
+</section>
+<section id="workflow_set" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.1. workflow_set()</h2>
+<ul>
+<li>Supongamos que queremos evaluar 2 recetas con 1 modelo de RF:</li>
+</ul>
+<div style="margin-left:50px; font-size:35px;">
+<ol type="1">
+<li>Una con solo las variables ‘Escala’</li>
+<li>Otra con solo las variables ‘Cognición’</li>
+</ol>
+</div>
+<ul>
+<li>Queremos dejarlo abierto a que puedan haber más.</li>
+</ul>
+</section>
+<section id="workflow_set-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.1. workflow_set()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb52-1" class="hljs-ln-code"><a href="#cb52-1"></a>  <span class="co"># 🔴 1.) Iniciamos la receta</span></span>
+<span id="cb52-2" class="hljs-ln-code"><a href="#cb52-2"></a>Receta_modelo_Escalas <span class="ot">&lt;-</span> <span class="fu">recipe</span>(  </span>
+<span id="cb52-3" class="hljs-ln-code"><a href="#cb52-3"></a>    <span class="at">formula =</span> Receta_modelo_Escalas_formula,</span>
+<span id="cb52-4" class="hljs-ln-code"><a href="#cb52-4"></a>    <span class="at">data =</span> Training_datos , </span>
+<span id="cb52-5" class="hljs-ln-code"><a href="#cb52-5"></a>    <span class="at">strata =</span> Var_respuesta)  <span class="sc">%&gt;%</span> </span>
+<span id="cb52-6" class="hljs-ln-code"><a href="#cb52-6"></a>  <span class="co"># 🔴 2.) Steps</span></span>
+<span id="cb52-7" class="hljs-ln-code"><a href="#cb52-7"></a>    <span class="co">#  🟡 2.1) Eliminamos las variables que contengan más de un 25% de datos perdidos </span></span>
+<span id="cb52-8" class="hljs-ln-code"><a href="#cb52-8"></a>  <span class="fu">step_filter_missing</span>(<span class="fu">all_predictors</span>(),  <span class="at">threshold =</span> <span class="fl">0.25</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-9" class="hljs-ln-code"><a href="#cb52-9"></a>    <span class="co">#  🟡 2.2) Imputamos las variables numéricas con un algoritmo de bagged trees</span></span>
+<span id="cb52-10" class="hljs-ln-code"><a href="#cb52-10"></a>  <span class="fu">step_impute_bag</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb52-11" class="hljs-ln-code"><a href="#cb52-11"></a>    <span class="co"># 2.3) Normalizamos los datos (restamos la media)</span></span>
+<span id="cb52-12" class="hljs-ln-code"><a href="#cb52-12"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>() ) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-13" class="hljs-ln-code"><a href="#cb52-13"></a>    <span class="co"># 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)</span></span>
+<span id="cb52-14" class="hljs-ln-code"><a href="#cb52-14"></a>  <span class="fu">step_scale</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-15" class="hljs-ln-code"><a href="#cb52-15"></a>    <span class="co"># 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)</span></span>
+<span id="cb52-16" class="hljs-ln-code"><a href="#cb52-16"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal</span>(), <span class="sc">-</span><span class="fu">all_outcomes</span>(), <span class="at">one_hot =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-17" class="hljs-ln-code"><a href="#cb52-17"></a>    <span class="co"># 2.6) Sobremuestreamos la variable para equilibrar grupos</span></span>
+<span id="cb52-18" class="hljs-ln-code"><a href="#cb52-18"></a>  <span class="fu">step_adasyn</span>(Var_respuesta, <span class="at">over_ratio =</span> <span class="dv">1</span>, <span class="at">neighbors =</span> <span class="dv">10</span>) </span>
+<span id="cb52-19" class="hljs-ln-code"><a href="#cb52-19"></a></span>
+<span id="cb52-20" class="hljs-ln-code"><a href="#cb52-20"></a></span>
+<span id="cb52-21" class="hljs-ln-code"><a href="#cb52-21"></a>  <span class="co"># 🔴 1.) Iniciamos la receta</span></span>
+<span id="cb52-22" class="hljs-ln-code"><a href="#cb52-22"></a>Receta_modelo_Cognicion <span class="ot">&lt;-</span> <span class="fu">recipe</span>(  </span>
+<span id="cb52-23" class="hljs-ln-code"><a href="#cb52-23"></a>    <span class="at">formula =</span> Receta_modelo_Cognicion_formula,</span>
+<span id="cb52-24" class="hljs-ln-code"><a href="#cb52-24"></a>    <span class="at">data =</span> Training_datos , </span>
+<span id="cb52-25" class="hljs-ln-code"><a href="#cb52-25"></a>    <span class="at">strata =</span> Var_respuesta)  <span class="sc">%&gt;%</span> </span>
+<span id="cb52-26" class="hljs-ln-code"><a href="#cb52-26"></a>  <span class="co"># 🔴 2.) Steps</span></span>
+<span id="cb52-27" class="hljs-ln-code"><a href="#cb52-27"></a>    <span class="co">#  🟡 2.1) Eliminamos las variables que contengan más de un 25% de datos perdidos </span></span>
+<span id="cb52-28" class="hljs-ln-code"><a href="#cb52-28"></a>  <span class="fu">step_filter_missing</span>(<span class="fu">all_predictors</span>(),  <span class="at">threshold =</span> <span class="fl">0.25</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb52-29" class="hljs-ln-code"><a href="#cb52-29"></a>    <span class="co">#  🟡 2.2) Imputamos las variables numéricas con un algoritmo de bagged trees</span></span>
+<span id="cb52-30" class="hljs-ln-code"><a href="#cb52-30"></a>  <span class="fu">step_impute_mean</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb52-31" class="hljs-ln-code"><a href="#cb52-31"></a>    <span class="co"># 2.3) Normalizamos los datos (restamos la media)</span></span>
+<span id="cb52-32" class="hljs-ln-code"><a href="#cb52-32"></a>  <span class="fu">step_normalize</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>() ) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-33" class="hljs-ln-code"><a href="#cb52-33"></a>    <span class="co"># 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)</span></span>
+<span id="cb52-34" class="hljs-ln-code"><a href="#cb52-34"></a>  <span class="fu">step_scale</span>(<span class="fu">all_numeric</span>(),<span class="sc">-</span><span class="fu">all_outcomes</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-35" class="hljs-ln-code"><a href="#cb52-35"></a>    <span class="co"># 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)</span></span>
+<span id="cb52-36" class="hljs-ln-code"><a href="#cb52-36"></a>  <span class="fu">step_dummy</span>(<span class="fu">all_nominal</span>(), <span class="sc">-</span><span class="fu">all_outcomes</span>(), <span class="at">one_hot =</span> T) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-37" class="hljs-ln-code"><a href="#cb52-37"></a>    <span class="co"># 2.6) Sobremuestreamos la variable para equilibrar grupos</span></span>
+<span id="cb52-38" class="hljs-ln-code"><a href="#cb52-38"></a>  <span class="fu">step_adasyn</span>(Var_respuesta, <span class="at">over_ratio =</span> <span class="dv">1</span>, <span class="at">neighbors =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="workflow_set-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.2. workflow_set()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb53-1" class="hljs-ln-code"><a href="#cb53-1"></a>Receta_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb53-2" class="hljs-ln-code"><a href="#cb53-2"></a>  <span class="st">'Modelo_Escalas'</span>    <span class="ot">=</span> Receta_modelo_Escalas,</span>
+<span id="cb53-3" class="hljs-ln-code"><a href="#cb53-3"></a>  <span class="st">'Modelo_Cognicion'</span>  <span class="ot">=</span> Receta_modelo_Cognicion</span>
+<span id="cb53-4" class="hljs-ln-code"><a href="#cb53-4"></a>  )</span>
+<span id="cb53-5" class="hljs-ln-code"><a href="#cb53-5"></a>  </span>
+<span id="cb53-6" class="hljs-ln-code"><a href="#cb53-6"></a>Model_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb53-7" class="hljs-ln-code"><a href="#cb53-7"></a>  <span class="at">RandomForest     =</span> Model_RandomForest</span>
+<span id="cb53-8" class="hljs-ln-code"><a href="#cb53-8"></a>  <span class="co"># ,XGBoost          = Model_XGBoost</span></span>
+<span id="cb53-9" class="hljs-ln-code"><a href="#cb53-9"></a>  <span class="co"># ,Bagged_Trees     = Model_Bagged_Tree</span></span>
+<span id="cb53-10" class="hljs-ln-code"><a href="#cb53-10"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="workflow_set-3" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.2. workflow_set()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb54-1" class="hljs-ln-code"><a href="#cb54-1"></a>Wokflows_set <span class="ot">&lt;-</span> <span class="fu">workflow_set</span>(</span>
+<span id="cb54-2" class="hljs-ln-code"><a href="#cb54-2"></a>  <span class="at">preproc =</span> Receta_list, </span>
+<span id="cb54-3" class="hljs-ln-code"><a href="#cb54-3"></a>  <span class="at">models =</span> Model_list, </span>
+<span id="cb54-4" class="hljs-ln-code"><a href="#cb54-4"></a>  <span class="co"># 🔴 La opción Cross es para que haga todos los cruces de modelos con recetas</span></span>
+<span id="cb54-5" class="hljs-ln-code"><a href="#cb54-5"></a>  <span class="at">cross =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A workflow set/tibble: 2 × 4
+  wflow_id                      info             option    result    
+  &lt;chr&gt;                         &lt;list&gt;           &lt;list&gt;    &lt;list&gt;    
+1 Modelo_Escalas_RandomForest   &lt;tibble [1 × 4]&gt; &lt;opts[0]&gt; &lt;list [0]&gt;
+2 Modelo_Cognicion_RandomForest &lt;tibble [1 × 4]&gt; &lt;opts[0]&gt; &lt;list [0]&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="workflow_set-4" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.2. workflow_set()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb56-1" class="hljs-ln-code"><a href="#cb56-1"></a>Wokflows_set_map <span class="ot">&lt;-</span> </span>
+<span id="cb56-2" class="hljs-ln-code"><a href="#cb56-2"></a>  Wokflows_set <span class="sc">%&gt;%</span> </span>
+<span id="cb56-3" class="hljs-ln-code"><a href="#cb56-3"></a>  <span class="co"># 🔴 workflow_map() es una función que permite ajustar múltiples flujos de trabajo</span></span>
+<span id="cb56-4" class="hljs-ln-code"><a href="#cb56-4"></a>    <span class="fu">workflow_map</span>(</span>
+<span id="cb56-5" class="hljs-ln-code"><a href="#cb56-5"></a>    <span class="at">resamples =</span> Folds_training, </span>
+<span id="cb56-6" class="hljs-ln-code"><a href="#cb56-6"></a>    <span class="at">fn =</span> <span class="st">"tune_grid"</span>,</span>
+<span id="cb56-7" class="hljs-ln-code"><a href="#cb56-7"></a>    <span class="at">grid =</span> <span class="fu">grid_max_entropy</span>(</span>
+<span id="cb56-8" class="hljs-ln-code"><a href="#cb56-8"></a>      <span class="fu">mtry</span>(<span class="at">range  =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>)),</span>
+<span id="cb56-9" class="hljs-ln-code"><a href="#cb56-9"></a>      <span class="fu">min_n</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">30</span>)),</span>
+<span id="cb56-10" class="hljs-ln-code"><a href="#cb56-10"></a>      <span class="fu">trees</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1000</span>)),</span>
+<span id="cb56-11" class="hljs-ln-code"><a href="#cb56-11"></a>      <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb56-12" class="hljs-ln-code"><a href="#cb56-12"></a>    <span class="co"># verbose = TRUE, </span></span>
+<span id="cb56-13" class="hljs-ln-code"><a href="#cb56-13"></a>    <span class="at">metrics =</span> Modelo_Metricas, </span>
+<span id="cb56-14" class="hljs-ln-code"><a href="#cb56-14"></a>    <span class="at">control =</span> <span class="fu">control_grid</span>( <span class="at">save_pred =</span> T),</span>
+<span id="cb56-15" class="hljs-ln-code"><a href="#cb56-15"></a>    <span class="co"># 🔴 para garantizar replicabildiad, podemos fijar la semilla en el proceso</span></span>
+<span id="cb56-16" class="hljs-ln-code"><a href="#cb56-16"></a>    <span class="at">seed =</span> <span class="dv">2465</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A workflow set/tibble: 2 × 4
+  wflow_id                      info             option    result   
+  &lt;chr&gt;                         &lt;list&gt;           &lt;list&gt;    &lt;list&gt;   
+1 Modelo_Escalas_RandomForest   &lt;tibble [1 × 4]&gt; &lt;opts[4]&gt; &lt;tune[+]&gt;
+2 Modelo_Cognicion_RandomForest &lt;tibble [1 × 4]&gt; &lt;opts[4]&gt; &lt;tune[+]&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="workflow_set-5" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.2. workflow_set()</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy" data-id="quarto-animate-code"><code class="sourceCode r hljs"><span id="cb58-1" class="hljs-ln-code"><a href="#cb58-1"></a><span class="co"># Modelo Escalas ----</span></span>
+<span id="cb58-2" class="hljs-ln-code"><a href="#cb58-2"></a>Modelo_Escalas_RandomForest_hyperparametros <span class="ot">&lt;-</span> Wokflows_set_map <span class="sc">%&gt;%</span> </span>
+<span id="cb58-3" class="hljs-ln-code"><a href="#cb58-3"></a>  <span class="co"># 🔴 Extraemos el flujo correspondiente al modelo que queremos </span></span>
+<span id="cb58-4" class="hljs-ln-code"><a href="#cb58-4"></a>  <span class="fu">extract_workflow_set_result</span>(<span class="st">'Modelo_Escalas_RandomForest'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb58-5" class="hljs-ln-code"><a href="#cb58-5"></a>  <span class="co"># 🔴 podemos ver una tabla con los mejores resultados, acorde a una métrica</span></span>
+<span id="cb58-6" class="hljs-ln-code"><a href="#cb58-6"></a>  <span class="fu">show_best</span>(<span class="at">metric =</span> <span class="st">'sensitivity'</span>, <span class="at">n=</span><span class="dv">50</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-7" class="hljs-ln-code"><a href="#cb58-7"></a>  <span class="fu">filter</span>(<span class="fu">row_number</span>()<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-8" class="hljs-ln-code"><a href="#cb58-8"></a>  <span class="fu">select</span>(mtry,trees,min_n,.config )</span>
+<span id="cb58-9" class="hljs-ln-code"><a href="#cb58-9"></a></span>
+<span id="cb58-10" class="hljs-ln-code"><a href="#cb58-10"></a>Modelo_Escalas_RandomForest_final <span class="ot">&lt;-</span> Wokflows_set_map <span class="sc">%&gt;%</span> </span>
+<span id="cb58-11" class="hljs-ln-code"><a href="#cb58-11"></a>  <span class="co"># 🔴 Extraemos el flujo correspondiente al modelo que queremos </span></span>
+<span id="cb58-12" class="hljs-ln-code"><a href="#cb58-12"></a>  <span class="fu">extract_workflow</span>(<span class="st">'Modelo_Escalas_RandomForest'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-13" class="hljs-ln-code"><a href="#cb58-13"></a>  <span class="fu">finalize_workflow</span>(Modelo_Escalas_RandomForest_hyperparametros) <span class="sc">%&gt;%</span></span>
+<span id="cb58-14" class="hljs-ln-code"><a href="#cb58-14"></a>  <span class="fu">last_fit</span>(Split_datos_strat, <span class="at">metrics =</span> Modelo_Metricas )</span>
+<span id="cb58-15" class="hljs-ln-code"><a href="#cb58-15"></a></span>
+<span id="cb58-16" class="hljs-ln-code"><a href="#cb58-16"></a><span class="co"># Modelo Cognición ----</span></span>
+<span id="cb58-17" class="hljs-ln-code"><a href="#cb58-17"></a></span>
+<span id="cb58-18" class="hljs-ln-code"><a href="#cb58-18"></a>Modelo_Cognicion_RandomForest_hyperparametros <span class="ot">&lt;-</span> Wokflows_set_map <span class="sc">%&gt;%</span> </span>
+<span id="cb58-19" class="hljs-ln-code"><a href="#cb58-19"></a>  <span class="fu">extract_workflow_set_result</span>(<span class="st">'Modelo_Cognicion_RandomForest'</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb58-20" class="hljs-ln-code"><a href="#cb58-20"></a>  <span class="fu">show_best</span>(<span class="at">metric =</span> <span class="st">'sensitivity'</span>, <span class="at">n=</span><span class="dv">50</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-21" class="hljs-ln-code"><a href="#cb58-21"></a>  <span class="fu">filter</span>(<span class="fu">row_number</span>()<span class="sc">==</span><span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-22" class="hljs-ln-code"><a href="#cb58-22"></a>  <span class="fu">select</span>(mtry,trees,min_n,.config )</span>
+<span id="cb58-23" class="hljs-ln-code"><a href="#cb58-23"></a></span>
+<span id="cb58-24" class="hljs-ln-code"><a href="#cb58-24"></a>Modelo_Cognicion_RandomForest_final <span class="ot">&lt;-</span> Wokflows_set_map <span class="sc">%&gt;%</span> </span>
+<span id="cb58-25" class="hljs-ln-code"><a href="#cb58-25"></a>  <span class="fu">extract_workflow</span>(<span class="st">'Modelo_Cognicion_RandomForest'</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-26" class="hljs-ln-code"><a href="#cb58-26"></a>  <span class="fu">finalize_workflow</span>(Modelo_Cognicion_RandomForest_hyperparametros) <span class="sc">%&gt;%</span></span>
+<span id="cb58-27" class="hljs-ln-code"><a href="#cb58-27"></a>  <span class="fu">last_fit</span>(Split_datos_strat, <span class="at">metrics =</span> Modelo_Metricas )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="métricas-de-todos-los-modelos" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.3. Métricas de todos los modelos</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">.metric</th>
+<th style="text-align: right;">Modelo_Escala</th>
+<th style="text-align: right;">Modelo_Cognicion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">accuracy</td>
+<td style="text-align: right;">0.6896552</td>
+<td style="text-align: right;">0.5862069</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">j_index</td>
+<td style="text-align: right;">0.4033816</td>
+<td style="text-align: right;">-0.0966184</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">precision</td>
+<td style="text-align: right;">0.9038462</td>
+<td style="text-align: right;">0.7704918</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">sensitivity</td>
+<td style="text-align: right;">0.6811594</td>
+<td style="text-align: right;">0.6811594</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">specificity</td>
+<td style="text-align: right;">0.7222222</td>
+<td style="text-align: right;">0.2222222</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">f_meas</td>
+<td style="text-align: right;">0.7768595</td>
+<td style="text-align: right;">0.7230769</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">recall</td>
+<td style="text-align: right;">0.6811594</td>
+<td style="text-align: right;">0.6811594</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">mcc</td>
+<td style="text-align: right;">0.3332278</td>
+<td style="text-align: right;">-0.0855005</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">roc_auc</td>
+<td style="text-align: right;">0.7846216</td>
+<td style="text-align: right;">0.4983897</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="curvas-roc-de-todos-los-modelos" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">13.4. Curvas roc de todos los modelos</h2>
+
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/curvas-roc-todos-modelos-1.png" width="960" class="r-stretch"></section></section>
+<section>
+<section id="shap-values" class="title-slide slide level1 center">
+<h1>14. SHAP values</h1>
+
+</section>
+<section id="shap-values-1" class="slide level2">
+<h2>14. SHAP values</h2>
+<div>
+<ul>
+<li class="fragment"><p>Forma de ver la contribución de las variables utilizadas en las predicciones.</p></li>
+<li class="fragment"><p>Se pueden utilizar tanto como para el modelo general como en individuos.</p></li>
+<li class="fragment"><p>Algunos paquetes que se encargan de generar shap values son h2o y DALEXTRA.</p></li>
+</ul>
+</div>
+</section>
+<section id="shap-values-2" class="slide level2">
+<h2>14. SHAP values</h2>
+
+<img data-src="Presentacion_Tidymodels_files/figure-revealjs/shap-values-12-1.png" width="960" class="r-stretch"></section></section>
+<section id="gracias-por-vuestra-atención" class="title-slide slide level1 center">
+<h1>Gracias por vuestra atención</h1>
 <div class="footer footer-default">
 
 </div>

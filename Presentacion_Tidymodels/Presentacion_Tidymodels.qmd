@@ -7,20 +7,6 @@ format:
     #incremental: true  
     scrollable: true
     transition: slide
-    include-in-header: 
-      text: |
-        <style>
-        .titulo-seccion {
-          font-size: 50px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0;
-          position: absolute;
-          top: 45%;
-          left: 15%;
-        }
-        </style>
 ---
 
 ## ¡Hola! {auto-animate="true"}
@@ -29,8 +15,6 @@ format:
 -   Me llamo Aitor González.
 
 -   Soy estadístico en la Unidad de Bioestadística de la Facultad de Medicina de la UAB.
-
--   También explico cosas de estadística en mi canal de YouTube *ReEstimando*.
 :::
 
 ## ¡Hola! {auto-animate="true"}
@@ -39,17 +23,17 @@ format:
 
 -   Soy estadístico en la Unidad de Bioestadística de la Facultad de Medicina de la UAB.
 
--   También explico cosas de estadística en mi canal de YouTube *ReEstimando*.
+-   También explico cosas de estadística en mi canal de YouTube [*ReEstimando*](https://www.youtube.com/@ReEstimando).
 
 ![](Imagenes/Logo_reestimando_logo_YT.jpg){width="300" fig-align="center"}
 
-::: titulo-seccion
-## 2. ¿Porqué Tidymodels?
-:::
+# 2. ¿Porqué Tidymodels?
 
 ## 2.1. Un poquito de historia {auto-animate="true"}
 
-![](Imagenes/Max_Kuhn.jpeg){width="400" height="400" top-margin="200px" fig-align="center"}
+![](Imagenes/Max_Kuhn.jpeg){width="400" height="400" margin-top="200px" margin-bottom="0px" padding="0px" fig-align="center"}
+
+<p style="text-align: center; margin-top:0; padding:0">Max Kuhn</p>
 
 ## 2.1. Un poquito de historia {auto-animate="true"}
 
@@ -59,7 +43,7 @@ format:
 :::
 
 ::: {.column .incremental width="70%"}
--   En 2008 desarrolló la librería Caret, la cual asentó las bases del modelado estadístico en R.
+-   En 2008 desarrolló la librería **Caret**, la cual asentó las bases del modelado estadístico en R.
 :::
 :::
 
@@ -67,13 +51,13 @@ format:
 
 ::: columns
 ::: {.column width="30%"}
-![](Imagenes/Max_Kuhn.jpeg){width="300" fig-align="center"}
+![](Imagenes/Max_Kuhn.jpeg){fig-align="center" width="300"}
 
 ![](Imagenes/Paper_Caret.jpeg){width="600" fig-align="center" margin-top="0"}
 :::
 
 ::: {.column width="70%"}
--   En 2008 desarrolló la librería Caret, la cual asentó las bases del modelado estadístico en R.
+-   En 2008 desarrolló la librería **Caret**, la cual asentó las bases del modelado estadístico en R.
 
 -   El paquete cuenta con más de 7.000 citas en publicaciones académicas.
 :::
@@ -83,7 +67,9 @@ format:
 
 ::: columns
 ::: {.column width="30%"}
+<div style="margin-top:100px">
 ![](Imagenes/Caret_logo.png){width="300" fig-align="center"}
+</div>
 :::
 
 ::: {.column .incremental width="70%"}
@@ -98,26 +84,26 @@ format:
 ## 2.1. Un poquito de historia (2) {auto-animate="true"}
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="20%"}
 ![](Imagenes/Hadley_Wickham.jpeg){width="300" fig-align="center"}
 :::
 
-::: {.column .incremental width="70%"}
--   En 2012 aparece el entorno de Tidyverse de la mano de Hadley Wickham.
+::: {.column .incremental width="80%"}
+-   En 2012 aparece el entorno de Tidyverse de la mano de **Hadley Wickham**.
 :::
 :::
 
 ## 2.1. Un poquito de historia (2) {auto-animate="true"}
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="20%"}
 ![](Imagenes/Hadley_Wickham.jpeg){.fade-out width="150" fig-align="center"}
 
 ![](Imagenes/Paquetes_Tidyverse.jpeg){.fade-in width="300" fig-align="center"}
 :::
 
-::: {.column width="70%"}
--   En 2012 aparece el entorno de Tidyverse de la mano de Hadley Wickham.
+::: {.column width="80%"}
+-   En 2012 aparece el entorno de Tidyverse de la mano de **Hadley Wickham**.
 
 -   Tidyverse proporciona múltiples herramientas para poder manipular datos facilmente.
 
@@ -132,9 +118,9 @@ format:
 ## 2.1. Un poquito de historia (3) {auto-animate="true"}
 
 ::: {layout-ncol="2"}
-![](Imagenes/Hadley_Wickham.jpeg){width="150" fig-align="center"}
+![](Imagenes/Hadley_Wickham.jpeg){fig-align="center" width="140"}
 
-![](Imagenes/Max_Kuhn.jpeg){width="150" fig-align="center"}
+![](Imagenes/Max_Kuhn.jpeg){fig-align="center" width="210"}
 :::
 
 -   En 2019 Max Kuhn se une al *Tidyverso* y comienza a crear Tidymodels junto con el equipo de Hadley Wickham.
@@ -142,16 +128,16 @@ format:
 ## 2.1.Un poquito de historia (3) {auto-animate="true"}
 
 ::: {layout-ncol="3"}
-![](Imagenes/Hadley_Wickham.jpeg){width="150" fig-align="center"}
+![](Imagenes/Hadley_Wickham.jpeg){fig-align="center" width="140"}
 
-![](Imagenes/Max_Kuhn.jpeg){width="150" fig-align="center"}
+![](Imagenes/Max_Kuhn.jpeg){fig-align="center" width="210"}
 
-![](Imagenes/Julia_Silge.jpeg){width="150" fig-align="center"}
+![](Imagenes/Julia_Silge.jpeg){fig-align="center" width="210"}
 :::
 
 -   En 2019 Max Kuhn se une al *Tidyverso* y comienza a crear Tidymodels junto con el equipo de Hadley Wickham.
 
--   Actualmente Julia Silge es, junto con Max Kuhn, la principal desarrolladora de Tidymodels.
+-   Actualmente **Julia Silge** es, junto con Max Kuhn, la principal desarrolladora de Tidymodels.
 
 ## 2.2. Un breve ejemplo {auto-animate="true"}
 
@@ -222,6 +208,7 @@ model <-
 ## 2.3. ¿Qué aporta Tidymodels?
 
 ::: incremental
+<div style="font-size:32px;">
 -   **No más Caret**: el paquete no tendrá más actualizaciones, sólo mantenimiento
 
 -   **Consistencia**: Misma sintáxis para todos los procesos
@@ -233,15 +220,68 @@ model <-
 -   **Exportabilidad**: Junto a Plumber y Vetiver se pueden poner los modelos en producción
 
 -   **Posibilidades**: Tidymodels da soporte a 155 modelos, incluyendo modelos para datos censurados o series temporales
+</div>
 :::
 
-::: titulo-seccion
-## 3. Presentando los datos
-:::
 
-## 3.1. Caso práctico {auto-animate="true"}
+# 3. ¿De qué se compone Tidymodels?
+
+## 3. ¿De qué se compone Tidymodels? {auto-animate="true"}
+
+-   El flujo de trabajo de Tidymodels es el siguiente:
+
+![](Imagenes/Flujo_tidymodels.png){fig-align="center"}
+
+## 3. ¿De qué se compone Tidymodels? {auto-animate="true"}
+
+-   La idea detrás consiste en una sola sintaxis que resuma todo este flujo de trabajo.
 
 ::: incremental
+<div style="font-size:32px; margin-left:40px;">
+1.  Partición de los datos
+
+2.  Pre-procesamos los datos de entrenamiento
+
+3.  Buscamos los hiper-parámetros ideales para nuestros datos en el modelo
+
+4.  Ajustamos el modelo
+
+5.  Comprobamos con las métricas
+
+6.  Vemos si funciona con unos datos que el modelo no haya visto
+</div>
+:::
+
+## 3. ¿De qué se compone Tidymodels? {auto-animate="true"}
+
+::: columns
+::: {.column width="30%"}
+<div style="margin-top:100px">
+![](Imagenes/paquetes_tidymodels.png){fig-align="center" width="500"}
+</div>
+:::
+
+::: {.column width="70%"}
+::: incremental
+<div style="font-size:30px;">
+-   **Rsample**: Funciones para crear distintos tipos de remuestreos.
+-   **Recipes**: Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.
+-   **Parsnip**: Interfaz para ajustar modelos, hasta 155 tipos a fecha de esta presentación
+-   **Yarstick**: Creación de métricas para la evaluación de un modelo.
+-   **Workflows**: Cohesión interna de tidymodels.
+-   **Tune & Dials**: Creación y gestión de hiper-parámetros de cualquier modelo presente en Tidymodels.
+</div>
+:::
+:::
+:::
+
+
+# 4. Presentando los datos
+
+## 4.1. Caso práctico {auto-animate="true"}
+
+::: incremental
+<div style="font-size:30px;">
 -   Somos unos expertos en aprendizaje automático y nos piden ayuda de un hospital 🏥
 
 -   Al parecer, nuestra variable, *Var_respuesta*, es una enfermedad complicada de diagnosticar.
@@ -251,9 +291,10 @@ model <-
 -   Haremos una modelización de tipo clasificatoria binaria, es decir de 2 niveles: o tiene la enfermedad o no la tiene. 👍/👎
 
 -   Además de de nuestra variable *Var_respuesta*, tenemos otras 25 variables: de cognición, bioquímicas, genéticas, etc.
+</div>
 :::
 
-## 3.1. Caso práctico {auto-animate="true"}
+## 4.1. Caso práctico {auto-animate="true"}
 
 ```{r caso-practico-1, echo=TRUE}
 
@@ -268,11 +309,12 @@ pacman::p_load(
   themis,      # Soporte de la librería "recipes" para añadir sobremuestreo
   skimr,       # Descriptiva rápida de datos  
   naniar,
+  ranger,
   knitr        # Renderización en html para este formato
 )
 ```
 
-## 3.1. Caso práctico {auto-animate="true"}
+## 4.1. Caso práctico {auto-animate="true"}
 
 -   Antes de empezar, podemos ver la estructura del dataset:
 
@@ -283,96 +325,36 @@ datos <- read_xlsx('Data/datos.xlsx') %>%
 
 
 datos %>% 
-  head(.,10) %>% 
+  head(.,5) %>% 
   knitr::kable()
 ```
 
-## 3.1. Caso práctico {auto-animate="true"}
+## 4.1. Caso práctico {auto-animate="true"}
 
-```{r caso-practico-2, echo=TRUE}
+```{r caso-practico-2, echo=FALSE}
 # Valoración general
 skimr::skim(datos)
 ```
 
-## 3.1. Caso práctico {auto-animate="true"}
-
-```{r caso-practico-3, echo=TRUE}
-# Valores perdidos
-naniar::vis_miss(datos)
-```
-
-## 3.1. Caso práctico {auto-animate="true"}
+## 4.1. Caso práctico {auto-animate="true"}
 
 ```{r caso-practico-4, echo=TRUE}
 naniar::gg_miss_upset(datos, nsets = 10, nintersects = 50)
 ```
 
-::: titulo-seccion
-## 4. ¿De qué se compone Tidymodels?
-:::
 
-## 4. ¿De qué se compone Tidymodels? {auto-animate="true"}
+# 5. Preparando la partición de datos con Rsample
 
--   El flujo de trabajo de Tidymodels es el siguiente:
 
-![](Imagenes/Flujo_tidymodels.png){fig-align="center"}
-
-## 4. ¿De qué se compone Tidymodels? {auto-animate="true"}
-
--   La idea detrás consiste en una sola sintaxis que resuma todo este flujo de trabajo.
+## 5.1. Cuidado con los datos {auto-animate="true"}
 
 ::: incremental
-1.  Partición de los datos
-
-2.  Pre-procesamos los datos de entrenamiento
-
-3.  Buscamos los hiper-parámetros ideales para nuestros datos en el modelo
-
-4.  Ajustamos el modelo
-
-5.  Comprobamos con las métricas
-
-6.  Vemos si funciona con unos datos que el modelo no haya visto
+-   Es necesario controlar qué datos utilizamos en el entrenamiento del modelo para que cuando se use en producción, el modelo sea capaz de responder.
 :::
 
-## 4. ¿De qué se compone Tidymodels? {auto-animate="true"}
+## 5.1. Cuidado con los datos {auto-animate="true"}
 
-::: incremental
-![](Imagenes/paquetes_tidymodels.png){fig-align="center" width="500"}
-
--   **Rsample**: Funciones para crear distintos tipos de remuestreos.
--   **Recipes**: Preprocesador de datos, simplifica el proceso de preparado de datos para cualquier modelo.
--   **Parsnip**: Interfaz para ajustar modelos, hasta 155 tipos a fecha de esta presentación
--   **Yarstick**: Creación de métricas para la evaluación de un modelo.
--   **Workflows**: Cohesión interna de tidymodels.
--   **Tune & Dials**: Creación y gestión de hiper-parámetros de cualquier modelo presente en Tidymodels.
-:::
-
-::: titulo-seccion
-## 5. Preparando la partición de datos con Rsample
-:::
-
-## 5.1. ¡Necesitamos datos! {auto-animate="true"}
-
-::: incremental
--   Suelen ser difíciles de conseguir
--   Requieren tiempo, esfuerzo y **dinero**
-:::
-
-## 5.1. ¡Necesitamos datos! {auto-animate="true"}
-
--   Suelen ser difíciles de conseguir
--   Requieren tiempo, esfuerzo y **dinero**
-
-::: incremental
--   Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.
--   Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.
-:::
-
-## 5.1. ¡Necesitamos datos! {auto-animate="true"}
-
--   Optimizar el manejo de los datos para abaratar los costes de recopilación y mejorar los resultados.
--   Tener en cuenta el propósito del modelo para predecir qué pasará con datos que todavía no conocemos.
+-   Es necesario controlar qué datos utilizamos en el entrenamiento del modelo para que cuando se use en producción, el modelo sea capaz de responder.
 
 ![](Imagenes/meme_spiderman_remuestreo.jpeg){fig-align="center"}
 
@@ -381,14 +363,14 @@ naniar::gg_miss_upset(datos, nsets = 10, nintersects = 50)
 -   Crearemos una partición de la muestra en unos datos para “entrenar” el modelo y la otra para “evaluarlo”.
 
 ::: {layout-ncol="2"}
-![](Imagenes/esquema_training_test.jpeg){fig-align="center"}
+![](Imagenes/esquema_training_test.jpeg){fig-align="center" width="300"}
 
-![](Imagenes/logo_rsample.png){fig-align="center"}
+![](Imagenes/logo_rsample.png){fig-align="center" width="198"}
 :::
 
 ## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
 
--   initial_split: Principal función dentro de la librería. Crea un objeto “split” sencillo para hacer una partición de datos.
+-   `initial_split`: Principal función dentro de la librería. Crea un objeto “split” sencillo para hacer una partición de datos.
 
 ```{r echo=TRUE}
 initial_split(datos, prop = 0.6 )
@@ -397,7 +379,7 @@ initial_split(datos, prop = 0.6 )
 
 ## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
 
--   bootstraps: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En las muestras tipo bootsrap, los individuos pueden aparecer más de una vez en el conjunto de datos.
+-   `bootstraps`: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En las muestras tipo bootsrap, los individuos pueden aparecer más de una vez en el conjunto de datos.
 
 ```{r echo=TRUE}
 rsample::bootstraps(datos,5)
@@ -405,17 +387,66 @@ rsample::bootstraps(datos,5)
 
 ## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
 
--   rolling_origin: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contiene datos consecutivos.
+-   `rolling_origin`: Crea un tibble con n cantidad de objetos “split” y su correspondiente identificador. En este caso, los remuestreos no son aleatorios y cada partición contiene datos consecutivos.
 
-```{r echo=TRUE}
+```{r echo=TRUE, eval=FALSE}
 rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = FALSE)
+```
+
+## 5.1.2. Algunas funciones importantes en *RSample* {auto-animate="true"}
+
+```{r echo=TRUE, eval=FALSE}
+rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = FALSE)
+rolling_origin(datos, initial = 50, assess = 20, skip = 70, cumulative = FALSE)
+rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = TRUE)
+rolling_origin(datos, initial = 50, assess = 50, skip = 70, cumulative = TRUE)
+```
+
+```{r echo=FALSE}
+ggpubr::ggarrange(
+  rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = FALSE) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = Row, fill = Data)) +
+    geom_tile() + 
+    scale_fill_manual( values = c('cyan','orange')) +
+    scale_y_continuous(breaks = seq(0, 300, by = 50)) +
+    theme_minimal()
+  ,
+  rolling_origin(datos, initial = 50, assess = 20, skip = 70, cumulative = FALSE) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = Row, fill = Data)) +
+    geom_tile()  + 
+    scale_fill_manual( values = c('cyan','orange')) +
+    scale_y_continuous(breaks = seq(0, 300, by = 50)) +
+    theme_minimal()
+  ,
+  rolling_origin(datos, initial = 20, assess = 20, skip = 40, cumulative = T) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = Row, fill = Data)) +
+    geom_tile()  + 
+    scale_fill_manual( values = c('cyan','orange')) +
+    scale_y_continuous(breaks = seq(0, 300, by = 50)) +
+    theme_minimal()
+  ,
+  rolling_origin(datos, initial = 50, assess = 50, skip = 70, cumulative = T) %>% 
+    tidy() %>% 
+    ggplot(aes(x = Resample, y = Row, fill = Data)) +
+    geom_tile()  + 
+    scale_fill_manual( values = c('cyan','orange')) +
+    scale_y_continuous(breaks = seq(0, 300, by = 50)) +
+    theme_minimal()
+  ,
+  common.legend = T, legend = 'bottom'
+)
 ```
 
 ## 5.2. Estratificación {auto-animate="true"}
 
+::: incremental
 -   Como las particiones son aleatorias, puede que uno de los conjuntos contenga más datos de un tipo que de otro.
 
 -   Idealmente querríamos que el conjunto de entrenamiento y el de evaluación contuvieran la misma proporción de las categorías.
+:::
 
 ## 5.2. Estratificación {auto-animate="true"}
 
@@ -493,8 +524,10 @@ ggpubr::ggarrange(
 
 Training_datos <- training(Split_datos_strat)
 Testing_datos  <- testing(Split_datos_strat)
+```
 
-knitr::kable(head(Training_datos,10))
+```{r echo=FALSE}
+knitr::kable(head(Training_datos,5))
 ```
 
 ## 5.3. Deshacer la partición {auto-animate="true"}
@@ -504,8 +537,10 @@ knitr::kable(head(Training_datos,10))
 
 Training_datos <- training(Split_datos_strat)
 Testing_datos  <- testing(Split_datos_strat)
+```
 
-knitr::kable(head(Testing_datos,10))
+```{r echo=FALSE}
+knitr::kable(head(Testing_datos,5))
 ```
 
 ## 5.4. Folds, creando conjuntos de validación {auto-animate="true"}
@@ -516,50 +551,50 @@ knitr::kable(head(Testing_datos,10))
 Folds_training <- vfold_cv(Training_datos, v = 5 ,strata = Var_respuesta)
 ```
 
-::: titulo-seccion
-## 6. Pre-procesamiento de datos con Parsnip
-:::
+```{r echo=FALSE}
+Folds_training 
+```
 
-## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
+
+# 6. Pre-procesamiento de datos con Parsnip
+
+## 6.1. Pre-procesamiento de datos {auto-animate="true"}
 
 ::: incremental
--   El pre-procesamiento es clave en el proceso de creación de modelos de machine learning.
-
--   Cuando queremos hacer un data frame para modelizar en aprendizaje automático hay que tener en cuenta:
-
-1.  Hay modelos que no aceptan valores perdidos.
-2.  Dependiendo de cómo queramos escalar el modelo los datos deberán estar normalizados o no.
-3.  Re-equilibrar grupos disparejos aumenta la eficiencia de preddición, aunque no siempre.
-4.  Reconvertir/transformar variables para maximizar el rendimiento del modelo.
+1.  Imputación
+2.  Normalización
+3.  Re-equilibración de grupos
+4.  Conversión
 :::
 
-## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
+## 6.1. Pre-procesamiento de datos {auto-animate="true"}
 
-¿Cómo hacemos cuando queramos poner un modelo a grane scala y entren datos a cada momento? ¿Debemos ejecutar el pre-procesamiento una y otra vez?
+<p style="margin-top:200px">¿Debemos ejecutar el pre-procesamiento una y otra vez?</p>
 
-## 6.1. ¿Qué es el pre-procesamiento de datos? {auto-animate="true"}
+## 6.1. Pre-procesamiento de datos {auto-animate="true"}
 
 ::: {layout-ncol="2"}
-![](Imagenes/meme_kuzco.jpeg){fig-align="center" width="425"}
+![](Imagenes/meme_kuzco.jpeg){fig-align="center" width="400"}
 
-![](Imagenes/logo_recipes.png){fig-align="center" width="439"}
+![](Imagenes/logo_recipes.png){fig-align="center" width="347"}
 :::
 
 ## 6.2. ¿Cómo cocinamos una receta? {auto-animate="true"}
 
 ::: incremental
 Para poder elaborar un flujo completo de pre-procesamiento debemos seguir los siguientes pasos:
-
+<div style="font-size:32px">
 -   **Recipe**: la base. Requiere de qué fórmula queremos para el modelo y de qué conjunto de datos partimos. Los datos aquí incorporados serán los datos de entrenamiento.
 -   **Step**: el proceso que queramos aplicar a nuestros datos, cualquier transofrmación de datos va aquí.
 -   **Prep**: la receta se prepara, es decir, se aplica al conjunto de entrenamiento y se abstrae para un modelado cualquiera.
 -   **Bake**: pone el pre-procesamiento en producción para un conjunto de datos cualquiera.
+</div>
 :::
 
 ## 6.2.1. Hagamos un ejemplo {auto-animate="true"}
 
-```{r}
-Training_datos %>% 
+```{r echo=TRUE}
+Ejemplo_receta <- Training_datos %>% 
   # 🔴 1. Recipe (crea la fórmula generalizada del modelo) 
   recipe(  
     as.formula("Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"),
@@ -571,16 +606,19 @@ Training_datos %>%
   # 🔴 3. Prep (asienta la receta y generalízala) 
   prep() %>% 
   # 🔴 4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)
-  bake(., new_data=NULL) %>% 
-  # displayment
-  head(.,10) %>% 
+  bake(., new_data=NULL) 
+```
+
+```{r echo=FALSE}
+Ejemplo_receta %>% 
+  head(.,5) %>% 
   knitr::kable()
 ```
 
 ## 6.2.2. Imputación múltiple {auto-animate="true"}
 
-```{r}
-Training_datos %>% 
+```{r echo=TRUE}
+Imputacion_multiple <- Training_datos %>% 
   # 🔴 1. Recipe (crea la fórmula generalizada del modelo) 
   recipe(  
     as.formula("Var_respuesta ~ Cognicion_01 +Cognicion_02+Escala_01+Escala_02"),
@@ -592,16 +630,19 @@ Training_datos %>%
   # 🔴 3. Prep (asienta la receta y generalízala) 
   prep() %>%
   # 🔴 4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)
-  bake(., new_data=NULL) %>%   
-  # displayment
-  head(.,10) %>% 
+  bake(., new_data=NULL) 
+```
+
+```{r echo=FALSE}
+Imputacion_multiple%>%   
+  head(.,5) %>% 
   knitr::kable()
 ```
 
 ## 6.2.3. PCA {auto-animate="true"}
 
-```{r}
-Training_datos %>% 
+```{r echo=TRUE}
+PCA <- Training_datos %>% 
   # 🔴 1. Recipe (crea la fórmula generalizada del modelo) 
   recipe(  
     as.formula("Var_respuesta ~ Cognicion_01 + Cognicion_02 + Cognicion_03 + Escala_01 + Escala_02  + Escala_03"),
@@ -614,15 +655,19 @@ Training_datos %>%
   # 🔴 3. Prep (asienta la receta y generalízala) 
   prep() %>%
   # 🔴 4. Bake (pon la receta en producción/comprueba qué tal ha funcionado)
-  tidy(id = "pca") %>%
+  tidy(id = "pca") 
+```
+
+```{r echo=FALSE}
+PCA %>%
   # displayment
-  head(.,10) %>% 
+  head(.,5) %>% 
   knitr::kable()
 ```
 
 ## 6.2.4. Remuestrear {auto-animate="true"}
 
-```{r}
+```{r echo=TRUE}
 # 🔴 Librería que permite instalar algoritmos y hacer sobremuestreo en Tidymodels.
 pacman::p_load(themis)
 
@@ -645,7 +690,7 @@ Training_datos_adasyn <- Training_datos %>%
 
 ## 6.2.4. Remuestrear {auto-animate="true"}
 
-```{r}
+```{r echo=FALSE}
 ggpubr::ggarrange(
   Training_datos %>% 
       group_by(Var_respuesta) %>% 
@@ -679,11 +724,14 @@ ggpubr::ggarrange(
 
 ## 6.3. Caso práctico: Receta {auto-animate="true"}
 
-Por el momento dejaré una receta lista para continuar con el taller.
+<div style="margin-top:200px">
+$$ \textbf{VarRespuesta} \sim Cognicion01 + Cognicion02 +\\ 
+    Cognicion03 + Cognicion04 + Cognicion05 + \\
+    Escala01 + Escala02 + Escala03 $$
+</div>
+## 6.3. Caso práctico: Receta {auto-animate="true"}
 
-```{r caso-practico-receta, echo=TRUE}
-# Creamos la Fórmula para la receta a partir 
-# de nombres de las variables y un poco de magia con paste()
+```{r echo=FALSE}
 Receta_modelo_1_formula <- Training_datos %>% 
   dplyr::select(
    dplyr::matches('Cog'), dplyr::matches('escala')) %>% 
@@ -691,8 +739,10 @@ Receta_modelo_1_formula <- Training_datos %>%
   paste(., collapse = ' + ') %>% 
   paste('Var_respuesta ~' ,.) %>% 
   as.formula() 
+```
 
-  # 🔴 1.) Iniciamos la receta
+```{r echo=TRUE}
+# 🔴 1.) Iniciamos la receta
 Receta_modelo_1 <- recipe(  
     formula = Receta_modelo_1_formula,
     data = Training_datos , 
@@ -702,19 +752,23 @@ Receta_modelo_1 <- recipe(
   step_filter_missing(all_predictors(),  threshold = 0.1) %>% 
     #  🟡 2.2) Imputamos las variables numéricas con un algoritmo de bagged trees
   step_impute_bag(all_numeric(),-all_outcomes()) %>%
-    # 2.3) Normalizamos los datos (restamos la media)
+    #  🟡 2.3) Normalizamos los datos (restamos la media)
   step_normalize(all_numeric(),-all_outcomes() ) %>% 
-    # 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
+    #  🟡 2.4) Escalamos los datos (reducimos a escala entre 0 y 1)
   step_scale(all_numeric(),-all_outcomes()) %>% 
-    # 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)
+    #  🟡 2.5) Convertimos a Dummy las variables factor (no hará nada por que no tenemos variables factor)
   step_dummy(all_nominal(), -all_outcomes(), one_hot = T) %>% 
-    # 2.6) Sobre muestreamos la variable para equilibrar grupos
+    #  🟡 2.6) Sobre muestreamos la variable para equilibrar grupos
   step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) 
+
 ```
 
-::: titulo-seccion
-## 7. ¿Dónde está el modelo? Creando modelos con Parsnip
-:::
+```{r echo=FALSE}
+#Receta_modelo_1
+```
+
+
+# 7. ¿Dónde está el modelo? Creando modelos con Parsnip
 
 ## 7.1. Modelos a la carrera con Parsnip {auto-animate="true"}
 
@@ -722,7 +776,8 @@ Receta_modelo_1 <- recipe(
 
 ## 7.1. Modelos a la carrera con Parsnip {auto-animate="true"}
 
-![](Imagenes/search_parsnip_models.png){fig-align="center"} https://www.tidymodels.org/find/parsnip/
+![](Imagenes/search_parsnip_models.png){fig-align="center" width="3500"}
+<p style="font-size:20px; text-align: center;">[Search Parsnip Models](https://www.tidymodels.org/find/parsnip/)</p>
 
 ## 7.2. Empezamos a modelar {auto-animate="true"}
 
@@ -730,7 +785,11 @@ Receta_modelo_1 <- recipe(
 # 🔴 Ver los posibles motores de un tipo de modelo
 show_engines('logistic_reg') 
 
+```
 
+## 7.2. Empezamos a modelar {auto-animate="true"}
+
+```{r echo=TRUE, eval=FALSE}
 logistic_reg(
   engine = "glmnet",
   #Hiperparámetros           
@@ -763,8 +822,27 @@ Model_RandomForest <-
   set_mode("classification")
 ```
 
-::: titulo-seccion
+
+# 8. Unificando todo: Workflow
+
 ## 8. Unificando todo: Workflow
+
+::: columns
+::: {.column width="20%"}
+<div style="margin-top:100px">
+![](Imagenes/workflows_logo.png){fig-align="center" width="300"}
+</div>
+:::
+
+::: {.column width="80%"}
+<div style="font-size:32px;">
+Un flujo de trabajo (Workflow) es un objeto que puede agrupar preprocesamiento, modelado y postprocesamiento.
+
+-   La preparación de la receta y el ajuste del modelo pueden ejecutarse utilizando una única llamada a `fit()`.
+-   Si tiene configuración personalizada de parámetros de ajuste, éstos pueden definirse utilizando una interfaz más sencilla cuando se combinan con tune.
+-   En el futuro, los flujos de trabajo podrán añadir operaciones de postprocesamiento, como modificar el corte de probabilidad para modelos de dos clases.
+</div>
+:::
 :::
 
 ## 8. Unificando todo: Workflow
@@ -779,8 +857,25 @@ WF_Receta_modelo_1_Random_forest <-
   add_model(Model_RandomForest)
 ```
 
-::: titulo-seccion
+```{r echo=FALSE}
+WF_Receta_modelo_1_Random_forest
+```
+
+
+# 9. Eligiendo métricas con Yardstick {auto-animate="true"}
+
 ## 9. Eligiendo métricas con Yardstick {auto-animate="true"}
+
+::: columns
+::: {.column width="20%"}
+![](Imagenes/yardstick_logo.png){fig-align="center" width="300"}
+
+:::
+
+::: {.column width="80%"}
+-   Yardstick es un paquete para estimar lo bien que funcionan los modelos, dentro del workflow o de forma aislada.
+<p style="font-size:25px; margin-top:20px"> [Más información](https://yardstick.tidymodels.org/articles/custom-metrics.html) </p>
+:::
 :::
 
 ## 9. Eligiendo métricas con Yardstick {auto-animate="true"}
@@ -790,43 +885,39 @@ WF_Receta_modelo_1_Random_forest <-
 Modelo_Metricas <- metric_set(accuracy, j_index, precision, sensitivity, specificity, roc_auc, f_meas,recall, mcc)
 ```
 
-Se puede encontrar más información en: https://yardstick.tidymodels.org/articles/custom-metrics.html
+```{r echo=FALSE}
+Modelo_Metricas
+```
 
-::: titulo-seccion
-## 10. Eligiendo hiperparámetros: Tune y Dials
+
+# 10. Eligiendo hiperparámetros: Tune y Dials
+
+## 10.1. Eligiendo hiperparámetros: Tune y Dials {auto-animate="true"}
+
+::: incremental
+-   Los paquetes *Tune* y *Dials* son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.
+:::
+
+## 10.1. Eligiendo hiperparámetros: Tune y Dials {auto-animate="true"}
+
+-   Los paquetes *Tune* y *Dials* son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.
+
+::: {layout-ncol="2"}
+![](Imagenes/logo_tune.png){fig-align="center" width="217"}
+
+![](Imagenes/logo_dials.png){fig-align="center" width="217"}
 :::
 
 ## 10.1. Eligiendo hiperparámetros: Tune y Dials {auto-animate="true"}
 
 ::: incremental
--   Los hiperparámetros no pueden aprenderse a partir de los datos, pero que influyen significativamente en el rendimiento del modelo.
+1.  Creamos unas réplicas del conjunto de entrenamiento, Rsample con el objeto *cv_Folds*
 
--   A diferencia de los parámetros del modelo, que se aprenden durante el entrenamiento, los hiperparámetros se establecen antes de que comience el entrenamiento.
-
--   La selección de los hiperparámetros adecuados es esencial para conseguir un modelo generalizable y con buen rendimiento.
-
--   Los hiperparámetros desempeñan un papel crucial a la hora de controlar el equilibrio entre la sobreadaptación y la inadaptación (oiverfitting y underfitting).
-
--   Ajustar los hiperparámetros puede ayudar a encontrar el nivel adecuado de complejidad del modelo, haciendo un buen equilibrio entre la varianza del conjunto de entrenamiento y el de evaluación.
-:::
-
-## 10.1. Eligiendo hiperparámetros: Tune y Dials {auto-animate="true"}
-
--   Los paquetes Tune y Dials son los que nos permiten hacer esta selección y control. Aquí se crea todo un subflujo de trabajo para el ajuste de hiperparámetros.
-
-::: columns
-::: {.column width="30%"}
-![](Imagenes/logo_tune.png){fig-align="center"}
-
-![](Imagenes/logo_dials.png){fig-align="center"}
-:::
-
-::: {.column width="30%"}
-1.  Creamos unas réplicas del conjunto de entrenamiento, para tener subconjunto de entrenamiento y de validación (que ya hicimos en el apartado de Rsample con el objeto ““)
 2.  Elegimos un modelo con Parsnip y dejamos sus hiperparámetros en abierto con `tune()`.
-3.  Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los hiperparámetros que dejamos en abierto en el paso 2.
+
+3.  Creamos una cuadrícula (grid) con diferentes posibles combinaciones de los hiperparámetros
+
 4.  Ponemos todo junto con la función `tune_grid()`.
-:::
 :::
 
 ## 10.2. Montando un espacio de hiperparámetros: familia `grid_` {auto-animate="true"}
@@ -834,11 +925,11 @@ Se puede encontrar más información en: https://yardstick.tidymodels.org/articl
 ::: incremental
 -   `grid_regular`: hará todas las combinaciones entre los rangos de la variable.
 -   `grid_random`: probará hiperparámetros aleatoriamente.
--   `grid_max_entropy`: propondrá una combinación de hiperpárametros que garanticen que se cubrirá todo el espectro, con fin de evitar mínimos locales en la conversión de algoritmos.
+-   `grid_max_entropy`: propondrá una combinación de hiperpárametros que garantice que se cubrirá todo el espectro, con fin de evitar mínimos locales en la conversión de algoritmos.
 -   `grid_latin_hypercube`: propondrá una matriz.
 :::
 
-## 10.2.1. Grid_regular {auto-animate="true"}
+## 10.2.1. Grid_regular() {auto-animate="true"}
 
 -   `Grid_regular` hará las combinaciones acorde al rango que le hayamos dado. Por defecto hace la combinación entre el mínimo, el medio y el máximo de cada valor.
 
@@ -877,52 +968,52 @@ grid_max_entropy(
   )
 ```
 
-## 10.3. Ajustando los hiperparámetros: convergen Yardstick con dial y tune {auto-animate="true"}
+## 10.3. Hiperparámetros: Dial & Tune + Yardstick {auto-animate="true"}
 
 ```{r hiperpar-1, echo=TRUE}
-
 WF_hiper_parametros <- 
-  # 🔴 Este proceso se hace con la función tune_grid()🔴
+  # 🔴 tune_grid()🔴
   tune_grid(
-  # Ponemos la receta de nuestro modelo, que incuye el preprocesamiento y la fórmula
+  # Receta de nuestro modelo, incluye el workflow 
   object = WF_Receta_modelo_1_Random_forest,
   # 🟡 Ponemos los Folds del conjunto de entrenamiento,  
-  # 🟡 Dentro del entrenamiento habrá un sub-entrenamiento y una sub-validación
   resamples = Folds_training,
-  #Ponemos un grid para que pruebe con diferentes hiperparámetros, ya con un rango predefinido
+  # 🟡 Grid con diferentes hiperparámetros 
   grid = grid_max_entropy(
     mtry(range  = c(1, 4)),
     min_n(range = c(10, 30)),
     trees(range = c(1, 1000)),
     size = 10),
-  # Ponemos las métricas que hemos definido anteriormente
+  # 🟡 Métricas definidas anteriormente
   metrics = Modelo_Metricas, 
-  # Con esta opción podemos guardar las predicciones
+  # 🟡 Con esta opción podemos guardar las predicciones
   control = control_grid( save_pred = T)
 )
 ```
 
-## 10.3. Ajustando los hiperparámetros: convergen Yardstick con dial y tune {auto-animate="true"}
+## 10.3. Hiperparámetros: Dial & Tune + Yardstick {auto-animate="true"}
 
 ```{r hiperpar-2, echo=TRUE}
 WF_hiperparametros_coleccion <- 
   WF_hiper_parametros %>% 
   collect_metrics() # 🔴 Esta es la función que retorna las métricas, importante tenerla en cuenta
+```
 
+```{r hiperpar-21, echo=FALSE}
 WF_hiperparametros_coleccion %>% 
-  head(.,20) %>% 
+  head(.,5) %>% 
   knitr::kable()
 ```
 
-## 10.3. Ajustando los hiperparámetros: convergen Yardstick con dial y tune {auto-animate="true"}
+## 10.3. Hiperparámetros: Dial & Tune + Yardstick {auto-animate="true"}
 
 ```{r hiperpar-3, echo=TRUE}
 autoplot(WF_hiper_parametros)
 ```
 
-## 10.3. Ajustando los hiperparámetros: convergen Yardstick con dial y tune {auto-animate="true"}
+## 10.3. Hiperparámetros: Dial & Tune + Yardstick {auto-animate="true"}
 
-```{r hiperpar-4, echo=TRUE}
+```{r hiperpar-4, echo=FALSE}
 WF_hiper_parametros %>% 
   collect_metrics() %>% 
   pivot_longer(cols = c('mtry','trees', 'min_n'), names_to = 'tipo_parametro', values_to = 'valor_parametro') %>% 
@@ -932,18 +1023,20 @@ WF_hiper_parametros %>%
   scale_color_viridis_b()
 ```
 
-## 10.3. Ajustando los hiperparámetros: convergen Yardstick con dial y tune {auto-animate="true"}
+## 10.3. Hiperparámetros: Dial & Tune + Yardstick {auto-animate="true"}
 
 ```{r hiperpar-5, echo=TRUE}
-WF_hiperparametros_mejor <- WF_hiper_parametros %>%  show_best("roc_auc",1)
+WF_hiperparametros_mejor <- 
+  WF_hiper_parametros %>% show_best(metric = "roc_auc",n=1)
+```
 
+```{r hiperpar-51, echo=FALSE}
 WF_hiperparametros_mejor %>% 
   knitr::kable()
 ```
 
-::: titulo-seccion
-## 11. La conversión de todo: `fit()` y `predict()`
-:::
+
+# 11. La conversión de todo: `fit()` y `predict()`
 
 ## 11. La conversión de todo: `fit()` y `predict()` {auto-animate="true"}
 
@@ -953,6 +1046,10 @@ Modelo_fitted <- WF_Receta_modelo_1_Random_forest %>%
   finalize_workflow(WF_hiperparametros_mejor) %>%
   # 🔴 Finalmente ajustamos con fit()
   fit(data= Training_datos)
+```
+
+```{r modelo-fitted-1, echo=FALSE}
+Modelo_fitted
 ```
 
 ## 11. La conversión de todo: `fit()` y `predict()` {auto-animate="true"}
@@ -972,34 +1069,31 @@ Nuevo_caso <- tibble(
 
 ## 11. La conversión de todo: `fit()` y `predict()` {auto-animate="true"}
 
+::: incremental
+La función `predict()` de la librería stats tiene sinergias con Tidymodels y necesita de estos argumentos:
+
+1.  El modelo ya ajustado (model_fitted)
+
+2.  Un tibble/dataframe con la nueva predicción (debe contener las mismas variables)
+
+3.  Un tipo de predicción en los casos de clasificación, si queremos las probabilidades de cada categoría o la categoría predicha directamente
+:::
+
+## 11. La conversión de todo: `fit()` y `predict()` {auto-animate="true"}
+
 ```{r predict-modelo, echo=TRUE}
 tibble(
-  # 🔴 La función predict() de la librería stats tiene sinergias con Tidymodels, necesita de estos argumentos:
-  # - 🟡 El modelo ya ajustado (model_fitted) 
-  # - 🟡 Un tibble/dataframe con la nueva predicción (debe contener las mismas variables)
-  # - 🟡 Un tipo de predicción en los casos de clasificación, si queremos las probabilidades de cada categoría o la categoría predicha  directamente
   predict(Modelo_fitted, Nuevo_caso, type = "prob" ),
-  predict(Modelo_fitted, Nuevo_caso, type = "class")) %>% 
-  knitr::kable()
-
+  predict(Modelo_fitted, Nuevo_caso, type = "class"))
 ```
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
 
 ::: incremental
--   La función `last_fit()` permite tener todo unificado en un solo tibble. Recibe directamente los datos de entrenamiento y los datos de evaulación y crea sus métricas y sus predicciones.
-
--   Contamos con una serie de funciones para extraer todo lo que necesitemos de ellas:
-
-1.  `extract_fit_engine()`: permite extraer el modelo crudo como si no hubiera sido ajustado con tidymodels.
-2.  `collect_metrics()`: extraer un tibble con las métricas del modelo (puestas con metric set)
-3.  `collect_predictions()`: extrae un tibble con las predicciones de los datos de evaluación.
-4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
+-   La función `last_fit()` permite tener todo unificado en un solo tibble. Recibe directamente los datos de entrenamiento y los datos de evaluación y crea sus métricas y sus predicciones.
 :::
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
-
-4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
 
 ```{r extract-workflow-1, echo=TRUE}
 Modelo_1_final <-  WF_Receta_modelo_1_Random_forest %>% 
@@ -1007,13 +1101,26 @@ Modelo_1_final <-  WF_Receta_modelo_1_Random_forest %>%
   finalize_workflow(WF_hiperparametros_mejor) %>%
   # 🔴 Ajustamos con last_fit(), poniendo el split de datos inicial y las métricas para las predicciones
   last_fit(Split_datos_strat, metrics = Modelo_Metricas)
+```
 
+```{r extract-workflow-11, echo=FALSE}
 Modelo_1_final
 ```
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
 
-4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones:
+::: incremental
+-   Contamos con una serie de funciones para extraer todo lo que necesitemos de ellas:
+
+<div style="font-size:35px;">
+1.  `extract_fit_engine()`: permite extraer el modelo crudo como si no hubiera sido ajustado con tidymodels.
+2.  `collect_metrics()`: extraer un tibble con las métricas del modelo (puestas con metric set)
+3.  `collect_predictions()`: extrae un tibble con las predicciones de los datos de evaluación.
+4.  `extract_workflow()`: Permite extraer todo el flujo del modelo, incluyendo la receta de modo que podemos hacer predicciones.
+</div>
+:::
+
+## 11.1. La función `last_fit()` {auto-animate="true"}
 
 ```{r extract-workflow-2, echo=TRUE}
 WF_Receta_modelo_1_Random_forest %>%
@@ -1022,20 +1129,18 @@ WF_Receta_modelo_1_Random_forest %>%
   # 🔴 Ajustamos con last_fit(), poniendo el split de datos inicial y las métricas para las predicciones
   last_fit(Split_datos_strat, metrics = Modelo_Metricas) %>%
   # 🔴 dentro del flujo de trabajo están la receta y el modelo ya ajustado
-  extract_workflow() 
+  extract_workflow()
 ```
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
-
--   A partir de aquí podemos manipular el objeto fit de múltiples maneras múltiples:
 
 ```{r extract-workflow-3, echo=TRUE}
 Modelo_1_final %>%
   # 🔴 Con esta función podemos recopilar todas las métricas de un modelo
   collect_metrics() %>% 
   select(-.estimator,-.config) %>%  
-  mutate(.estimate= round(.estimate,2)) %>% 
-  knitr::kable()
+  mutate(.estimate= round(.estimate,2))
+
 ```
 
 ## 11.1. La función `last_fit()` {auto-animate="true"}
@@ -1052,52 +1157,41 @@ Modelo_1_final %>%  collect_predictions() %>%
   labs(title= 'Cruva roc del modelo_1_final')
 ```
 
-Advertencia: en la función de curva roc, ved que he puesto predicción del 0 en vez del 1. Esto es un error interno en la clasificación dentro del paquete yardstick. Hay que tener cuidado sobre si estas funciones utilizan el primer / segundo / x nivel de su factor como el “evento”. Por defecto, yardstick elige el primer nivel de verdad como “evento” al calcular la curva roc. Podéis encontrar más de este suceso en el github de los desarrolladores https://github.com/tidymodels/yardstick/issues/94
 
-::: titulo-seccion
-## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación)
-:::
+# 12. Threshold performance
 
-## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación) {auto-animate="true"}
+## 12. Threshold performance {auto-animate="true"}
 
 ::: incremental
--   El concepto de rendimiento del umbral (threshold performance) es crucial a la hora de evaluar y ajustar modelos de clasificación binaria.
-
--   El umbral es el valor de probabilidad por encima del cual un resultado predicho se considera de clase positiva. Por defecto, muchos modelos utilizan un umbral de 0,5.
-
--   Ajustar el umbral permite elegir entre precisión y la recall. Bajar el umbral aumenta la sensibilidad (recall) pero disminuye la precisión, y viceversa.
-
--   En tidymodels está la librería `probably` con la función `threshold_perf()`, la cual nos permite, dadas las predicciones del modelo, ver como se desenvuelve este umbral.
+-   En tidymodels está la librería `probably` con la función `threshold_perf()`, la cual nos permite, dadas las predicciones del modelo, ver cómo se desenvuelve este umbral.
 :::
 
-## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación) {auto-animate="true"}
+## 12. Threshold performance {auto-animate="true"}
 
 ```{r Threshold-1, echo=TRUE}
 pacman::p_load(probably)
 
-
 Modelo_1_final_Threshold_performance <- 
-  # Llamamos al modelo ya finalizado con "last_fit()"
   Modelo_1_final %>% 
-  # Coleccionamos sus predicciones
   collect_predictions() %>% 
-  # 🔴 Ejecutamos el rendimeinto de umbral con la siguiente función
   threshold_perf(
     # Le decimos qué variable es la verdadera respuesta
     truth = Var_respuesta,  
-    # Le decimos qué vairbale es la predicción (aviso: debido a un bug en la version )
+    # Le decimos qué variable es la predicción
     .pred_1, 
-    # ajustamos un rango en el que se evaluará el umbral en cada punto
+    # Rango en el que se evaluará el umbral en cada punto
     thresholds = seq(0.5,1,0.01) )
 
-# Displayment
+```
+
+```{r Threshold-11, echo=FALSE}
 Modelo_1_final_Threshold_performance %>% 
-  head(.,10) %>% 
+  head(.,5) %>% 
   mutate(.estimate= round(.estimate,2)) %>% 
   knitr::kable()
 ```
 
-## 12. Rendimiento del umbral (Threshold performance en modelos de clasificación) {auto-animate="true"}
+## 12. Threshold performance {auto-animate="true"}
 
 ```{r Threshold-2, echo=FALSE}
 Modelo_1_final_Threshold_performance %>% 
@@ -1109,16 +1203,27 @@ Modelo_1_final_Threshold_performance %>%
       filter(.metric=='j_index') %>%
       arrange(desc(.estimate)) %>% 
       slice(1) %>% 
-      pull(.threshold), linetype = 'dashed', size=1.5)
+      pull(.threshold), linetype = 'dashed', size=1.5)+
+  theme_minimal()
 ```
 
-::: titulo-seccion
-## 13. El cielo es el límite: `workflow_set()`
-:::
 
-## 13.1. Todas las recetas {auto-animate="true"}
+# 13. `workflow_set()` para unificarlas todas
 
-```{r todas-recetas, echo=TRUE}
+## 13.1. workflow_set() {auto-animate="true"}
+
+-   Supongamos que queremos evaluar 2 recetas con 1 modelo de RF:
+
+<div style="margin-left:50px; font-size:35px;">
+1.  Una con solo las variables 'Escala'
+2.  Otra con solo las variables 'Cognición'
+</div>
+
+-   Queremos dejarlo abierto a que puedan haber más.
+
+## 13.1. workflow_set() {auto-animate="true"}
+
+```{r todas-recetas, echo=FALSE}
 Receta_modelo_Escalas_formula <- Training_datos %>% 
   dplyr::select(dplyr::matches('Esc')) %>% 
   names() %>% 
@@ -1126,6 +1231,16 @@ Receta_modelo_Escalas_formula <- Training_datos %>%
   paste('Var_respuesta ~' ,.) %>% 
   as.formula() 
 
+Receta_modelo_Cognicion_formula <- Training_datos %>% 
+  dplyr::select(
+   dplyr::matches('Cog')) %>% 
+  names() %>% 
+  paste(., collapse = ' + ') %>% 
+  paste('Var_respuesta ~' ,.) %>% 
+  as.formula() 
+```
+
+```{r todas-recetas-1, echo=TRUE}
   # 🔴 1.) Iniciamos la receta
 Receta_modelo_Escalas <- recipe(  
     formula = Receta_modelo_Escalas_formula,
@@ -1145,15 +1260,6 @@ Receta_modelo_Escalas <- recipe(
     # 2.6) Sobremuestreamos la variable para equilibrar grupos
   step_adasyn(Var_respuesta, over_ratio = 1, neighbors = 10) 
 
-
-
-Receta_modelo_Cognicion_formula <- Training_datos %>% 
-  dplyr::select(
-   dplyr::matches('Cog')) %>% 
-  names() %>% 
-  paste(., collapse = ' + ') %>% 
-  paste('Var_respuesta ~' ,.) %>% 
-  as.formula() 
 
   # 🔴 1.) Iniciamos la receta
 Receta_modelo_Cognicion <- recipe(  
@@ -1176,14 +1282,12 @@ Receta_modelo_Cognicion <- recipe(
 
 ```
 
-## 13.2. `workflow_set()` para unificarlas todas {auto-animate="true"}
+## 13.2. workflow_set() {auto-animate="true"}
 
 ```{r workflow-set-1, echo=TRUE}
 Receta_list <- list(
   'Modelo_Escalas'    = Receta_modelo_Escalas,
   'Modelo_Cognicion'  = Receta_modelo_Cognicion
-  #,'Modelo_Bioquimica' = Receta_modelo_Bioquimica
-  #,'Modelo_Popurri'    = Receta_modelo_Popurri
   )
   
 Model_list <- list(
@@ -1191,20 +1295,25 @@ Model_list <- list(
   # ,XGBoost          = Model_XGBoost
   # ,Bagged_Trees     = Model_Bagged_Tree
   )
+```
 
+## 13.2. workflow_set() {auto-animate="true"}
+
+```{r workflow-set-2, echo=TRUE}
 Wokflows_set <- workflow_set(
   preproc = Receta_list, 
   models = Model_list, 
   # 🔴 La opción Cross es para que haga todos los cruces de modelos con recetas
   cross = T)
+```
 
-
+```{r workflow-set-21, echo=FALSE}
 Wokflows_set
 ```
 
-## 13.2. `workflow_set()` para unificarlas todas {auto-animate="true"}
+## 13.2. workflow_set() {auto-animate="true"}
 
-```{r workflow-set-2, echo=TRUE}
+```{r workflow-set-3, echo=TRUE}
 Wokflows_set_map <- 
   Wokflows_set %>% 
   # 🔴 workflow_map() es una función que permite ajustar múltiples flujos de trabajo
@@ -1221,13 +1330,15 @@ Wokflows_set_map <-
     control = control_grid( save_pred = T),
     # 🔴 para garantizar replicabildiad, podemos fijar la semilla en el proceso
     seed = 2465)
+```
 
+```{r workflow-set-31, echo=FALSE}
 Wokflows_set_map
 ```
 
-## 13.2. `workflow_set()` para unificarlas todas {auto-animate="true"}
+## 13.2. workflow_set() {auto-animate="true"}
 
-```{r workflow-set-3, echo=F}
+```{r workflow-set-4, echo=T}
 
 # Modelo Escalas ----
 Modelo_Escalas_RandomForest_hyperparametros <- Wokflows_set_map %>% 
@@ -1261,7 +1372,6 @@ Modelo_Cognicion_RandomForest_final <- Wokflows_set_map %>%
 ## 13.3. Métricas de todos los modelos {auto-animate="true"}
 
 ```{r metricas-1, echo=F}
-
 map2(
   list(
     Modelo_Escalas_RandomForest_final,
@@ -1282,28 +1392,27 @@ map2(
 
 ## 13.4. Curvas roc de todos los modelos {auto-animate="true"}
 
-```{r}
+```{r echo=FALSE}
 ROC_CURVE_training_todos_los_posibles_modelos <- Wokflows_set_map %>%  
   collect_predictions() %>%
   group_split(wflow_id) %>% 
-  set_names(list('Escala','Cognicion','Bioquimica','Popurri')) %>% 
+  set_names(list('Escala','Cognicion')) %>% 
   map(~ .x %>% roc_curve(truth=Var_respuesta , .pred_0)) %>% 
-  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+  map2(., list('Escala','Cognicion'),
                ~ .x %>%  mutate(model= .y)) %>% 
          bind_rows() 
 
 Plot_ROC_CURVE_training_todos_los_posibles_modelos <- ROC_CURVE_training_todos_los_posibles_modelos %>% 
   ggplot(aes( x = 1- specificity ,y= sensitivity, color= model ) ) +
   geom_path() +
-  geom_abline(intercept=0, slope=1, linetype=3)
+  geom_abline(intercept=0, slope=1, linetype=3) +
+  theme_minimal()
   
 
 
 ROC_CURVE_training_modelos_finales <- list(
   list('Esc' ,Modelo_Escalas_RandomForest_hyperparametros$.config),
-  list('Cog' ,Modelo_Cognicion_RandomForest_hyperparametros$.config),
-  list('Bio' ,Modelo_Bioquimica_RandomForest_hyperparametros$.config),
-  list('Pop' ,Modelo_Popurri_RandomForest_hyperparametros$.config)) %>% 
+  list('Cog' ,Modelo_Cognicion_RandomForest_hyperparametros$.config)) %>% 
   map(~ Wokflows_set_map %>% 
         collect_predictions() %>% 
         filter(
@@ -1315,39 +1424,36 @@ ROC_CURVE_training_modelos_finales <- list(
         mutate(Model= str_extract(wflow_id, '^.{2}') ) %>% 
         select(Model,Var_respuesta, .pred_0, .pred_1, .pred_class)
   ) %>% 
-  set_names(list('Escala','Cognicion','Bioquimica','Popurri') ) %>%
+  set_names(list('Escala','Cognicion') ) %>%
   map(~ .x %>% roc_curve(truth = Var_respuesta, .pred_0)) %>% 
-  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+  map2(., list('Escala','Cognicion'),
        ~ .x %>% mutate(model= .y)) %>% 
   bind_rows() 
   
 Plot_ROC_CURVE_training_modelos_finales <- ROC_CURVE_training_modelos_finales %>% 
   ggplot(aes( x = 1- specificity ,y= sensitivity, color= model ) ) +
   geom_path() +
-  geom_abline(intercept=0, slope=1, linetype=3) 
+  geom_abline(intercept=0, slope=1, linetype=3) +
+  theme_minimal()
 
 
 ROC_CURVE_testing_modelos_finales <-list(
   Modelo_Escalas_RandomForest_final,
-  Modelo_Cognicion_RandomForest_final,
-  Modelo_Bioquimica_RandomForest_final,
-  Modelo_Popurri_RandomForest_final
+  Modelo_Cognicion_RandomForest_final
   ) %>% 
   map(~.x %>% 
         collect_predictions() %>% 
         roc_curve(Var_respuesta, .pred_0)) %>% 
-  map2(., list('Escala','Cognicion','Bioquimica','Popurri'),
+  map2(., list('Escala','Cognicion'),
        ~ .x %>%  mutate(model= .y)) %>% 
   bind_rows()
 
 Plot_ROC_CURVE_testing_modelos_finales <- ROC_CURVE_testing_modelos_finales %>% 
   ggplot(aes(x = 1- specificity ,y = sensitivity, color = model ) ) +
   geom_path()+
-  geom_abline(intercept=0, slope=1, linetype=3)
+  geom_abline(intercept=0, slope=1, linetype=3) +
+  theme_minimal()
 ```
-
-
-
 
 ```{r curvas-roc-todos-modelos, echo=FALSE}
 ggpubr::ggarrange( Plot_ROC_CURVE_training_todos_los_posibles_modelos,
@@ -1359,28 +1465,42 @@ ggpubr::ggarrange( Plot_ROC_CURVE_training_todos_los_posibles_modelos,
                    labels = c('Todos_training','Training','Test'))
 ```
 
-::: titulo-seccion
-## 14. Haciendo el machine learning entendible: SHAP values
-:::
+# 14. SHAP values
 
-## 14. Haciendo el machine learning entendible: SHAP values
+## 14. SHAP values
 
 ::: incremental
--   Los valores de Shapley (shap values), que deben su nombre al premio Nobel Lloyd Shapley, son un concepto de la teoría de juegos cooperativos que ha acabado encontrado aplicaciones en el aprendizaje automático.
+-   Forma de ver la contribución de las variables utilizadas en las predicciones.
 
--   En teoría de juegos, los valores de Shapley son la distribución equitativa de la contribución de cada jugador en un juego cooperativo entre todos los jugadores. En el contexto del aprendizaje automático, las características o variables se consideran jugadores, y el juego consiste en cuánto contribuye cada característica a la predicción de un modelo.
+-   Se pueden utilizar tanto como para el modelo general como en individuos.
 
--   Es decir, los valores de Shapley son sencillamente las marginales de cada variable dentro del modelo.
-
--   El valor final llamado Shap value es promedio de todas las aportaciones de una variable marginal.
-
--   Aparte de su extenso coste computacional, todo shap value asume que está utilizando un modelo de caja negra, de manera que es posible que el modelo esté dando indicaciones erróneas.
-
--   Actualmente se pueden compilar en tidymodels utilizando la libreria agua, al ser una extensión de Tidymodels del entorno de h2o.
-
--   Una propuesta sería buscar un modelo bien calibrado con Tidymodels y pasarlo por h2o para hacer un diagnóstico más eficaz.
+-   Algunos paquetes que se encargan de generar shap values son h2o y DALEXTRA.
 :::
 
-$$
-VarRespuesta \sim . 
-$$
+## 14. SHAP values
+
+```{r shap-values-1, echo=FALSE, output=FALSE}
+h2o_start()
+
+modelo_h20 <- rand_forest() %>% 
+  set_engine("h2o", max_runtime_secs = 20) %>% 
+  set_mode('classification') %>% 
+  fit(Var_respuesta ~ ., data = Receta_modelo_Escalas %>% prep() %>% bake(new_data = NULL) )
+
+entrada_h20 <- h2o::as.h2o(
+  Receta_modelo_Escalas %>% prep() %>% bake(new_data = NULL) %>%
+    dplyr::rename(.outcome = Var_respuesta))
+```
+
+```{r shap-values-12, echo=FALSE}
+modelo_h20 %>%  
+  extract_fit_engine() %>% 
+  h2o::h2o.shap_summary_plot(entrada_h20)
+
+```
+
+```{r shap-values-2, echo=FALSE}
+h2o_end()
+```
+
+# Gracias por vuestra atención
